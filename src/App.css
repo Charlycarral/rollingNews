@@ -37,7 +37,7 @@
 
     
 }
-#inputNav{ 
+.inputNav{ 
     background: none;
     border-color: rgb(255, 255, 255);
     width: 55vh;
@@ -46,7 +46,10 @@
 #inputNav::placeholder{
     color: white;
 }
-
+.footer{
+    padding: 30px 0px;
+    background: #000;
+}
 
 @media (max-width: 576px){
     #navNewsCanvas{

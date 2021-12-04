@@ -23,8 +23,8 @@ const Navigation = () => {
           >
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <section>
-              <div className="container my-5 text-center">
-                <Nav className="flex-row pe-3 row mt-5">
+              <div className="container my-5 text-center ">
+                <Nav className="flex-row pe-3 row mt-5  justify-content-center">
                   <div className="col-sm-12 col-md-6 col-lg-4 text-white">
                     <h3 className="text-white">Secciones</h3>
                     <hr />
@@ -152,7 +152,7 @@ const Navigation = () => {
               </article>
             </section>
           </Navbar.Offcanvas>
-          <Navbar.Brand href="#">Logo RollingNews</Navbar.Brand>
+          <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
           <Button id="botonNav">Ingresar</Button>
         </Container>
       </Navbar>
