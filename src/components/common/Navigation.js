@@ -4,13 +4,13 @@ import {
   Nav,
   Container,
   Offcanvas,
-  NavDropdown,
   Button,
   Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import messi from '../img/messi-balon-de-oro_862x485.jpg'
 const Navigation = () => {
+
   return (
     <>
       <Navbar expand={false} fixed="top" id="Nav">
@@ -19,9 +19,9 @@ const Navigation = () => {
           <Navbar.Offcanvas
             id="navNewsCanvas"
             placement="start"
-            className="w-100"
+            
           >
-            <Offcanvas.Header closeButton></Offcanvas.Header>
+            <Offcanvas.Header closeButton className='btn-close-white'></Offcanvas.Header>
             <section>
               <div className="container my-5 text-center ">
                 <Nav className="flex-row pe-3 row mt-5  justify-content-center">
@@ -136,7 +136,7 @@ const Navigation = () => {
                     </Form.Group>
                   </Form>
                   <div>
-                    <a className="text-white">
+                    <a className="text-white ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="35"
@@ -153,7 +153,7 @@ const Navigation = () => {
             </section>
           </Navbar.Offcanvas>
           <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
-          <Button id="botonNav">Ingresar</Button>
+          <Link to='/login' id="botonNav">Ingresar</Link>
         </Container>
       </Navbar>
       <div >

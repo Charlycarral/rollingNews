@@ -22,6 +22,7 @@ function App() {
       <Route exact path="/institucional/contacto" ></Route>
       <Route exact path="/institucional/acerca-de" ></Route>
       <Route exact path="/institucional/publicidad" ></Route>
+      <Route exact path="/login" ></Route>
     </Routes>
     <Fotter/>
     </BrowserRouter>
