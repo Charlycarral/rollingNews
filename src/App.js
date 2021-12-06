@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Navigation from './components/common/Navigation';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Fotter from './components/common/Fotter';
+import Login from './components/pages/Login'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Route exact path="/institucional/contacto" ></Route>
       <Route exact path="/institucional/acerca-de" ></Route>
       <Route exact path="/institucional/publicidad" ></Route>
-      <Route exact path="/login" ></Route>
+      <Route exact path="/login" element={<Login></Login>} ></Route>
     </Routes>
     <Fotter/>
     </BrowserRouter>

@@ -156,9 +156,6 @@ const Navigation = () => {
           <Link to='/login' id="botonNav">Ingresar</Link>
         </Container>
       </Navbar>
-      <div >
-      <img src={messi} alt="" width='100%' />
-      </div>
     </>
   );
 };
