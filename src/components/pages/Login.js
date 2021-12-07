@@ -1,19 +1,11 @@
 import React from "react";
-import diarios from "../../img/redaccion.jpg";
 import logo from "../../img/logoRollingGris.svg";
 import "./Login.css";
 import FormularioLogin from "./FormularioLogin";
 
 const Login = () => {
   return (
-    <section>
-      <div>
-        <img
-          className="fixed imagenDiarios"
-          src={diarios}
-          alt="imagen de redaccion"
-        />
-      </div>
+    <section className="bgLogin">
       <div className="botonInicio">
         <button className="bgBotonInicio mt-4">INICIO</button>
       </div>
@@ -27,7 +19,7 @@ const Login = () => {
         </div>
 
         <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end me-lg-1 ms-5">
-        <FormularioLogin></FormularioLogin>  
+          <FormularioLogin></FormularioLogin>
         </div>
       </section>
     </section>
