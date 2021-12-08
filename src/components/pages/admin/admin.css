@@ -1,0 +1,22 @@
+.contenedor{
+    border:red 1px solid;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.caja{
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(128, 128, 128, 0.411);
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 25px 0px;
+}
+.uno :hover{
+    background-image: var(--noticiaImg);
+}

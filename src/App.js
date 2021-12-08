@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navigation from './components/common/Navigation';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Admin from './components/pages/admin/Admin';
 import Fotter from './components/common/Fotter';
 import Login from './components/pages/Login'
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <BrowserRouter>
     <Navigation/>
+    <Admin/>
     <Routes>
       <Route exact path="/seccion/actualidad" ></Route>
       <Route exact path="/seccion/espectaculos" ></Route>

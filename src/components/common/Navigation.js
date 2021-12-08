@@ -4,11 +4,9 @@ import {
   Nav,
   Container,
   Offcanvas,
-  Button,
   Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import messi from '../img/messi-balon-de-oro_862x485.jpg'
 const Navigation = () => {
 
   return (
