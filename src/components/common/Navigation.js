@@ -7,19 +7,21 @@ import {
   Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 const Navigation = () => {
 
   return (
     <>
       <Navbar expand={false} fixed="top" id="Nav">
         <Container fluid>
+          <section className='d-flex align-items-center'>
           <Navbar.Toggle />
           <Navbar.Offcanvas
             id="navNewsCanvas"
             placement="start"
             
           >
-            <Offcanvas.Header closeButton className='btn-close-white'></Offcanvas.Header>
+            <Offcanvas.Header closeButton className='btn-close-white centrado'></Offcanvas.Header>
             <section>
               <div className="container my-5 text-center ">
                 <Nav className="flex-row pe-3 row mt-5  justify-content-center">
@@ -150,8 +152,13 @@ const Navigation = () => {
               </article>
             </section>
           </Navbar.Offcanvas>
+          <Link to='/login' id="botonInicio">Inicio</Link>
+          </section>
           <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
-          <Link to='/login' id="botonNav">Ingresar</Link>
+          <div className='d-flex'>
+          <Link to='/login' id="botonSub">Suscribite</Link>
+          <Link to='/login' id="botonIngresar">Ingresar</Link>
+          </div>
         </Container>
       </Navbar>
     </>
