@@ -1,8 +1,25 @@
 import React from "react";
-import Messi from "../../img/messi.jpg";
+import NoticiaPrincipal from "./NoticiaPrincipal";
+import NoticiasDestacadas from "./NoticiasDestacadas";
+import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
+import BannerPublicitario from "./BannerPublicitario";
+
 
 const Inicio = () => {
-  return <img src={Messi} alt="Messi" className="w-100" />;
+  return (
+      <section>
+
+          <NoticiaPrincipal></NoticiaPrincipal>
+          <NoticiasDestacadas></NoticiasDestacadas>
+          <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
+          <BannerPublicitario></BannerPublicitario>
+          <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
+          <BannerPublicitario></BannerPublicitario>
+
+      </section>
+
+    
+  );
 };
 
 export default Inicio;
