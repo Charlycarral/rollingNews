@@ -3,9 +3,13 @@ import NoticiaPrincipal from "./NoticiaPrincipal";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
 import BannerPublicitario from "./BannerPublicitario";
+import ConsultarClima from "../common/apiClima/ConsultarClima";
 
 
 const Inicio = () => {
+
+
+
   return (
       <section>
 
@@ -15,6 +19,7 @@ const Inicio = () => {
           <BannerPublicitario></BannerPublicitario>
           <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
           <BannerPublicitario></BannerPublicitario>
+          <ConsultarClima></ConsultarClima>
 
       </section>
 
