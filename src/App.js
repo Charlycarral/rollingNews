@@ -8,6 +8,7 @@ import Login from './components/pages/Login'
 import ListaNoticias from './components/pages/admin/ListaNoticias';
 import EditarNoticia from './components/pages/admin/EditarNoticia';
 import AgregarNoticia from './components/pages/admin/AgregarNoticia';
+import Inicio from './components/pages/Inicio';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     {/* <EditarNoticia/> */}
     {/* <Admin/> */}
     <Routes>
+      <Route exact path="/" element={<Inicio></Inicio>}></Route>
       <Route exact path="/seccion/actualidad" ></Route>
       <Route exact path="/seccion/espectaculos" ></Route>
       <Route exact path="/seccion/tecnologia" ></Route>
