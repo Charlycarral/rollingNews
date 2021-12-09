@@ -6,6 +6,7 @@ import Fotter from "./components/common/Fotter";
 import Login from "./components/pages/Login";
 import Inicio from "./components/pages/Inicio";
 
+
 function App() {
   return (
     <Router>
