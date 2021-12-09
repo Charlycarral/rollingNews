@@ -8,20 +8,19 @@ import {
   Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import messi from '../img/messi-balon-de-oro_862x485.jpg'
-const Navigation = () => {
+import logo from "../../img/logoRollingBlanco.svg";
 
+const Navigation = () => {
   return (
     <>
       <Navbar expand={false} fixed="top" id="Nav">
         <Container fluid>
           <Navbar.Toggle />
-          <Navbar.Offcanvas
-            id="navNewsCanvas"
-            placement="start"
-            
-          >
-            <Offcanvas.Header closeButton className='btn-close-white'></Offcanvas.Header>
+          <Navbar.Offcanvas id="navNewsCanvas" placement="start">
+            <Offcanvas.Header
+              closeButton
+              className="btn-close-white"
+            ></Offcanvas.Header>
             <section>
               <div className="container my-5 text-center ">
                 <Nav className="flex-row pe-3 row mt-5  justify-content-center">
@@ -29,54 +28,14 @@ const Navigation = () => {
                     <h3 className="text-white">Secciones</h3>
                     <hr />
                     <section className="d-flex flex-column">
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Actualidad
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Espectaculos
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Tecnologia
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Deportes
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Politica
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Economia
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Salud
-                      </Link>
-                      <Link
-                        to=""
-                        className="text-decoration-none text-white my-1"
-                      >
-                        Fotografias
-                      </Link>
+                      <Link  to="" className="text-decoration-none text-white my-1">Actualidad </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Espectaculos </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Tecnologia </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Deportes </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Politica </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Economia </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Salud </Link>
+                      <Link to="" className="text-decoration-none text-white my-1">Fotografias </Link>
                     </section>
                   </div>
                   <div className="col-sm-12 col-md-6 col-lg-4 text-white">
@@ -152,8 +111,8 @@ const Navigation = () => {
               </article>
             </section>
           </Navbar.Offcanvas>
-          <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
-          <Link to='/login' id="botonNav">Ingresar</Link>
+          <Link to="" className=""><img src={logo} alt="logo rollingnews blanco" className="mt-2 w-75"/></Link>
+          <Link to="/login" id="botonNav">Ingresar</Link>
         </Container>
       </Navbar>
     </>
