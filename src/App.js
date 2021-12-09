@@ -14,6 +14,7 @@ function App() {
     <BrowserRouter>
     <Navigation/>
     <EditarNoticia/>
+    {/* <Admin/> */}
     <Routes>
       <Route exact path="/seccion/actualidad" ></Route>
       <Route exact path="/seccion/espectaculos" ></Route>

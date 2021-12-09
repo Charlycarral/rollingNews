@@ -12,7 +12,7 @@ const Navigation = () => {
 
   return (
     <>
-      <Navbar expand={false} fixed="top" id="Nav">
+      <Navbar expand={false} sticky="top" id="Nav">
         <Container fluid>
           <section className='d-flex align-items-center'>
           <Navbar.Toggle />
@@ -152,11 +152,11 @@ const Navigation = () => {
               </article>
             </section>
           </Navbar.Offcanvas>
-          <Link to='/login' id="botonInicio">Inicio</Link>
+          <Link to='/' id="botonInicio">Inicio</Link>
           </section>
           <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
           <div className='d-flex'>
-          <Link to='/login' id="botonSub">Suscribite</Link>
+          <Link to='/' id="botonSub">Suscribite</Link>
           <Link to='/login' id="botonIngresar">Ingresar</Link>
           </div>
         </Container>
