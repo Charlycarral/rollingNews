@@ -22,7 +22,6 @@
   color: white;
   width: 90px;
 }
-<<<<<<< HEAD
 .divLogin{
   width: 750px;
   position: relative;
@@ -36,8 +35,13 @@
   width: 100%;
   
 }
-=======
->>>>>>> admin
+
+.widhtsection{
+  width: 150px;
+}
+
+
+
 
 @media all and (max-width: 1023px) {
 }
