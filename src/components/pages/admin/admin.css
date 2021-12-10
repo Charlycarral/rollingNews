@@ -21,10 +21,11 @@
     display: flex;
     justify-content: space-between;
 }
-.autor{
+.inputchico{
     width: 32%;
 }
-.titulo{
+
+.inputgrande{
     width: 65%;
 }
 .btn-publish{

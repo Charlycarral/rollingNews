@@ -1,0 +1,22 @@
+{
+  "noticias": [
+    {
+      "autor": "aaf",
+      "titulo": "faefae",
+      "imagen": "aefaef",
+      "categoria": "actualidad",
+      "descripcion": "aefae",
+      "noticia": "aefaef",
+      "id": 1
+    },
+    {
+      "autor": "fwefwef",
+      "titulo": "wefwefwef",
+      "imagen": "wef",
+      "categoria": "espectaculos",
+      "descripcion": "efwef",
+      "noticia": "efwefwef",
+      "id": 2
+    }
+  ]
+}
