@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const NoticiasAdmin = (props) => {
 
-    console.log(props.noticias)
+    
     return (
         <section className='container'>
             <Breadcrumb className='mt-4'>

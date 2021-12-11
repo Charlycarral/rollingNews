@@ -38,7 +38,7 @@ function App() {
       <Navigation />
     
       <Routes>
-        {/* <Route exact path="/" element={<Inicio></Inicio>}></Route> */}
+        <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route exact path="/seccion/actualidad"></Route>
         <Route exact path="/seccion/espectaculos"></Route>
         <Route exact path="/seccion/tecnologia"></Route>
