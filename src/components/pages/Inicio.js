@@ -3,7 +3,6 @@ import NoticiaPrincipal from "./NoticiaPrincipal";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
 import BannerPublicitario from "./BannerPublicitario";
-import ApiMonedas from "../common/apiClimaMoneda/ApiMonedas";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
 
 

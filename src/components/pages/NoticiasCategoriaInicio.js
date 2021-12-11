@@ -4,8 +4,8 @@ import Market from "../../img/market.jpg";
 
 const NoticiasCategoriaInicio = () => {
   return (
-    <section className="container">
-      <div className="mt-2 d-flex justify-content-between border-bottom border-2 align-items-end">
+    <section className="">
+      <div className="mt-2 d-flex border-bottom border-2 align-items-end">
         <Button variant="link" className="botonCategoria">
           CATEGORIA
         </Button>
@@ -13,8 +13,8 @@ const NoticiasCategoriaInicio = () => {
           VER MAS
         </Button>
       </div>
-      <div className="d-flex column justify-content-center mb-5">
-        <div className="mt-3 col-sm-12 col-lg-4">
+      <div className="row justify-content-center mb-5">
+        <div className="mt-3 col-sm-12 col-lg-4 d-flex justify-content-center">
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={Market} />
             <Card.Body>
@@ -29,7 +29,7 @@ const NoticiasCategoriaInicio = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="mt-3 col-sm-12 col-lg-4">
+        <div className="mt-3 col-sm-12 col-lg-4 d-flex justify-content-center">
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={Market} />
             <Card.Body>
@@ -44,7 +44,7 @@ const NoticiasCategoriaInicio = () => {
             </Card.Body>
           </Card>
         </div>
-        <div className="mt-3 col-sm-12 col-lg-4">
+        <div className="mt-3 col-sm-12 col-lg-4 d-flex justify-content-center">
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={Market} />
             <Card.Body>

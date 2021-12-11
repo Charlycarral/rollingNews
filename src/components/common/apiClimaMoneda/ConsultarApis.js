@@ -5,7 +5,7 @@ import "./Clima.css"
 
 const ConsultarApis = () => {
     return (
-        <div className="row bgBannerTiempo ">
+        <div className="row bgBannerTiempo mt-5">
             <ApiMonedas></ApiMonedas>
             <ConsultarClima></ConsultarClima>
         </div>

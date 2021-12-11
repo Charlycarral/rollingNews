@@ -1,20 +1,20 @@
 import React from "react";
 import { Navbar, Nav, Container, Offcanvas, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../../img/logoRollingGris.svg";
+import logo from "../../img/logoRollingBlanco.svg";
 import "../pages/Login.css";
 
 const Navigation = () => {
   return (
     <>
-      <Navbar expand={false} sticky="top" id="Nav">
-        <Container fluid className="">
-          <section className="d-flex align-items-center widhtsection">
+      <Navbar expand={false} id="Nav" >
+        <Container fluid className="fixed-top bgNavbar pb-2">
+          <section>
             <Navbar.Toggle />
             <Navbar.Offcanvas id="navNewsCanvas" placement="start">
               <Offcanvas.Header
                 closeButton
-                className="btn-close-white centrado"
+                className="btn-close-dark centrado"
               ></Offcanvas.Header>
               <section>
                 <div className="container my-5 text-center ">
@@ -147,26 +147,35 @@ const Navigation = () => {
               </section>
             </Navbar.Offcanvas>
           </section>
-          <div className="d-flex column pt-2">
-          
-          <div className="col-lg-2">
+
+          {/* <div className=" col-md-2 col-lg-2 borderPrueba">
             <Link to="/" id="botonInicio">
               Inicio
             </Link>
-          </div>
-          <div className="col-lg-6 ">
-            <Link to="" className="d-flex justify-content-center text-decoration-none text-dark">
-              <img src={logo} alt="logo rolling news" className="w-50" />
+          </div> */}
+          <div>
+            <Link
+              to="/"
+              className="d-flex justify-content-center text-decoration-none text-white"
+            >
+              <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
             </Link>
           </div>
-          <div className="col-lg-4 d-flex">
-            <Link to="/" id="botonSub">
+          <div className="d-flex justify-content-center">
+            <div >
+            <Link to="/" id="botonSub" className="w-auto p-2" >
               Suscribite
             </Link>
-            <Link to="/login" id="botonIngresar">
-              Ingresar
+
+            </div>
+            
+            <div className="colorFuenteGris" >
+            <Link to="/login" id="botonIngresar" className="w-auto p-2 colorFuenteGris">
+               Ingresar
             </Link>
-          </div>
+
+            </div>
+            
           </div>
         </Container>
       </Navbar>
