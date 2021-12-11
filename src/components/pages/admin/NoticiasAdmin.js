@@ -17,10 +17,7 @@ const NoticiasAdmin = (props) => {
             <h1 className='text-center my-4'>Administrador de Noticias</h1>
             <hr />
         <div className='row mt-5'>
-            {
-
-            props.noticias.map((noticia)=><CardsNoticiasAdmin key={noticia.id} noticia={noticia}></CardsNoticiasAdmin>)
-            }
+            {props.noticias.map((noticia)=><CardsNoticiasAdmin key={noticia.id} noticia={noticia} consultaServer={props.consultaServer}></CardsNoticiasAdmin>)}
             
         </div>
         </section>

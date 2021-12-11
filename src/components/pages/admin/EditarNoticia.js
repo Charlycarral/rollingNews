@@ -1,10 +1,31 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Form } from "react-bootstrap";
 import "./admin.css";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const EditarNoticia = () => {
+const EditarNoticia = (props) => {
+   const {id} = useParams();
+   const [noticia, setNoticia] = useEffect({});
+   const URL = process.env.REACT_APP_API_URL + "/" +id;
+
+   useEffect(async()=>{
+     try{
+      const respuesta = await fetch();
+
+
+
+
+
+     }
+     
+   }, []); 
+
+
+
+
+
+
   return (
     <div>
       <section className="container">

@@ -53,26 +53,10 @@ function App() {
         <Route exact path="/institucional/acerca-de"></Route>
         <Route exact path="/institucional/publicidad"></Route>
         <Route exact path="/login" element={<Login></Login>}></Route>
-        <Route
-          exact
-          path="/admin"
-          element={<Admin></Admin>}
-        ></Route>
-        <Route
-          exact
-          path="/admin/lista-noticias"
-          element={<NoticiasAdmin noticias={noticias}></NoticiasAdmin>}
-        ></Route>
-        <Route
-          exact
-          path="/admin/editar"
-          element={<EditarNoticia></EditarNoticia>}
-        ></Route>
-        <Route
-          exact
-          path="/admin/agregar"
-          element={<AgregarNoticia consultaServer = {consultaServer}></AgregarNoticia>}
-        ></Route>
+        <Route exact path="/admin" element={<Admin></Admin>}></Route>
+        <Route exact path="/admin/lista-noticias" element={<NoticiasAdmin noticias={noticias} consultaServer = {consultaServer}></NoticiasAdmin>}></Route>
+        <Route exact path="/admin/editar/:id" element={<EditarNoticia consultaServer = {consultaServer}></EditarNoticia>}></Route>
+        <Route exact path="/admin/agregar" element={<AgregarNoticia consultaServer = {consultaServer}></AgregarNoticia>}></Route>
       </Routes>
       <Fotter />
     </BrowserRouter>

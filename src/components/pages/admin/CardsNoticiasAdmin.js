@@ -1,9 +1,56 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import './admin.css';
 
+
+
 const CardsNoticiasAdmin = (props) => {
+  const eliminarNoticia = () => {
+    console.log(props.noticia.id)
+    Swal.fire({
+      title: '¿Esta seguro de eliminar este artículo?',
+      text: "¡Una vez eliminado no se puede recuperar!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: "Cancelar",
+      confirmButtonText: 'Borrar'
+    }).then(async(result) => {
+      if (result.isConfirmed) {
+try {
+const URL = process.env.REACT_APP_API_URL + "/" + props.noticia.id;
+
+const respuesta = await fetch(URL, {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+console.log(respuesta);
+if (respuesta.status === 200) {
+  Swal.fire(
+    '¡Eliminado!',
+    'El artículo fue correctamente eliminado.',
+    'success'
+  );
+  props.consultaServer();
+  }
+
+
+}catch (error){
+  console.log(error);
+}
+
+      
+      }
+    })
+
+
+
+  }
 
   console.log(props.noticia);
   return (
@@ -16,8 +63,8 @@ const CardsNoticiasAdmin = (props) => {
             <p>{props.noticia.descripcion}</p>
           </Card.Text>
           <div className=" d-flex justify-content-end align-items-center">
-          <Link to='/admin/editar' className="mx-1 btn btn-editar">Editar</Link>
-          <button className="mx-1 btn-borrar">Borrar</button>
+          <Link to={`/admin/editar/${props.noticia.id}`} className="mx-1 btn btn-editar">Editar</Link>
+         <Button variant="danger" onClick={()=>eliminarNoticia()}>Borrar</Button>
           </div>
         </Card.Body>
       </Card>
