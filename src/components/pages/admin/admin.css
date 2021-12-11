@@ -21,10 +21,36 @@
     display: flex;
     justify-content: space-between;
 }
-.autor{
+.inputchico{
     width: 32%;
 }
-.titulo{
+.btn-borrar{
+    background: #c00000;
+    border: none;
+    width:80px;
+    height: 32px;
+    color: white;
+    border-radius: 5px;
+    
+}
+.btn-editar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #000;
+    border: none;
+    width:80px;
+    height: 32px;
+    color: white;
+    border-radius: 5px;
+    
+}
+.btn-editar:hover{
+
+    color: white;
+}
+.inputgrande{
     width: 65%;
 }
 .btn-publish{
