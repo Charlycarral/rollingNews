@@ -16,7 +16,7 @@ const Admin = () => {
                     <Link to='/admin/agregar' className='text-decoration-none text-dark'>Nueva Noticia</Link>
                 </div>
                 <div className='caja 4 '>
-                    <Link to='/admin/editar' className='text-decoration-none text-dark'>Nueva Categoria</Link>
+                    <Link to='' className='text-decoration-none text-dark'>Nueva Categoria</Link>
                 </div>
                 </section>            
         </div>

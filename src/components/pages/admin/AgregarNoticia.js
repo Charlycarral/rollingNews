@@ -3,8 +3,10 @@ import { Form } from "react-bootstrap";
 import "./admin.css";
 import Swal from "sweetalert2";
 import { campoRequerido, validarImagen } from "../../Helpers/helpers";
+import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const AgregarNoticia = () => {
+const AgregarNoticia = (props) => {
   const [autor, setAutor] = useState("");
   const [titulo, setTitulo] = useState("");
   const [imagen, setImagen] = useState("");
@@ -20,8 +22,7 @@ const AgregarNoticia = () => {
       campoRequerido(titulo) &&
       campoRequerido(categoria) &&
       campoRequerido(descripcion) &&
-      campoRequerido(noticia) 
-      
+      campoRequerido(noticia)
     ) {
       const nuevaNoticia = {
         autor: autor,
@@ -51,20 +52,33 @@ const AgregarNoticia = () => {
             "success"
           );
           e.target.reset();
+          props.consultarServer();
         }
       } catch (error) {
         // mostrar mensaje de error
       }
     } else {
       // mostrar cartel informando que puso mal los campos
-      console.log('mensaje de error');
+      console.log("mensaje de error");
     }
-    }
-
+  };
 
   return (
     <div>
-      <h1 className="my-5 pt-4 text-center">Alta de Noticias</h1>
+      <section className="container">
+        <Breadcrumb className="mt-4">
+          <BreadcrumbItem>
+            <Link to="/">Inicio</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <Link to="/admin">Admin</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <Link to="/admin/lista-noticias">Alta Noticias</Link>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </section>
+      <h1 className="my-4 pt-2 text-center">Alta de Noticias</h1>
       <section className="container">
         <Form onSubmit={handleSubmit}>
           <div className="form-top">
