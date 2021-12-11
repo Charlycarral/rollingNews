@@ -7,17 +7,20 @@ import { Link, useParams } from "react-router-dom";
 const EditarNoticia = (props) => {
    const {id} = useParams();
    const [noticia, setNoticia] = useEffect({});
+   const [categoria, setCategoria] = useState('');
    const URL = process.env.REACT_APP_API_URL + "/" +id;
 
    useEffect(async()=>{
      try{
-      const respuesta = await fetch();
-
-
-
-
-
-     }
+      const respuesta = await fetch(URL);
+      if (respuesta.status === 200){
+        const dato = await respuesta.json();
+        setNoticia(dato);
+        setCategoria(dato.categoria)
+      }
+     }catch(error){
+       console.log(error)
+     } 
      
    }, []); 
 
@@ -51,7 +54,7 @@ const EditarNoticia = (props) => {
                 type="text"
                 placeholder=""
                 required
-                
+                defaultValue={noticia.autorNoticia}         
               />
             </Form.Group>
             <Form.Group className="mb-3 inputgrande">
@@ -60,7 +63,7 @@ const EditarNoticia = (props) => {
                 type="text"
                 placeholder=""
                 required
-                
+                defaultValue={noticia.tituloNoticia} 
               />
             </Form.Group>
           </div>
@@ -71,15 +74,12 @@ const EditarNoticia = (props) => {
                 type="text"
                 placeholder=""
                 required
-                
+                defaultValue={noticia.urlNoticia}
               />
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Categoria</Form.Label>
-              <Form.Select
-                required
-                o
-              >
+              <Form.Select value={categoria} onChange={(e)=>setCategoria(e.target.value)} required>
                 <option value="">Seleccione una categoria</option>
                 <option value="actualidad">Actualidad</option>
                 <option value="espectaculos">Espectaculo</option>
@@ -97,6 +97,7 @@ const EditarNoticia = (props) => {
             <Form.Control
               as="textarea"
               required
+              defaultValue={noticia.descripcionNoticia}
               
             />
           </Form.Group>
@@ -105,7 +106,7 @@ const EditarNoticia = (props) => {
             <Form.Control
               as="textarea"
               required
-              
+              defaultValue={noticia.completaNoticia}
             />
           </Form.Group>
           <div className="text-center">
