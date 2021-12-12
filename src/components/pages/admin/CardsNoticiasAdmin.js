@@ -52,8 +52,7 @@ if (respuesta.status === 200) {
 
   }
 
-  console.log(props.noticia);
-  return (
+   return (
     <div className="col-sm-12 col-md-4 col-lg-3 my-3 ">
       <Card >
         <Card.Img variant="top" src={props.noticia.imagen} />

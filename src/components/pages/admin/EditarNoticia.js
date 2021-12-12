@@ -1,30 +1,73 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { Form } from "react-bootstrap";
 import "./admin.css";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import {campoRequerido} from "../../Helpers/helpers"
+import Swal from "sweetalert2";
 
 const EditarNoticia = (props) => {
-   const {id} = useParams();
-   const [noticia, setNoticia] = useEffect({});
-   const [categoria, setCategoria] = useState('');
+   const {id} = useParams()
+   const [noticia,setNoticia]= useState({});
    const URL = process.env.REACT_APP_API_URL + "/" +id;
+   const [categoria, setCategoria]= useState('');
+   const autorNoticiaRef = useRef('');
+   const tituloNoticiaRef = useRef('');
+   const imagenNoticiaRef = useRef('');
+      const descripcionNoticiaRef = useRef('');
+   const completaNoticiaRef = useRef('');
+   const navegacion = useNavigate();
+    
 
    useEffect(async()=>{
      try{
       const respuesta = await fetch(URL);
       if (respuesta.status === 200){
         const dato = await respuesta.json();
+        console.log(respuesta)
         setNoticia(dato);
         setCategoria(dato.categoria)
       }
      }catch(error){
        console.log(error)
      } 
-     
    }, []); 
 
+const handleSubmit = async(e)=>{
+  e.preventDefault();
+  if (campoRequerido(autorNoticiaRef.current.value) && campoRequerido(tituloNoticiaRef.current.value) && campoRequerido(categoria) && campoRequerido(descripcionNoticiaRef.current.value) && campoRequerido(completaNoticiaRef.current.value)
+  ) {
+    const noticiaModificada={
+        autor: autorNoticiaRef.current.value,
+        titulo: tituloNoticiaRef.current.value,
+        imagen: imagenNoticiaRef.current.value,
+        descripcion: descripcionNoticiaRef.current.value,
+        noticia: completaNoticiaRef.current.value,
+        categoria
+    }
 
+try{
+  const respuesta = await fetch(URL, {
+    method: "PUT",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(noticiaModificada)
+  })
+console.log(respuesta);
+if(await respuesta.status === 200){
+  Swal.fire('Articulo Modificado', 'El articulo fue corrrectamente modificado', 'success')
+  props.consultaServer()
+  navegacion('/admin/lista-noticias')
+}
+}catch(error){
+  console.log(error);
+}
+  
+  }else{
+    console.log("error en la validacion de los datos")
+  }
+
+
+}
 
 
 
@@ -44,9 +87,9 @@ const EditarNoticia = (props) => {
           </BreadcrumbItem>
         </Breadcrumb>
       </section>
-      <h1 className="my-5 pt-4 text-center">Editar Noticias</h1>
+      <h1 className="mt-3 mb-5 pt-4 text-center">Editar Noticias</h1>
       <section className="container">
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <div className="form-top">
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Autor</Form.Label>
@@ -54,7 +97,8 @@ const EditarNoticia = (props) => {
                 type="text"
                 placeholder=""
                 required
-                defaultValue={noticia.autorNoticia}         
+                defaultValue={noticia.autor}  
+                ref={autorNoticiaRef}        
               />
             </Form.Group>
             <Form.Group className="mb-3 inputgrande">
@@ -63,7 +107,9 @@ const EditarNoticia = (props) => {
                 type="text"
                 placeholder=""
                 required
-                defaultValue={noticia.tituloNoticia} 
+                defaultValue={noticia.titulo}
+                ref={tituloNoticiaRef}
+                
               />
             </Form.Group>
           </div>
@@ -74,7 +120,8 @@ const EditarNoticia = (props) => {
                 type="text"
                 placeholder=""
                 required
-                defaultValue={noticia.urlNoticia}
+                defaultValue={noticia.imagen}
+                ref={imagenNoticiaRef}
               />
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
@@ -97,7 +144,8 @@ const EditarNoticia = (props) => {
             <Form.Control
               as="textarea"
               required
-              defaultValue={noticia.descripcionNoticia}
+              defaultValue={noticia.descripcion}
+              ref={descripcionNoticiaRef}
               
             />
           </Form.Group>
@@ -106,7 +154,9 @@ const EditarNoticia = (props) => {
             <Form.Control
               as="textarea"
               required
-              defaultValue={noticia.completaNoticia}
+              style={{ height: '250px'}}
+              defaultValue={noticia.noticia}
+              ref={completaNoticiaRef}
             />
           </Form.Group>
           <div className="text-center">

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
-import "./admin.css";
+import { Form, Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { campoRequerido, validarImagen } from "../../Helpers/helpers";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { campoRequerido, validarImagen } from "../../Helpers/helpers";
+import "./admin.css";
 
 const AgregarNoticia = (props) => {
   const [autor, setAutor] = useState("");
@@ -13,6 +13,7 @@ const AgregarNoticia = (props) => {
   const [categoria, setCategoria] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [noticia, setNoticia] = useState("");
+  const URL = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const AgregarNoticia = (props) => {
     if (
       campoRequerido(autor) &&
       campoRequerido(titulo) &&
+      campoRequerido(imagen) &&
       campoRequerido(categoria) &&
       campoRequerido(descripcion) &&
       campoRequerido(noticia)
@@ -40,9 +42,7 @@ const AgregarNoticia = (props) => {
           },
           body: JSON.stringify(nuevaNoticia),
         };
-        const respuesta = await fetch(
-          "http://localhost:3004/noticias",
-          parametros
+        const respuesta = await fetch(URL, parametros
         );
         console.log(respuesta);
         if (respuesta.status === 201) {
@@ -51,14 +51,24 @@ const AgregarNoticia = (props) => {
             "Su noticia fue publicada con exito",
             "success"
           );
+        }else {
+          Swal.fire(
+            "Noticia no agregada",
+            "Existen problemas con el servidor",
+            "error"
+            );
+          }
           e.target.reset();
           props.consultarServer();
-        }
       } catch (error) {
-        // mostrar mensaje de error
+        console.log(error);
       }
     } else {
-      // mostrar cartel informando que puso mal los campos
+      ['danger'].map((variant, idx) => (
+        <Alert key={idx} variant={variant}>
+          This is a {variant} alert—check it out!
+        </Alert>
+      ));
       console.log("mensaje de error");
     }
   };

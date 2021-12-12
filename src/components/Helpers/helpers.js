@@ -6,10 +6,9 @@ const campoRequerido = (input) => {
   }
 };
 
-const validarImagen = (input) => {
-  let url = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/
-
-  if (input.value.trim().length > 0 && url.test(input.value.trim())) {
+function validarImagen(input) {
+  let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
+  if (input.value.trim().length > 0 && patron.test(input.value.trim())) {
     return true;
   } else {
     return false;
