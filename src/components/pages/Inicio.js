@@ -4,6 +4,7 @@ import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
 import BannerPublicitario from "./BannerPublicitario";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
+import PaginaDetalleNoticias from "./PaginaDetalleNoticias";
 
 
 const Inicio = () => {
@@ -19,6 +20,7 @@ const Inicio = () => {
           <BannerPublicitario></BannerPublicitario>
           <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
           <BannerPublicitario></BannerPublicitario>
+          <PaginaDetalleNoticias></PaginaDetalleNoticias>
           
           
 
