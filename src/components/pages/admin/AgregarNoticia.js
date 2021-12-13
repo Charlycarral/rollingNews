@@ -9,10 +9,13 @@ import "./admin.css";
 const AgregarNoticia = (props) => {
   const [autor, setAutor] = useState("");
   const [titulo, setTitulo] = useState("");
+  const [bajadanoticia, setBajadaNoticia] = useState("");
   const [imagen, setImagen] = useState("");
   const [categoria, setCategoria] = useState("");
-  const [descripcion, setDescripcion] = useState("");
-  const [noticia, setNoticia] = useState("");
+  const [leadnoticia, setLeadNoticia] = useState("");
+  const [cuerponoticia, setCuerpoNoticia] = useState("");
+  const [fechanoticia, setFechaNoticia] = useState("");
+  const [destacada, setDestacada] = useState(false);
   const URL = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
@@ -21,18 +24,23 @@ const AgregarNoticia = (props) => {
     if (
       campoRequerido(autor) &&
       campoRequerido(titulo) &&
+      campoRequerido(bajadanoticia) &&
       campoRequerido(imagen) &&
       campoRequerido(categoria) &&
-      campoRequerido(descripcion) &&
-      campoRequerido(noticia)
+      campoRequerido(leadnoticia) &&
+      campoRequerido(cuerponoticia) &&
+      campoRequerido(fechanoticia)
     ) {
       const nuevaNoticia = {
         autor: autor,
         titulo: titulo,
+        bajadanoticia: bajadanoticia,
         imagen: imagen,
         categoria: categoria,
-        descripcion: descripcion,
-        noticia: noticia,
+        leadnoticia: leadnoticia,
+        cuerponoticia: cuerponoticia,
+        fechanoticia: fechanoticia,
+        destacada: destacada,
       };
       try {
         const parametros = {
@@ -42,8 +50,7 @@ const AgregarNoticia = (props) => {
           },
           body: JSON.stringify(nuevaNoticia),
         };
-        const respuesta = await fetch(URL, parametros
-        );
+        const respuesta = await fetch(URL, parametros);
         console.log(respuesta);
         if (respuesta.status === 201) {
           Swal.fire(
@@ -51,20 +58,20 @@ const AgregarNoticia = (props) => {
             "Su noticia fue publicada con exito",
             "success"
           );
-        }else {
+        } else {
           Swal.fire(
             "Noticia no agregada",
             "Existen problemas con el servidor",
             "error"
-            );
-          }
-          e.target.reset();
-          props.consultarServer();
+          );
+        }
+        e.target.reset();
+        props.consultarServer();
       } catch (error) {
         console.log(error);
       }
     } else {
-      ['danger'].map((variant, idx) => (
+      ["danger"].map((variant, idx) => (
         <Alert key={idx} variant={variant}>
           This is a {variant} alert—check it out!
         </Alert>
@@ -73,10 +80,18 @@ const AgregarNoticia = (props) => {
     }
   };
 
+  const handleDestacada = () => {
+    if (destacada === false) {
+      setDestacada(true);
+    } else {
+      setDestacada(false);
+    }
+  };
+
   return (
     <div>
       <section className="container">
-        <Breadcrumb className="mt-4">
+        <Breadcrumb className="mt-5 pt-2">
           <BreadcrumbItem>
             <Link to="/">Inicio</Link>
           </BreadcrumbItem>
@@ -100,6 +115,24 @@ const AgregarNoticia = (props) => {
                 required
                 onChange={(e) => setAutor(e.target.value)}
               />
+            </Form.Group>
+            <Form.Group className="mb-3 inputchico">
+              <Form.Label>Fecha</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder=""
+                required
+                onChange={(e) => setFechaNoticia(e.target.value)}
+              />
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  label="Noticia destacada"
+                  onClick={(e) => handleDestacada(e.target.value)}
+                 
+
+                />
+              </Form.Group>
             </Form.Group>
             <Form.Group className="mb-3 inputgrande">
               <Form.Label>Titulo</Form.Label>
@@ -140,19 +173,27 @@ const AgregarNoticia = (props) => {
             </Form.Group>
           </div>
           <Form.Group className="mb-3">
-            <Form.Label>Descripcion</Form.Label>
+            <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control
               as="textarea"
               required
-              onChange={(e) => setDescripcion(e.target.value)}
+              onChange={(e) => setBajadaNoticia(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Noticia completa</Form.Label>
+            <Form.Label>Lead Noticia</Form.Label>
             <Form.Control
               as="textarea"
               required
-              onChange={(e) => setNoticia(e.target.value)}
+              onChange={(e) => setLeadNoticia(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Cuerpo Noticia</Form.Label>
+            <Form.Control
+              as="textarea"
+              required
+              onChange={(e) => setCuerpoNoticia(e.target.value)}
             />
           </Form.Group>
           <div className="text-center">

@@ -1,20 +1,26 @@
 {
   "noticias": [
     {
-      "autor": "Fermin.",
-      "titulo": "Estados Unidos a Colombia el retiro de las FARC de lista terrorista",
+      "autor": "Fermin",
+      "titulo": "Es un enunciado breve y preciso acerca del tema que desarrolla la noticia, despertando la curiosidad del lector.",
+      "bajadanoticia": "La bajada es una oración que va debajo del título y que entrega una información distinta a éste. ",
       "imagen": "https://imgmedia.wapa.pe/650x368/wapa/original/2021/11/24/619ed695f1426931f772551a.webp",
-      "descripcion": "Las FARC sigue en la lista terrorista, según la evidencia de un alto funcionario de la Administración. El presidente Iván Duque espera que los notifiquen.",
-      "noticia": "ACTUALIDAD\nMUNDOCOLOMBIAESTADOS UNIDOS\nEstados Unidos no ha notificado a Colombia el retiro de las FARC de lista terrorista\nLas FARC sigue en la lista terrorista, según la evidencia de un alto funcionario de la Administración. El presidente Iván Duque espera que los notifiquen.\nEl Gobierno de Estados Unidos no ha enviado al de Colombia ninguna notificación sobre el retiro de las extintas FARC de su lista negra de grupos terroristas.\nEstados Unidos no ha notificado a Colombia el retiro de las FARC de lista terrorista | CNN\nicon-shared-fb\nicon-shared-tw\nEstados Unidos no ha notificado a Colombia el retiro de las FARC \nRevistaWAPA\nwapa@wapa.pe\n24 Nov 2021 | 19:50 h\nActualizado 24 Nov 2021 | 19:50 h\nEl equipo del presidente Joe Biden realizan todo lo que está a su alcance para revertir esto. El Gobierno de Estados Unidos no ha emitido ninguna notificación al de Colombia sobre el retiro de las extintas FARC de su lista negra de agrupaciones terroristas, de la que hacía parte desde 1997, ni tampoco de la inclusión de los grupos disidentes de esa guerrilla liderados por alias “Iván Márquez” y “Gentil Duarte”.\n\nEl presidente colombiano, Iván Duque, dio detalles de lo que viene sucediente, esto durante una rueda de prensa en Bogotá con el secretario general de la ONU, António Guterres, en la que señaló que \"las decisiones que corresponden al Gobierno de Estados Unidos tendrán ellos que notificarlas y precisarlas en los tiempos y en las condiciones que establece su normatividad\".\n\n\"Yo no he sido notificado formalmente sobre el proceso ni sobre cómo se adelantará\", manifestó el presidente del país cafetero.",
+      "leadnoticia": "Lead es un término inglés que indica textualmente \"adelantar\" y \"tomar la delantera\". En periodismo se dice de la entradilla que sigue al titular y que contiene en muy pocas líneas los elementos más relevantes de la noticia.",
+      "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
+      "fechanoticia": "2021-12-13",
+      "destacada": false,
       "categoria": "politica",
       "id": 1
     },
     {
       "autor": "Fermin",
-      "titulo": "De Mon Laferte a Bad Bunny: Los ganadores de los Grammy Latinos en las principales categorías",
+      "titulo": "Titular: Es el título de la noticia, destinado a captar la atención de los lectores.",
+      "bajadanoticia": "Resume o sintetiza el contenido más importante del título, por lo que se posiciona debajo de él haciendo una aclaración que refuerza su significado.",
       "imagen": "https://www.latercera.com/resizer/cBdb-cbznc-uF07J1GXi1joZq_w=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/AQSTPXL7DJEMJEPELGXKAI3CPU.jpg",
-      "descripcion": "La cantante chilena se impuso en la categoría \"Mejor Álbum Cantautor\" gracias a su álbum Seis. El colombiano Camilo fue el gran ganador de la jornada.",
-      "noticia": "Este jueves, en Las Vegas, se efectuó una nueva versión, la 22a, de los premios Grammys Latinos 2021, instancia en la que la chilena Mon Laferte una vez más supo brillar.\n\nSin ir más lejos, la cantante nacional oriunda de Viña del Mar obtuvo el galardón —el cuarto en su haber— en la categoría \"Mejor Álbum Cantautor\", gracias a su penúltimo disco, Seis, que vio la luz durante los primeros meses de este 2021.\n\n\n\nTambién destacaron los brasileños Caetano y Tom Veloso, quienes se impusieron en la \"Grabación del año\", uno de los galardones principales de la premiación.",
+      "leadnoticia": "Es el primer párrafo de la noticia, que muchas veces aparece en la portada para ser desarrollado luego en el interior del periódico. Luego del título, que es la parte más importante de la noticia, la entradilla lo sigue en relevancia utilizando los datos esenciales de la información para captar el interés de los lectores.",
+      "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
+      "fechanoticia": "2021-12-10",
+      "destacada": false,
       "categoria": "espectaculos",
       "id": 2
     }

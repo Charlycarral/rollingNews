@@ -20,7 +20,7 @@ const Inicio = () => {
           <BannerPublicitario></BannerPublicitario>
           <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
           <BannerPublicitario></BannerPublicitario>
-          <PaginaDetalleNoticias></PaginaDetalleNoticias>
+          
           
           
 

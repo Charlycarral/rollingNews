@@ -11,6 +11,7 @@ import Inicio from "./components/pages/Inicio";
 import { useEffect, useState } from "react";
 import NoticiasAdmin from "./components/pages/admin/NoticiasAdmin";
 import CardsNoticiasAdmin from "./components/pages/admin/CardsNoticiasAdmin";
+import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
 
 
 function App() {
@@ -20,14 +21,16 @@ function App() {
   useEffect(() => {
     consultaServer();
   }, []);
+ 
 
   const consultaServer = async () => {
     try {
       const respuesta = await fetch(URL);
-      const datos = await respuesta.json();
-      setNoticias(datos);
-      
-     
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json();
+        setNoticias(datos);
+      }
+             
     } catch (error) {
       console.log(error);
       console.log('desde consultasServer');
@@ -53,6 +56,7 @@ function App() {
         <Route exact path="/institucional/acerca-de"></Route>
         <Route exact path="/institucional/publicidad"></Route>
         <Route exact path="/login" element={<Login></Login>}></Route>
+        <Route exact path="/noticias/:id" element={<PaginaDetalleNoticias noticias={noticias} consultaServer = {consultaServer}></PaginaDetalleNoticias>}></Route>
         <Route exact path="/admin" element={<Admin></Admin>}></Route>
         <Route exact path="/admin/lista-noticias" element={<NoticiasAdmin noticias={noticias} consultaServer = {consultaServer}></NoticiasAdmin>}></Route>
         <Route exact path="/admin/editar/:id" element={<EditarNoticia consultaServer = {consultaServer}></EditarNoticia>}></Route>
