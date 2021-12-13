@@ -12,6 +12,9 @@ import { useEffect, useState } from "react";
 import NoticiasAdmin from "./components/pages/admin/NoticiasAdmin";
 import CardsNoticiasAdmin from "./components/pages/admin/CardsNoticiasAdmin";
 import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
+import ListaCategoria from "./components/pages/admin/ListaCategoria";
+import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
+
 
 
 function App() {
@@ -61,6 +64,8 @@ function App() {
         <Route exact path="/admin/lista-noticias" element={<NoticiasAdmin noticias={noticias} consultaServer = {consultaServer}></NoticiasAdmin>}></Route>
         <Route exact path="/admin/editar/:id" element={<EditarNoticia consultaServer = {consultaServer}></EditarNoticia>}></Route>
         <Route exact path="/admin/agregar" element={<AgregarNoticia consultaServer = {consultaServer}></AgregarNoticia>}></Route>
+        <Route exact path="/admin/categorias" element={<ListaCategoria></ListaCategoria>}></Route>
+        <Route exact path="/admin/agregar-categoria" element={<NuevaCategoria></NuevaCategoria>}></Route>
       </Routes>
       <Fotter />
     </BrowserRouter>
