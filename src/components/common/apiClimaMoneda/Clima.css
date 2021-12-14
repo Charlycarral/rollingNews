@@ -1,0 +1,25 @@
+.bannerClima {
+  height: 30px;
+}
+.iconosClima {
+  width: 35px;
+  height: 40px;
+}
+.fuente {
+  font-size: 14px;
+  color: black;
+}
+
+.bgBannerTiempo {
+  background: rgb(233, 226, 226);
+  background: linear-gradient(
+    90deg,
+    rgba(233, 226, 226, 1) 0%,
+    rgba(215, 209, 209, 1) 31%,
+    rgba(224, 217, 217, 1) 100%
+  );
+}
+
+.colorFuenteGris {
+  color: #666666;
+}

@@ -22,7 +22,6 @@
   color: white;
   width: 90px;
 }
-<<<<<<< HEAD
 .divLogin{
   width: 750px;
   position: relative;
@@ -36,8 +35,25 @@
   width: 100%;
   
 }
-=======
->>>>>>> admin
+
+.borderPrueba{
+  border: 1px red solid;
+}
+
+.bgBannerTiempo{
+  background: rgb(233,226,226);
+  background: linear-gradient(90deg, rgba(233,226,226,1) 0%, rgba(215,209,209,1) 31%, rgba(224,217,217,1) 100%);
+}
+
+.bgNavbar{
+background: #4D4D4D;
+
+}
+
+.wboton{
+margin-left: 50px; 
+width: 100px;
+}
 
 @media all and (max-width: 1023px) {
 }

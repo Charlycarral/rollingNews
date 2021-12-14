@@ -51,15 +51,31 @@
       "contrasena": "12345"
     }
   ],
+
   "noticias": [
     {
-      "id": 1,
-      "titulo": "some comment",
-      "descripcion": "",
-      "contenido": ""
+      "autor": "Fermin",
+      "titulo": "Es un enunciado breve y preciso acerca del tema que desarrolla la noticia, despertando la curiosidad del lector.",
+      "bajadanoticia": "La bajada es una oración que va debajo del título y que entrega una información distinta a éste. ",
+      "imagen": "https://imgmedia.wapa.pe/650x368/wapa/original/2021/11/24/619ed695f1426931f772551a.webp",
+      "leadnoticia": "Lead es un término inglés que indica textualmente \"adelantar\" y \"tomar la delantera\". En periodismo se dice de la entradilla que sigue al titular y que contiene en muy pocas líneas los elementos más relevantes de la noticia.",
+      "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
+      "fechanoticia": "2021-12-13",
+      "destacada": false,
+      "categoria": "politica",
+      "id": 1
+    },
+    {
+      "autor": "Fermin",
+      "titulo": "Titular: Es el título de la noticia, destinado a captar la atención de los lectores.",
+      "bajadanoticia": "Resume o sintetiza el contenido más importante del título, por lo que se posiciona debajo de él haciendo una aclaración que refuerza su significado.",
+      "imagen": "https://www.latercera.com/resizer/cBdb-cbznc-uF07J1GXi1joZq_w=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/AQSTPXL7DJEMJEPELGXKAI3CPU.jpg",
+      "leadnoticia": "Es el primer párrafo de la noticia, que muchas veces aparece en la portada para ser desarrollado luego en el interior del periódico. Luego del título, que es la parte más importante de la noticia, la entradilla lo sigue en relevancia utilizando los datos esenciales de la información para captar el interés de los lectores.",
+      "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
+      "fechanoticia": "2021-12-10",
+      "destacada": false,
+      "categoria": "espectaculos",
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

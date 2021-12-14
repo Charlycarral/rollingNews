@@ -1,28 +1,34 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Navigation from './components/common/Navigation';
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Admin from './components/pages/admin/Admin';
-import Fotter from './components/common/Fotter';
-import Login from './components/pages/Login';
-import Suscribe from './components/pages/Suscribe';
-import ListaNoticias from './components/pages/admin/ListaNoticias';
-import EditarNoticia from './components/pages/admin/EditarNoticia';
-import AgregarNoticia from './components/pages/admin/AgregarNoticia';
-import Inicio from './components/pages/Inicio';
-import { useState, useEffect } from 'react';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navigation from "./components/common/Navigation";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Admin from "./components/pages/admin/Admin";
+import Fotter from "./components/common/Fotter";
+import Login from "./components/pages/Login";
+import EditarNoticia from "./components/pages/admin/EditarNoticia";
+import AgregarNoticia from "./components/pages/admin/AgregarNoticia";
+import Inicio from "./components/pages/Inicio";
+import { useEffect, useState } from "react";
+import NoticiasAdmin from "./components/pages/admin/NoticiasAdmin";
+import CardsNoticiasAdmin from "./components/pages/admin/CardsNoticiasAdmin";
+import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
+import ListaCategoria from "./components/pages/admin/ListaCategoria";
+import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 
 
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [admins, setAdmins] = useState([]);
+  const [noticias, setNoticias] = useState([]);
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
+  const URL_n = process.env.REACT_APP_API_URL_NOTIC;
 
   useEffect(() => {
     consultarUser();
     consultarAdmin();
+    consultaServer();
   }, []);
 
   const consultarUser = async () => {
@@ -45,6 +51,19 @@ function App() {
     }
   }
 
+  const consultaServer = async () => {
+    try {
+      const respuesta = await fetch(URL);
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json();
+        setNoticias(datos);
+      }
+             
+    } catch (error) {
+      console.log(error);
+      console.log('desde consultasServer');
+    }
+  };
 
   return (
     <BrowserRouter>
@@ -68,9 +87,12 @@ function App() {
       <Route exact path="/login" element={<Login admins={admins} usuarios={usuarios}></Login>} ></Route>
       <Route exact path="/admin" element={<Admin></Admin>} ></Route>
       <Route exact path="/suscribe" element={<Suscribe consultarUser={consultarUser} usuarios={usuarios}></Suscribe>} ></Route>
-      <Route exact path="/admin/lista-noticias" element={<ListaNoticias></ListaNoticias>}></Route>
-      <Route exact path="/admin/editar" element={<EditarNoticia></EditarNoticia>}></Route>
-      <Route exact path="/admin/agregar" element={<AgregarNoticia></AgregarNoticia>}></Route>
+      <Route exact path="/noticias/:id" element={<PaginaDetalleNoticias noticias={noticias} consultaServer = {consultaServer}></PaginaDetalleNoticias>}></Route>
+      <Route exact path="/admin/lista-noticias" element={<NoticiasAdmin noticias={noticias} consultaServer = {consultaServer}></NoticiasAdmin>}></Route>
+      <Route exact path="/admin/editar/:id" element={<EditarNoticia consultaServer = {consultaServer}></EditarNoticia>}></Route>
+      <Route exact path="/admin/agregar" element={<AgregarNoticia consultaServer = {consultaServer}></AgregarNoticia>}></Route>
+      <Route exact path="/admin/categorias" element={<ListaCategoria></ListaCategoria>}></Route>
+      <Route exact path="/admin/agregar-categoria" element={<NuevaCategoria></NuevaCategoria>}></Route>
     </Routes>
     <Fotter/>
     </BrowserRouter>
