@@ -147,12 +147,6 @@ const Navigation = () => {
               </section>
             </Navbar.Offcanvas>
           </section>
-<<<<<<< HEAD
-          <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
-          <div className='d-flex'>
-          <Link to='/suscribe' id="botonSub">Suscribite</Link>
-          <Link to='/login' id="botonIngresar">Ingresar</Link>
-=======
 
           {/* <div className=" col-md-2 col-lg-2 borderPrueba">
             <Link to="/" id="botonInicio">
@@ -169,7 +163,7 @@ const Navigation = () => {
           </div>
           <div className="d-flex justify-content-center">
             <div >
-            <Link to="/" id="botonSub" className="w-auto p-2" >
+            <Link to="/suscribe" id="botonSub" className="w-auto p-2" >
               Suscribite
             </Link>
 
@@ -182,7 +176,6 @@ const Navigation = () => {
 
             </div>
             
->>>>>>> 3f346a6c126c6a7a95d937e728352de733952899
           </div>
         </Container>
       </Navbar>

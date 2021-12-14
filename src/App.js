@@ -14,6 +14,7 @@ import CardsNoticiasAdmin from "./components/pages/admin/CardsNoticiasAdmin";
 import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
 import ListaCategoria from "./components/pages/admin/ListaCategoria";
 import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
+import Suscribe from "./components/pages/Suscribe"
 
 
 
