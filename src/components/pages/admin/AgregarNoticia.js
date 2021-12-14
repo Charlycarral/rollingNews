@@ -16,7 +16,7 @@ const AgregarNoticia = (props) => {
   const [cuerponoticia, setCuerpoNoticia] = useState("");
   const [fechanoticia, setFechaNoticia] = useState("");
   const [destacada, setDestacada] = useState(false);
-  const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL_NOTIC;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
