@@ -35,6 +35,12 @@
       "nombre": "asas",
       "contrasena": "12",
       "id": 6
+    },
+    {
+      "email": "aw@html.com",
+      "nombre": "ddsds",
+      "contrasena": "1234",
+      "id": 7
     }
   ],
   "admins": [
@@ -51,7 +57,6 @@
       "contrasena": "12345"
     }
   ],
-
   "noticias": [
     {
       "autor": "Fermin",

@@ -54,7 +54,7 @@ function App() {
 
   const consultaServer = async () => {
     try {
-      const respuesta = await fetch(URL);
+      const respuesta = await fetch(URL_n);
       if (respuesta.status === 200) {
         const datos = await respuesta.json();
         setNoticias(datos);
@@ -69,7 +69,6 @@ function App() {
   return (
     <BrowserRouter>
     <Navigation/>
-
     <Routes>
       <Route exact path="/" element={<Inicio></Inicio>}></Route>
       <Route exact path="/seccion/actualidad" ></Route>
