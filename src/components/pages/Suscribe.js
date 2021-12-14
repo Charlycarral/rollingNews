@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "../../img/logoRollingGris.svg";
 import "./Login.css";
-import FormularioLogin from "./FormularioLogin";
+import FormularioSuscribe from "./FormularioSuscribe";
 
-const Login = (props) => {
+const Suscribe = (props) => {
   return (
     <section className="bgLogin">
       <div className="botonInicio">
@@ -19,11 +19,11 @@ const Login = (props) => {
         </div>
 
         <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end me-lg-1 ms-5">
-          <FormularioLogin admins={props.admins} usuarios={props.usuarios}></FormularioLogin>
+          <FormularioSuscribe consultarUser={props.consultarUser} usuarios={props.usuarios}></FormularioSuscribe>
         </div>
       </section>
     </section>
   );
 };
 
-export default Login;
+export default Suscribe;

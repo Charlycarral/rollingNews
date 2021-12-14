@@ -116,7 +116,7 @@ const Navigation = () => {
           </section>
           <Link to='' className='text-decoration-none text-dark'>Logo RollingNews</Link>
           <div className='d-flex'>
-          <Link to='/' id="botonSub">Suscribite</Link>
+          <Link to='/suscribe' id="botonSub">Suscribite</Link>
           <Link to='/login' id="botonIngresar">Ingresar</Link>
           </div>
         </Container>

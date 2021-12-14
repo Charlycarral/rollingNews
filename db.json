@@ -1,0 +1,65 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "ramiro@gmail.com",
+      "nombre": "Ramiro Isa Jara",
+      "contrasena": "1234"
+    },
+    {
+      "id": 2,
+      "email": "alejandro@gmail.com",
+      "nombre": "Alejandro Isa Paña",
+      "contrasena": "12345"
+    },
+    {
+      "email": "silvia@hotmail.com",
+      "nombre": "Silvia Paña",
+      "contrasena": "234",
+      "id": 3
+    },
+    {
+      "email": "ale@gmail.com",
+      "nombre": "Alejandro",
+      "contrasena": "123",
+      "id": 4
+    },
+    {
+      "email": "ra@mn.com",
+      "nombre": "rar",
+      "contrasena": "123",
+      "id": 5
+    },
+    {
+      "email": "re@gmail.com",
+      "nombre": "asas",
+      "contrasena": "12",
+      "id": 6
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "email": "ramiroI@gmail.com",
+      "nombre": "Ramiro Isa Jara",
+      "contrasena": "1234"
+    },
+    {
+      "id": 2,
+      "email": "carlosC@gmail.com",
+      "nombre": "Carlos Carral",
+      "contrasena": "12345"
+    }
+  ],
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "some comment",
+      "descripcion": "",
+      "contenido": ""
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
