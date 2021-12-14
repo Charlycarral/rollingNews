@@ -19,7 +19,7 @@ const CardsNoticiasAdmin = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const URL = process.env.REACT_APP_API_URL + "/" + props.noticia.id;
+          const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + props.noticia.id;
 
           const respuesta = await fetch(URL, {
             method: "DELETE",

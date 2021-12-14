@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const EditarNoticia = (props) => {
   const { id } = useParams();
   const [noticia, setNoticia] = useState({});
-  const URL = process.env.REACT_APP_API_URL + "/" + id;
+  const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + id;
   const [categoria, setCategoria] = useState("");
   const [destacada, setDestacada] = useState(false);
   const autorNoticiaRef = useRef("");

@@ -35,6 +35,12 @@
       "nombre": "asas",
       "contrasena": "12",
       "id": 6
+    },
+    {
+      "email": "carlos@live.com",
+      "nombre": "carlos",
+      "contrasena": "1234",
+      "id": 7
     }
   ],
   "admins": [
@@ -51,7 +57,6 @@
       "contrasena": "12345"
     }
   ],
-
   "noticias": [
     {
       "autor": "Fermin",
@@ -60,7 +65,7 @@
       "imagen": "https://imgmedia.wapa.pe/650x368/wapa/original/2021/11/24/619ed695f1426931f772551a.webp",
       "leadnoticia": "Lead es un término inglés que indica textualmente \"adelantar\" y \"tomar la delantera\". En periodismo se dice de la entradilla que sigue al titular y que contiene en muy pocas líneas los elementos más relevantes de la noticia.",
       "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
-      "fechanoticia": "2021-12-13",
+      "fechanoticia": "2021-12-06",
       "destacada": false,
       "categoria": "politica",
       "id": 1
