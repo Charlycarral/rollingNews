@@ -14,6 +14,7 @@ import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
 import ListaCategoria from "./components/pages/admin/ListaCategoria";
 import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 import Suscribe from "./components/pages/Suscribe";
+import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -89,11 +90,12 @@ function App() {
         const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
           .splice(1);
-          setnoticiasdestacadas(articulosdestacados);
-        const articuloprincipal = await noticias
-          .filter((noticia) => noticia.principal === true)
-          
-          setnoticiaprincipal(articuloprincipal);
+        setnoticiasdestacadas(articulosdestacados);
+        const articuloprincipal = await noticias.filter(
+          (noticia) => noticia.principal === true
+        );
+
+        setnoticiaprincipal(articuloprincipal);
       }
     } catch (error) {
       console.log(error);
@@ -120,13 +122,16 @@ function App() {
             ></Inicio>
           }
         ></Route>
-        <Route exact path="/seccion/actualidad"></Route>
-        <Route exact path="/seccion/espectaculos"></Route>
-        <Route exact path="/seccion/tecnologia"></Route>
-        <Route exact path="/seccion/deportes"></Route>
-        <Route exact path="/seccion/politica"></Route>
-        <Route exact path="/seccion/economia"></Route>
-        <Route exact path="/seccion/salud"></Route>
+        <Route
+          exact
+          path="/noticias/seccion/:categoria"
+          element={
+            <NoticiasporCategoria
+              noticias={noticias}
+              consultaServer={consultaServer}
+            ></NoticiasporCategoria>
+          }
+        ></Route>
         <Route exact path="/seccion/fotografias"></Route>
         <Route exact path="/servicio/clima"></Route>
         <Route exact path="/servicio/moneda"></Route>

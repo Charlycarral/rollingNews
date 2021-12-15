@@ -12,7 +12,7 @@ const NoticiasCategoriaInicio = (props) => {
             <div className="d-flex justify-content-between border-bottom fw-bold">
               <Link
                 className="text-uppercase text-decoration-none text-secondary"
-                to="/admin"
+                to={`/noticias/seccion/${props.categoria[0].categoria}`}
               >
                 {" "}
                 {props.categoria[0].categoria}
