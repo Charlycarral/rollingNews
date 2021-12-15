@@ -6,27 +6,19 @@ import BannerPublicitario from "./BannerPublicitario";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
 import PaginaDetalleNoticias from "./PaginaDetalleNoticias";
 
-
-const Inicio = () => {
-
-
-
+const Inicio = (props) => {
   return (
-      <section>
-          <ConsultarApis></ConsultarApis>
-          <NoticiaPrincipal></NoticiaPrincipal>
-          <NoticiasDestacadas></NoticiasDestacadas>
-          <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
-          <BannerPublicitario></BannerPublicitario>
-          <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
-          <BannerPublicitario></BannerPublicitario>
-          
-          
-          
-
+    <section>
+      {/* <ConsultarApis></ConsultarApis> */}
+      <NoticiaPrincipal></NoticiaPrincipal>
+      <NoticiasDestacadas></NoticiasDestacadas>
+      <section className="container">
+        <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
+        <BannerPublicitario></BannerPublicitario>
+        <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
+        <BannerPublicitario></BannerPublicitario>
       </section>
-
-    
+    </section>
   );
 };
 

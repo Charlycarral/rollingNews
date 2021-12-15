@@ -82,5 +82,19 @@
       "categoria": "espectaculos",
       "id": 2
     }
+  ],
+  "categorias": [
+    {
+      "categoria": "Actualidad",
+      "id": 2
+    },
+    {
+      "categoria": "Espectaculo",
+      "id": 3
+    },
+    {
+      "categoria": "deporte",
+      "id": 5
+    }
   ]
 }

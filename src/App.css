@@ -2,9 +2,12 @@
     background: #484b52;
     color: #484b52;
 }
+
 .navbar-toggler::after{
  content: 'Secciones';
  margin-left: 5px;
+ font-size: 16px;
+ color: white;
 }
 #Nav{
     background: #484b5248 ;
@@ -114,5 +117,17 @@
         align-self: center;
         margin-top: 20px;
 
+    }
+    .navbar-toggler::after{
+        content: '';
+
+       }
+       .logoNav{
+        width: 90%;
+    }
+}
+@media (min-width: 577px) and (max-width: 771px){
+    .logoNav{
+        width: 56%;
     }
 }

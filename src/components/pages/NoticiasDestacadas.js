@@ -5,9 +5,10 @@ import ImagenCard from "../../img/futbol.jpg";
 
 const NoticiasDestacadas = () => {
   return (
-    <div className="bgNoticiasDestacadas d-flex justify-content-center pb-5 row ">
-      <div className="col-md-3 col-lg-3">
-        <Card className="bgCard rounded-3" style={{ width: "18rem" }}>
+    <div className="bgNoticiasDestacadas pb-5">
+      <div className=" d-flex justify-content-center">
+      <div className="col-12 col-md-3 col-lg-3 mx-lg-4">
+        <Card className="bgCard">
           <Card.Img className="" variant="top" src={ImagenCard} />
           <Card className="bgCard">
             <Card.Title className="text-white mt-2 text-center">
@@ -16,8 +17,8 @@ const NoticiasDestacadas = () => {
           </Card>
         </Card>
       </div>
-      <div className="col-md-3 col-lg-3">
-        <Card className="bgCard rounded-3" style={{ width: "18rem" }}>
+      <div className="col-12 col-md-3 col-lg-3 mx-lg-4">
+        <Card className="bgCard">
           <Card.Img className="" variant="top" src={ImagenCard} />
           <Card className="bgCard">
             <Card.Title className="text-white mt-2 text-center">
@@ -26,8 +27,8 @@ const NoticiasDestacadas = () => {
           </Card>
         </Card>
       </div>
-      <div className="col-md-3 col-lg-3">
-        <Card className="bgCard rounded-3" style={{ width: "18rem" }}>
+      <div className="col-12 col-md-3 col-lg-3 mx-lg-4">
+        <Card className="bgCard">
           <Card.Img className="" variant="top" src={ImagenCard} />
           <Card className="bgCard">
             <Card.Title className="text-white mt-2 text-center">
@@ -37,6 +38,7 @@ const NoticiasDestacadas = () => {
         </Card>
       </div>
     </div>
+      </div>
   );
 };
 

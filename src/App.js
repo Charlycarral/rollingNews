@@ -14,18 +14,17 @@ import CardsNoticiasAdmin from "./components/pages/admin/CardsNoticiasAdmin";
 import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
 import ListaCategoria from "./components/pages/admin/ListaCategoria";
 import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
-import Suscribe from "./components/pages/Suscribe"
-
-
+import Suscribe from "./components/pages/Suscribe";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [noticias, setNoticias] = useState([]);
+  const [categorias, setCategorias] = useState([]);
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
   const URL_n = process.env.REACT_APP_API_URL_NOTIC;
-
+  const URL_c = process.env.REACT_APP_API_URL_CAT;
   useEffect(() => {
     consultarUser();
     consultarAdmin();
@@ -37,20 +36,29 @@ function App() {
       const respuesta = await fetch(URL);
       const datos = await respuesta.json();
       setUsuarios(datos);
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   const consultarAdmin = async () => {
     try {
       const respuesta = await fetch(URL_a);
       const datos = await respuesta.json();
       setAdmins(datos);
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
+  const consultarCat = async () => {
+    try {
+      const respuesta = await fetch(URL_c);
+      const datos = await respuesta.json();
+      setCategorias(datos);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const consultaServer = async () => {
     try {
@@ -59,43 +67,102 @@ function App() {
         const datos = await respuesta.json();
         setNoticias(datos);
       }
-             
     } catch (error) {
       console.log(error);
-      console.log('desde consultasServer');
+      console.log("desde consultasServer");
     }
   };
 
   return (
     <BrowserRouter>
-    <Navigation/>
-
-    <Routes>
-      <Route exact path="/" element={<Inicio></Inicio>}></Route>
-      <Route exact path="/seccion/actualidad" ></Route>
-      <Route exact path="/seccion/espectaculos" ></Route>
-      <Route exact path="/seccion/tecnologia" ></Route>
-      <Route exact path="/seccion/deportes" ></Route>
-      <Route exact path="/seccion/politica" ></Route>
-      <Route exact path="/seccion/economia" ></Route>
-      <Route exact path="/seccion/salud" ></Route>
-      <Route exact path="/seccion/fotografias" ></Route>
-      <Route exact path="/servicio/clima" ></Route>
-      <Route exact path="/servicio/moneda" ></Route>
-      <Route exact path="/institucional/contacto" ></Route>
-      <Route exact path="/institucional/acerca-de" ></Route>
-      <Route exact path="/institucional/publicidad" ></Route>
-      <Route exact path="/login" element={<Login admins={admins} usuarios={usuarios}></Login>} ></Route>
-      <Route exact path="/admin" element={<Admin></Admin>} ></Route>
-      <Route exact path="/suscribe" element={<Suscribe consultarUser={consultarUser} usuarios={usuarios}></Suscribe>} ></Route>
-      <Route exact path="/noticias/:id" element={<PaginaDetalleNoticias noticias={noticias} consultaServer = {consultaServer}></PaginaDetalleNoticias>}></Route>
-      <Route exact path="/admin/lista-noticias" element={<NoticiasAdmin noticias={noticias} consultaServer = {consultaServer}></NoticiasAdmin>}></Route>
-      <Route exact path="/admin/editar/:id" element={<EditarNoticia consultaServer = {consultaServer}></EditarNoticia>}></Route>
-      <Route exact path="/admin/agregar" element={<AgregarNoticia consultaServer = {consultaServer}></AgregarNoticia>}></Route>
-      <Route exact path="/admin/categorias" element={<ListaCategoria></ListaCategoria>}></Route>
-      <Route exact path="/admin/agregar-categoria" element={<NuevaCategoria></NuevaCategoria>}></Route>
-    </Routes>
-    <Fotter/>
+      <Navigation />
+      <Routes>
+        <Route exact path="/" element={<Inicio></Inicio>}></Route>
+        <Route exact path="/seccion/actualidad"></Route>
+        <Route exact path="/seccion/espectaculos"></Route>
+        <Route exact path="/seccion/tecnologia"></Route>
+        <Route exact path="/seccion/deportes"></Route>
+        <Route exact path="/seccion/politica"></Route>
+        <Route exact path="/seccion/economia"></Route>
+        <Route exact path="/seccion/salud"></Route>
+        <Route exact path="/seccion/fotografias"></Route>
+        <Route exact path="/servicio/clima"></Route>
+        <Route exact path="/servicio/moneda"></Route>
+        <Route exact path="/institucional/contacto"></Route>
+        <Route exact path="/institucional/acerca-de"></Route>
+        <Route exact path="/institucional/publicidad"></Route>
+        <Route
+          exact
+          path="/login"
+          element={<Login admins={admins} usuarios={usuarios}></Login>}
+        ></Route>
+        <Route exact path="/admin" element={<Admin></Admin>}></Route>
+        <Route
+          exact
+          path="/suscribe"
+          element={
+            <Suscribe
+              consultarUser={consultarUser}
+              usuarios={usuarios}
+            ></Suscribe>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/noticias/:id"
+          element={
+            <PaginaDetalleNoticias
+              noticias={noticias}
+              consultaServer={consultaServer}
+            ></PaginaDetalleNoticias>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/admin/lista-noticias"
+          element={
+            <NoticiasAdmin
+              noticias={noticias}
+              consultaServer={consultaServer}
+            ></NoticiasAdmin>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/admin/editar/:id"
+          element={
+            <EditarNoticia consultaServer={consultaServer}></EditarNoticia>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/admin/agregar"
+          element={
+            <AgregarNoticia consultaServer={consultaServer}></AgregarNoticia>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/admin/categorias"
+          element={
+            <ListaCategoria
+              categorias={categorias}
+              consultarCat={consultarCat}
+            ></ListaCategoria>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/admin/agregar-categoria"
+          element={
+            <NuevaCategoria
+              categorias={categorias}
+              consultarCat={consultarCat}
+            ></NuevaCategoria>
+          }
+        ></Route>
+      </Routes>
+      <Fotter />
     </BrowserRouter>
   );
 }
