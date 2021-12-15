@@ -36,22 +36,8 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />
-    
       <Routes>
-        <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/seccion/actualidad"></Route>
-        <Route exact path="/seccion/espectaculos"></Route>
-        <Route exact path="/seccion/tecnologia"></Route>
-        <Route exact path="/seccion/deportes"></Route>
-        <Route exact path="/seccion/politica"></Route>
-        <Route exact path="/seccion/economia"></Route>
-        <Route exact path="/seccion/salud"></Route>
-        <Route exact path="/seccion/fotografias"></Route>
-        <Route exact path="/servicio/clima"></Route>
-        <Route exact path="/servicio/moneda"></Route>
-        <Route exact path="/institucional/contacto"></Route>
-        <Route exact path="/institucional/acerca-de"></Route>
-        <Route exact path="/institucional/publicidad"></Route>
+        <Route exact path="/" element={<Inicio noticias={noticias}></Inicio>}></Route>
         <Route exact path="/login" element={<Login></Login>}></Route>
         <Route exact path="/admin" element={<Admin></Admin>}></Route>
         <Route exact path="/admin/lista-noticias" element={<NoticiasAdmin noticias={noticias} consultaServer = {consultaServer}></NoticiasAdmin>}></Route>

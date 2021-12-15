@@ -74,24 +74,6 @@ const Navigation = () => {
                       </section>
                     </div>
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-                      <h3 className="text-white">Servicios</h3>
-                      <hr />
-                      <section className="d-flex flex-column">
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Clima
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Monedas extrangeras
-                        </Link>
-                      </section>
-                    </div>
-                    <div className="col-sm-12 col-md-6 col-lg-4 text-white">
                       <h3 className="text-white">Institucional</h3>
                       <hr />
                       <section className="d-flex flex-column">
@@ -117,50 +99,16 @@ const Navigation = () => {
                     </div>
                   </Nav>
                 </div>
-                <article className="footerNav text-white">
-                  <h3 className="text-center">Suscribite a RollingNews</h3>
-                  <div className="Form-nav">
-                    <Form>
-                      <Form.Group className="my-3">
-                        <Form.Control
-                          type="email"
-                          id="inputNav"
-                          placeholder="Ingresa tu mail"
-                        />
-                      </Form.Group>
-                    </Form>
-                    <div>
-                      <a className="text-white ">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="35"
-                          fill="currentColor"
-                          class="bi bi-envelope ms-2"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </article>
+
               </section>
             </Navbar.Offcanvas>
           </section>
-
-          {/* <div className=" col-md-2 col-lg-2 borderPrueba">
-            <Link to="/" id="botonInicio">
-              Inicio
-            </Link>
-          </div> */}
-          <div>
             <Link
               to="/"
-              className="d-flex justify-content-center text-decoration-none text-white"
+              className=" d-flex justify-content-center text-decoration-none text-white logoNav"
             >
               <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
             </Link>
-          </div>
           <div className="d-flex justify-content-center">
             <div >
             <Link to="/" id="botonSub" className="w-auto p-2" >
