@@ -2,7 +2,7 @@ import React from "react";
 import { ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./admin.css";
-import ItemCategoria from "./ItemCategoria";
+import ItemListaCategoria from "./ItemListaCategoria";
 
 const ListaCategoria = (props) => {
   // props.consultarCat();
@@ -13,7 +13,7 @@ const ListaCategoria = (props) => {
         <h1 className="my-5 text-center pt-5">Lista de Categorías</h1>
         <ListGroup>
           {
-            props.categorias.map((categoria)=><ItemCategoria categoria={categoria} key={categoria.id} consultarCat={props.consultarCat}></ItemCategoria>)
+            props.categorias.map((categoria)=><ItemListaCategoria categoria={categoria} key={categoria.id} consultarCat={props.consultarCat}></ItemListaCategoria>)
           }
         </ListGroup>
    

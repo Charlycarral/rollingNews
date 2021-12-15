@@ -76,7 +76,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navigation />
+      <Navigation categorias={categorias} />
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route exact path="/seccion/actualidad"></Route>
@@ -139,7 +139,7 @@ function App() {
           exact
           path="/admin/agregar"
           element={
-            <AgregarNoticia consultaServer={consultaServer}></AgregarNoticia>
+            <AgregarNoticia consultaServer={consultaServer} categorias={categorias}></AgregarNoticia>
           }
         ></Route>
         <Route
@@ -163,7 +163,7 @@ function App() {
           }
         ></Route>
       </Routes>
-      <Fotter />
+      <Fotter categorias={categorias}/>
     </BrowserRouter>
   );
 }

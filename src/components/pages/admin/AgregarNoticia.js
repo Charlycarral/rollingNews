@@ -161,14 +161,9 @@ const AgregarNoticia = (props) => {
                 onChange={(e) => setCategoria(e.target.value)}
               >
                 <option value="">Seleccione una categoria</option>
-                <option value="actualidad">Actualidad</option>
-                <option value="espectaculos">Espectaculo</option>
-                <option value="tecnologia">Tecnologia</option>
-                <option value="deportes">Deportes</option>
-                <option value="politica">Politica</option>
-                <option value="economia">Economia</option>
-                <option value="salud">Salud</option>
-                <option value="fotografias">Fotografias</option>
+                {
+                  props.categorias.map((categoria)=><option value={(categoria.categoria).toLowerCase()} key={categoria.id}>{categoria.categoria}</option>)
+                }
               </Form.Select>
             </Form.Group>
           </div>
