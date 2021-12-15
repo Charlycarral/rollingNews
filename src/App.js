@@ -29,6 +29,7 @@ function App() {
     consultarUser();
     consultarAdmin();
     consultaServer();
+    consultarCat();
   }, []);
 
   const consultarUser = async () => {

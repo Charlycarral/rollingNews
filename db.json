@@ -95,6 +95,10 @@
     {
       "categoria": "deporte",
       "id": 5
+    },
+    {
+      "categoria": "Salud",
+      "id": 6
     }
   ]
 }
