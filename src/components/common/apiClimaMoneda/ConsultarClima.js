@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import InfoClima from "./InfoClima";
 import { Spinner } from "react-bootstrap";
 import "./Clima.css"

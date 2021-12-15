@@ -14,7 +14,7 @@ const Login = (props) => {
           <img
             src={logo}
             alt="logo rollingnews"
-            className="ms-5 ps-sm-1 ps-md-5 w-75 mt-4 "
+            className="ms-5 ps-sm-1 ps-md-5 w-75 my-5 "
           />
         </div>
 

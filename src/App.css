@@ -1,3 +1,8 @@
+*{
+ margin: 0px;
+ padding: 0px;   
+}
+
 .fondo{
     background: #484b52;
     color: #484b52;
