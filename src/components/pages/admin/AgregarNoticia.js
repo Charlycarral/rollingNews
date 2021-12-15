@@ -16,6 +16,7 @@ const AgregarNoticia = (props) => {
   const [cuerponoticia, setCuerpoNoticia] = useState("");
   const [fechanoticia, setFechaNoticia] = useState("");
   const [destacada, setDestacada] = useState(false);
+  const [principal, setPrincipal] = useState(false);
   const URL = process.env.REACT_APP_API_URL_NOTIC;
 
   const handleSubmit = async (e) => {
@@ -41,6 +42,7 @@ const AgregarNoticia = (props) => {
         cuerponoticia: cuerponoticia,
         fechanoticia: fechanoticia,
         destacada: destacada,
+        principal: principal,
       };
       try {
         const parametros = {
@@ -87,6 +89,13 @@ const AgregarNoticia = (props) => {
       setDestacada(false);
     }
   };
+  const handlePrincipal = () => {
+    if (destacada === false) {
+      setPrincipal(true);
+    } else {
+      setPrincipal(false);
+    }
+  };
 
   return (
     <div>
@@ -127,8 +136,17 @@ const AgregarNoticia = (props) => {
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
-                  label="Noticia destacada"
+                  label="Noticia Destacada"
                   onClick={(e) => handleDestacada(e.target.value)}
+                 
+
+                />
+              </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  label="Noticia Principal"
+                  onClick={(e) => handlePrincipal(e.target.value)}
                  
 
                 />

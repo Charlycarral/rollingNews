@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import Market from '../../img/market.jpg';
 const NotiIndividual = (props) => {
   return (
-    <div className="ms-5 ps-5">
+    <div className="ms-5 ps-1">
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={props.noticia.imagen} />
         <Card.Body>

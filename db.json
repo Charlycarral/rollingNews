@@ -67,6 +67,7 @@
       "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
       "fechanoticia": "2021-12-06",
       "destacada": false,
+      "principal": false,
       "categoria": "politica",
       "id": 1
     },
@@ -78,7 +79,8 @@
       "leadnoticia": "Es el primer párrafo de la noticia, que muchas veces aparece en la portada para ser desarrollado luego en el interior del periódico. Luego del título, que es la parte más importante de la noticia, la entradilla lo sigue en relevancia utilizando los datos esenciales de la información para captar el interés de los lectores.",
       "cuerponoticia": "Es el desarrollo del texto informativo completo que fue anunciado en la entrada. El cuerpo es el núcleo principal de la información, en el que se describen los hechos del relato con todos los detalles. Agrega datos nuevos, documenta los expuestos previamente en la noticia, y se explaya en los pormenores del suceso.",
       "fechanoticia": "2021-12-10",
-      "destacada": false,
+      "destacada": true,
+      "principal": false,
       "categoria": "espectaculos",
       "id": 2
     },
@@ -87,11 +89,12 @@
       "titulo": "Deportes Deportes Deportes",
       "bajadanoticia": "deportes deportes depoadasdddddd  dsaaaaaaaaaaaa",
       "imagen": "https://images.pexels.com/photos/50713/football-ball-sport-soccer-50713.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "deportes",
       "leadnoticia": "deport           dassssssssssssssssssssssssssssssssssssssss",
       "cuerponoticia": "adsssssssssssssssssssssssssssssssssssssssssssssssssssssss",
       "fechanoticia": "2021-12-15",
-      "destacada": true,
+      "destacada": false,
+      "principal": false,
+      "categoria": "deportes",
       "id": 3
     },
     {
@@ -99,11 +102,12 @@
       "titulo": "CARLOS DEPORTES DEPORTES",
       "bajadanoticia": "DSADADADADASDAD",
       "imagen": "https://images.pexels.com/photos/50713/football-ball-sport-soccer-50713.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "deportes",
       "leadnoticia": "ASDASDASDADADDAD",
       "cuerponoticia": "DASDADASDSASDASDASDAS",
       "fechanoticia": "2021-12-13",
-      "destacada": false,
+      "destacada": true,
+      "principal": false,
+      "categoria": "deportes",
       "id": 4
     },
     {
@@ -111,11 +115,12 @@
       "titulo": "FERMIN DEPORTES",
       "bajadanoticia": "FERMIN DEPORTES",
       "imagen": "https://images.pexels.com/photos/50713/football-ball-sport-soccer-50713.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "deportes",
       "leadnoticia": "FERMIN DEPORTES",
       "cuerponoticia": "FERMIN DEPORTES",
       "fechanoticia": "2021-12-11",
       "destacada": false,
+      "principal": false,
+      "categoria": "deportes",
       "id": 5
     },
     {
@@ -123,11 +128,12 @@
       "titulo": "MARIANO DEPORTES",
       "bajadanoticia": "DEPORTES MARIANO",
       "imagen": "https://images.pexels.com/photos/50713/football-ball-sport-soccer-50713.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "deportes",
       "leadnoticia": "DEPORTES MARIANO",
       "cuerponoticia": "DEPORTES MARIANO",
       "fechanoticia": "2021-12-01",
       "destacada": false,
+      "principal": true,
+      "categoria": "deportes",
       "id": 6
     },
     {
@@ -135,11 +141,12 @@
       "titulo": "AIME POLITICA",
       "bajadanoticia": "AIME POLITICA",
       "imagen": "https://images.pexels.com/photos/129112/pexels-photo-129112.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "politica",
       "leadnoticia": "AIME POLITICA",
       "cuerponoticia": "AIME POLITICA",
       "fechanoticia": "2021-12-12",
-      "destacada": true,
+      "destacada": false,
+      "principal": false,
+      "categoria": "politica",
       "id": 7
     },
     {
@@ -147,11 +154,12 @@
       "titulo": "LILY POLITICA",
       "bajadanoticia": "LILY POLITICA",
       "imagen": "https://images.pexels.com/photos/129112/pexels-photo-129112.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "politica",
       "leadnoticia": "LILY POLITICA",
       "cuerponoticia": "LILY POLITICA",
       "fechanoticia": "2021-12-01",
-      "destacada": true,
+      "destacada": false,
+      "principal": false,
+      "categoria": "politica",
       "id": 8
     },
     {
@@ -159,11 +167,12 @@
       "titulo": "RAMIRO POLITICA",
       "bajadanoticia": "RAMIRO POLITICA",
       "imagen": "https://images.pexels.com/photos/129112/pexels-photo-129112.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "politica",
       "leadnoticia": "RAMIRO POLITICA",
       "cuerponoticia": "RAMIRO POLITICA",
       "fechanoticia": "2021-12-12",
-      "destacada": true,
+      "destacada": false,
+      "principal": false,
+      "categoria": "politica",
       "id": 9
     },
     {
@@ -171,11 +180,12 @@
       "titulo": "CARLOS ECONOMIA",
       "bajadanoticia": "CARLOS ECONOMIA",
       "imagen": "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "economia",
       "leadnoticia": "CARLOS ECONOMIA",
       "cuerponoticia": "CARLOS ECONOMIA",
       "fechanoticia": "2021-01-01",
-      "destacada": false,
+      "destacada": true,
+      "principal": false,
+      "categoria": "economia",
       "id": 10
     },
     {
@@ -183,11 +193,12 @@
       "titulo": "FERMIN ECONOMIA",
       "bajadanoticia": "FERMIN ECONOMIA",
       "imagen": "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "economia",
       "leadnoticia": "FERMIN ECONOMIA",
       "cuerponoticia": "FERMIN ECONOMIA",
       "fechanoticia": "2021-01-01",
       "destacada": false,
+      "principal": false,
+      "categoria": "economia",
       "id": 11
     },
     {
@@ -195,11 +206,12 @@
       "titulo": "MARIANO ECONOMIA",
       "bajadanoticia": "MARIANO ECONOMIA",
       "imagen": "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "economia",
       "leadnoticia": "MARIANO ECONOMIA",
       "cuerponoticia": "MARIANO ECONOMIA",
       "fechanoticia": "2021-01-01",
       "destacada": false,
+      "principal": false,
+      "categoria": "economia",
       "id": 12
     },
     {
@@ -207,11 +219,12 @@
       "titulo": "FERMIN ECONOMIAAAAAA",
       "bajadanoticia": "FERMIN ECONOMIA",
       "imagen": "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-      "categoria": "economia",
       "leadnoticia": "FERMINODASDADADADA",
       "cuerponoticia": "ASDADADADAD",
       "fechanoticia": "2021-01-01",
-      "destacada": false,
+      "destacada": true,
+      "principal": false,
+      "categoria": "economia",
       "id": 13
     }
   ]

@@ -22,7 +22,8 @@ function App() {
   const [noticiasdeportes, setnoticiasdeportes] = useState([]);
   const [noticiaspolitica, setnoticiaspolitica] = useState([]);
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
-  const [noticiasprincipales, setnoticiasprincipales] = useState([]);
+  const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
+  const [noticiaprincipal, setnoticiaprincipal] = useState([]);
 
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
@@ -80,16 +81,21 @@ function App() {
         const articulospolitica = await noticias
           .filter((noticia) => noticia.categoria === "politica")
           .splice(1);
-          setnoticiaspolitica(articulospolitica);
+        setnoticiaspolitica(articulospolitica);
         const articuloseconomia = await noticias
           .filter((noticia) => noticia.categoria === "economia")
           .splice(1);
-          setnoticiaseconomia(articuloseconomia);
-        const articulosprincipales = await noticias
+        setnoticiaseconomia(articuloseconomia);
+        const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
           .splice(1);
-          setnoticiasprincipales(articulosprincipales);
-}}catch (error) {
+          setnoticiasdestacadas(articulosdestacados);
+        const articuloprincipal = await noticias
+          .filter((noticia) => noticia.principal === true)
+          
+          setnoticiaprincipal(articuloprincipal);
+      }
+    } catch (error) {
       console.log(error);
       console.log("desde consultasServer");
     }
@@ -108,7 +114,8 @@ function App() {
               noticiasdeportes={noticiasdeportes}
               noticiaspolitica={noticiaspolitica}
               noticiaseconomia={noticiaseconomia}
-              noticiasprincipales={noticiasprincipales}
+              noticiasdestacadas={noticiasdestacadas}
+              noticiaprincipal={noticiaprincipal}
               consultaServer={consultaServer}
             ></Inicio>
           }

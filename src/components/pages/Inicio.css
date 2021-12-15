@@ -1,11 +1,12 @@
-.bgNoticiaPrincipal {
+/* .bgNoticiaPrincipal {
   position: relative;
   width: 100%;
   height: 1000px;
   background: linear-gradient(rgba(241, 236, 236, 0.027), #292828);
   z-index: 1;
-  /* border: red 3px solid; */
-}
+
+} */
+
 .noticiaPrincipal {
   z-index: -2;
   
@@ -15,25 +16,25 @@
   
 }
 
-.divNoticiasDestacadas{
-  position: relative;
-  margin-top: 0;
-
-}
 
 .tituloNoticias {
   margin-top: -400px;
   text-align: center;
   z-index: 1;
   color: #c10000;
+  
+ 
 }
 
 .subtituloNoticias {
+  justify-content: center;
   margin-top: -300px;
   position: relative;
   height: 100px;
   text-align: center;
   z-index: 1;
+  
+
 }
 
 .bgCard {

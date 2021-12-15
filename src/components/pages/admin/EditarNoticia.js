@@ -12,6 +12,7 @@ const EditarNoticia = (props) => {
   const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + id;
   const [categoria, setCategoria] = useState("");
   const [destacada, setDestacada] = useState(false);
+  const [principal, setPrincipal] = useState(false);
   const autorNoticiaRef = useRef("");
   const tituloNoticiaRef = useRef("");
   const bajadanoticiaRef = useRef("");
@@ -55,6 +56,7 @@ const EditarNoticia = (props) => {
         cuerponoticia: cuerponoticiaRef.current.value,
         fechanoticia: fechanoticiaRef.current.value,
         destacada,
+        principal,
         categoria,
       };
 
@@ -87,6 +89,13 @@ const EditarNoticia = (props) => {
       setDestacada(true);
       }else {
       setDestacada(false);
+     }
+  }
+  const handlePrincipal = () => {
+    if (destacada === false) {
+      setPrincipal(true);
+      }else {
+      setPrincipal(false);
      }
   }
 
@@ -133,8 +142,19 @@ const EditarNoticia = (props) => {
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
-                  label="Noticia destacada"
+                  label="Noticia Destacada"
                   onChange={(e) => handleDestacada()}
+                  defaultChecked={noticia.destacada && noticia.destacada === true}
+                  
+                  
+
+                />
+            </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  label="Noticia Principal"
+                  onChange={(e) => handlePrincipal()}
                   defaultChecked={noticia.destacada && noticia.destacada === true}
                   
                   

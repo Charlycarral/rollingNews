@@ -3,14 +3,16 @@ import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
 import BannerPublicitario from "./BannerPublicitario";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
+import './Inicio.css'
+
 
 
 const Inicio = (props) => {
   return (
-    <section>
+    <section className="w-100 container-fluid" >
       <ConsultarApis></ConsultarApis>
-      <NoticiaPrincipal></NoticiaPrincipal>
-      <NoticiasDestacadas></NoticiasDestacadas>
+      {props.noticiaprincipal && (<NoticiaPrincipal categoria={props.noticiaprincipal} ></NoticiaPrincipal>)}
+      {props.noticiasdestacadas && (<NoticiasDestacadas categoria={props.noticiasdestacadas} ></NoticiasDestacadas>)}
       {/* <NoticiasCategoriaInicio></NoticiasCategoriaInicio> */}
       <BannerPublicitario></BannerPublicitario>
       {props.noticiasdeportes && (<NoticiasCategoriaInicio categoria={props.noticiasdeportes} ></NoticiasCategoriaInicio>)}
