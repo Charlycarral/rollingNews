@@ -18,6 +18,7 @@ const NoticiasDestacadas = (props) => {
           </div>
         ))}
     </div>
+      
   );
 };
 

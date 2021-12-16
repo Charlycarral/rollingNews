@@ -20,6 +20,7 @@ function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [noticias, setNoticias] = useState([]);
+  const [categorias, setCategorias] = useState([]);
   const [noticiasdeportes, setnoticiasdeportes] = useState([]);
   const [noticiaspolitica, setnoticiaspolitica] = useState([]);
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
@@ -30,11 +31,12 @@ function App() {
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
   const URL_n = process.env.REACT_APP_API_URL_NOTIC;
-
+  const URL_c = process.env.REACT_APP_API_URL_CAT;
   useEffect(() => {
     consultarUser();
     consultarAdmin();
     consultaServer();
+    consultarCat();
     noticiaspaginaprincipal();
   }, []);
 
@@ -55,6 +57,15 @@ function App() {
       setAdmins(datos);
     } catch (err) {
       console.log(err);
+    }
+  };
+  const consultarCat = async () => {
+    try {
+      const respuesta = await fetch(URL_c);
+      const datos = await respuesta.json();
+      setCategorias(datos);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -186,21 +197,31 @@ function App() {
           exact
           path="/admin/agregar"
           element={
-            <AgregarNoticia consultaServer={consultaServer}></AgregarNoticia>
+            <AgregarNoticia consultaServer={consultaServer} categorias={categorias}></AgregarNoticia>
           }
         ></Route>
         <Route
           exact
           path="/admin/categorias"
-          element={<ListaCategoria></ListaCategoria>}
+          element={
+            <ListaCategoria
+              categorias={categorias}
+              consultarCat={consultarCat}
+            ></ListaCategoria>
+          }
         ></Route>
         <Route
           exact
           path="/admin/agregar-categoria"
-          element={<NuevaCategoria></NuevaCategoria>}
+          element={
+            <NuevaCategoria
+              categorias={categorias}
+              consultarCat={consultarCat}
+            ></NuevaCategoria>
+          }
         ></Route>
       </Routes>
-      <Fotter />
+      <Fotter categorias={categorias}/>
     </Router>
   );
 }

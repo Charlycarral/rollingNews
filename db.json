@@ -227,5 +227,31 @@
       "categoria": "economia",
       "id": 13
     }
+  ],
+  "categorias": [
+    {
+      "categoria": "Espectaculo",
+      "id": 3
+    },
+    {
+      "categoria": "Salud",
+      "id": 6
+    },
+    {
+      "categoria": "Tecnologia",
+      "id": 7
+    },
+    {
+      "categoria": "Politica",
+      "id": 8
+    },
+    {
+      "categoria": "Economia",
+      "id": 9
+    },
+    {
+      "categoria": "Deportes",
+      "id": 11
+    }
   ]
 }
