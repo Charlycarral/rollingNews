@@ -25,6 +25,7 @@ function App() {
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
+  const [loginCtr, setLoginCtr] = useState(false);
 
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
@@ -105,7 +106,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation />
+      <Navigation loginCtr={loginCtr} setLoginCtr={setLoginCtr}/>
 
       <Routes>
         <Route
@@ -141,7 +142,7 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login admins={admins} usuarios={usuarios}></Login>}
+          element={<Login loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
         ></Route>
         <Route exact path="/admin" element={<Admin></Admin>}></Route>
         <Route

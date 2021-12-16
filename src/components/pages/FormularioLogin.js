@@ -17,17 +17,32 @@ const FormularioLogin = (props) => {
           "email": emailUsuario,
           "contrasena": contrasenaUsuario
       };
-      let user = props.usuarios.find((usuario) => {return usuario.email === nuevoUsuario.email});
-      let admin = props.admins.find((usuario) => {return usuario.email === nuevoUsuario.email});
-      if (user !== undefined){
-          if (user.contrasena === nuevoUsuario.contrasena){
-            navegacion('/admin');
+      if (props.loginCtr === false){
+        let user = props.usuarios.find((usuario) => {return usuario.email === nuevoUsuario.email});
+        let admin = props.admins.find((usuario) => {return usuario.email === nuevoUsuario.email});
+        if (user !== undefined){
+            if (user.contrasena === nuevoUsuario.contrasena){
+              props.setLoginCtr(true);
+              navegacion('/admin');
+              
+            }
+        }else if (admin !== undefined){
+          if (admin.contrasena === nuevoUsuario.contrasena){
+            props.setLoginCtr(true);
+             navegacion('/admin');  
           }
-      }else if (admin !== undefined){
-        if (admin.contrasena === nuevoUsuario.contrasena){
-           navegacion('/admin');
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'El usuario no existe!',
+            footer: '<a href="">Más informaci\'on?</a>'
+        });
         }
+      }else{
+          navegacion('/');
       }
+
 
     }else{
       Swal.fire({

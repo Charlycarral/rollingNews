@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logoRollingBlanco.svg";
 import "../pages/Login.css";
 
-const Navigation = () => {
+const Navigation = (props) => {
+
+  const salirLogin = () =>{
+    props.setLoginCtr(false);
+  }
+
   return (
     <>
       <Navbar expand={false} id="Nav" >
@@ -166,16 +171,17 @@ const Navigation = () => {
             <Link to="/suscribe" id="botonSub" className="w-auto p-2" >
               Suscribite
             </Link>
-
             </div>
-            
-            <div className="colorFuenteGris" >
-            <Link to="/login" id="botonIngresar" className="w-auto p-2 colorFuenteGris">
-               Ingresar
-            </Link>
 
-            </div>
-            
+            { props.loginCtr === false ? (<div className="colorFuenteGris" >
+           <Link to="/login" id="botonIngresar" className="w-auto p-2 colorFuenteGris">
+               Ingresar </Link>
+            </div>) : (<div className="colorFuenteGris" >
+           <Link to="/" id="botonIngresar" className="w-auto p-2 colorFuenteGris" onClick={() => {salirLogin()}}>
+               Salir </Link>
+            </div>)}
+          
+         
           </div>
         </Container>
       </Navbar>
