@@ -85,10 +85,6 @@
   ],
   "categorias": [
     {
-      "categoria": "Actualidad",
-      "id": 2
-    },
-    {
       "categoria": "Espectaculo",
       "id": 3
     },
