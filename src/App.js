@@ -15,6 +15,7 @@ import ListaCategoria from "./components/pages/admin/ListaCategoria";
 import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 import Suscribe from "./components/pages/Suscribe";
 import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
+import EditarCategoria from "./components/pages/admin/EditarCategoria";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -216,6 +217,16 @@ function App() {
               categorias={categorias}
               consultarCat={consultarCat}
             ></NuevaCategoria>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/admin/editar-categoria/:id"
+          element={
+            <EditarCategoria
+              categorias={categorias}
+              consultarCat={consultarCat}
+            ></EditarCategoria>
           }
         ></Route>
       </Routes>

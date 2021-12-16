@@ -57,7 +57,7 @@ const NuevaCategoria = (props) => {
             placeholder="Nueva Categoría"
             onChange={(e) => setNuevaCategoria(e.target.value)}
           />
-        </Form.Group>
+                  </Form.Group>
 
         <Button variant="primary" type="submit">
           Agregar

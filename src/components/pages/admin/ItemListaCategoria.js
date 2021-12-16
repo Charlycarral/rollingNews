@@ -47,7 +47,7 @@ const ItemListaCategoria = (props) => {
       <ListGroup.Item className="d-flex justify-content-between align-items-center">
           <span className="mx-3 ">{(props.categoria.categoria).toUpperCase()}</span>
           <div><Button variant="danger" onClick={eliminarCategoria}>Borrar</Button>
-               <Link to="/" className="btn btn-warning m-2">Editar</Link>
+               <Link to={`/admin/editar-categoria/${props.categoria.id}`} className="btn btn-warning m-2">Editar</Link>
                <Link to="/" className="btn btn-primary">Mostrar</Link></div>
       </ListGroup.Item>
 
