@@ -116,8 +116,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation />
-
+      <Navigation categorias={categorias} />
       <Routes>
         <Route
           exact
@@ -196,7 +195,7 @@ function App() {
           exact
           path="/admin/agregar"
           element={
-            <AgregarNoticia consultaServer={consultaServer}></AgregarNoticia>
+            <AgregarNoticia consultaServer={consultaServer} categorias={categorias}></AgregarNoticia>
           }
         ></Route>
         <Route
@@ -220,7 +219,7 @@ function App() {
           }
         ></Route>
       </Routes>
-      <Fotter />
+      <Fotter categorias={categorias}/>
     </Router>
   );
 }

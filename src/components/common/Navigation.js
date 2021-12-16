@@ -3,11 +3,12 @@ import { Navbar, Nav, Container, Offcanvas, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../img/logoRollingBlanco.svg";
 import "../pages/Login.css";
+import ItemsCategorias from "./ItemsCategorias";
 
-const Navigation = () => {
+const Navigation = (props) => {
   return (
     <>
-      <Navbar expand={false} id="Nav" >
+      <Navbar expand={false} id="Nav">
         <Container fluid className="fixed-top bgNavbar pb-2">
           <section>
             <Navbar.Toggle />
@@ -22,55 +23,13 @@ const Navigation = () => {
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white">
                       <h3 className="text-white">Secciones</h3>
                       <hr />
-                      <section className="d-flex flex-column">
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Actualidad{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Espectaculos{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Tecnologia{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Deportes{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Politica{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Economia{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Salud{" "}
-                        </Link>
-                        <Link
-                          to=""
-                          className="text-decoration-none text-white my-1"
-                        >
-                          Fotografias{" "}
-                        </Link>
+                      <section className="d-flex flex-column ">
+                        {props.categorias.map((categoria) => (
+                          <ItemsCategorias
+                            key={categoria.id}
+                            categoria={categoria}
+                          ></ItemsCategorias>
+                        ))}
                       </section>
                     </div>
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white">
@@ -99,31 +58,31 @@ const Navigation = () => {
                     </div>
                   </Nav>
                 </div>
-
               </section>
             </Navbar.Offcanvas>
           </section>
-            <Link
-              to="/"
-              className=" d-flex justify-content-center text-decoration-none text-white logoNav"
-            >
-              <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
-            </Link>
+          <Link
+            to="/"
+            className=" d-flex justify-content-center text-decoration-none text-white logoNav"
+          >
+            <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
+          </Link>
           <div className="d-flex justify-content-center">
-            <div >
-            <Link to="/suscribe" id="botonSub" className="w-auto p-2" >
-              Suscribite
-            </Link>
-
+            <div>
+              <Link to="/suscribe" id="botonSub" className="w-auto p-2">
+                Suscribite
+              </Link>
             </div>
-            
-            <div className="colorFuenteGris" >
-            <Link to="/login" id="botonIngresar" className="w-auto p-2 colorFuenteGris">
-               Ingresar
-            </Link>
 
+            <div className="colorFuenteGris">
+              <Link
+                to="/login"
+                id="botonIngresar"
+                className="w-auto p-2 colorFuenteGris"
+              >
+                Ingresar
+              </Link>
             </div>
-            
           </div>
         </Container>
       </Navbar>

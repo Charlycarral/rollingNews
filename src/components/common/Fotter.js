@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ItemsCategorias from "./ItemsCategorias";
 
-const Fotter = () => {
+const Fotter = (props) => {
   return (
     <div>
       <section className="footer">
@@ -10,45 +11,16 @@ const Fotter = () => {
             <div className="col-sm-12 col-md-6 col-lg-4 text-white">
               <h3 className="text-white">Secciones</h3>
               <hr />
-              <section className="d-flex flex-column">
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Actualidad
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Espectaculos
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Tecnologia
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Deportes
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Politica
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Economia
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Salud
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Fotografias
-                </Link>
+              <section className="d-flex flex-column ">
+                {props.categorias.map((categoria) => (
+                  <ItemsCategorias
+                    key={categoria.id}
+                    categoria={categoria}
+                  ></ItemsCategorias>
+                ))}
               </section>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-              <h3 className="text-white">Servicios</h3>
-              <hr />
-              <section className="d-flex flex-column">
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Clima
-                </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
-                  Monedas extrangeras
-                </Link>
-              </section>
-            </div>
+
             <div className="col-sm-12 col-md-6 col-lg-4 text-white">
               <h3 className="text-white">Institucional</h3>
               <hr />
@@ -70,7 +42,6 @@ const Fotter = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
-                
                   fill="currentColor"
                   class="bi bi-facebook text-white mx-2"
                   viewBox="0 0 16 16"
@@ -80,7 +51,6 @@ const Fotter = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
-                
                   fill="currentColor"
                   class="bi bi-instagram text-white mx-2"
                   viewBox="0 0 16 16"
@@ -90,7 +60,6 @@ const Fotter = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
-                
                   fill="currentColor"
                   class="bi bi-twitter text-white mx-2"
                   viewBox="0 0 16 16"

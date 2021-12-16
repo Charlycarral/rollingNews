@@ -2,7 +2,7 @@ import React from "react";
 import { ListGroup,Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-const ItemCategoria = (props) => {
+const ItemListaCategoria = (props) => {
 
     const eliminarCategoria = () => {
         Swal.fire({
@@ -54,4 +54,4 @@ const ItemCategoria = (props) => {
   );
 };
 
-export default ItemCategoria;
+export default ItemListaCategoria;
