@@ -1,23 +1,31 @@
-import React from "react";
 import NoticiaPrincipal from "./NoticiaPrincipal";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
 import BannerPublicitario from "./BannerPublicitario";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
-import PaginaDetalleNoticias from "./PaginaDetalleNoticias";
+import './Inicio.css'
+
+
 
 const Inicio = (props) => {
   return (
-    <section>
-      {/* <ConsultarApis></ConsultarApis> */}
-      <NoticiaPrincipal></NoticiaPrincipal>
-      <NoticiasDestacadas></NoticiasDestacadas>
-      <section className="container">
-        <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
-        <BannerPublicitario></BannerPublicitario>
-        <NoticiasCategoriaInicio></NoticiasCategoriaInicio>
-        <BannerPublicitario></BannerPublicitario>
-      </section>
+    <section className="w-100 container-fluid" >
+      <ConsultarApis></ConsultarApis>
+      {props.noticiaprincipal && (<NoticiaPrincipal categoria={props.noticiaprincipal} ></NoticiaPrincipal>)}
+      {props.noticiasdestacadas && (<NoticiasDestacadas categoria={props.noticiasdestacadas} ></NoticiasDestacadas>)}
+      {/* <NoticiasCategoriaInicio></NoticiasCategoriaInicio> */}
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiasdeportes && (<NoticiasCategoriaInicio categoria={props.noticiasdeportes} ></NoticiasCategoriaInicio>)}
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiaspolitica && (<NoticiasCategoriaInicio categoria={props.noticiaspolitica} ></NoticiasCategoriaInicio>)}
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiaseconomia && (<NoticiasCategoriaInicio categoria={props.noticiaseconomia} ></NoticiasCategoriaInicio>)}
+
+      {/* {props.noticiasdeportes && (
+      <NoticiasCategoriaInicio
+        categoria={props.noticiasdeportes} */}
+      {/* ></NoticiasCategoriaInicio>
+    )} */}
     </section>
   );
 };

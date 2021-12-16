@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/common/Navigation";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Admin from "./components/pages/admin/Admin";
 import Fotter from "./components/common/Fotter";
 import Login from "./components/pages/Login";
@@ -10,17 +10,23 @@ import AgregarNoticia from "./components/pages/admin/AgregarNoticia";
 import Inicio from "./components/pages/Inicio";
 import { useEffect, useState } from "react";
 import NoticiasAdmin from "./components/pages/admin/NoticiasAdmin";
-import CardsNoticiasAdmin from "./components/pages/admin/CardsNoticiasAdmin";
 import PaginaDetalleNoticias from "./components/pages/PaginaDetalleNoticias";
 import ListaCategoria from "./components/pages/admin/ListaCategoria";
 import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 import Suscribe from "./components/pages/Suscribe";
+import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [noticias, setNoticias] = useState([]);
   const [categorias, setCategorias] = useState([]);
+  const [noticiasdeportes, setnoticiasdeportes] = useState([]);
+  const [noticiaspolitica, setnoticiaspolitica] = useState([]);
+  const [noticiaseconomia, setnoticiaseconomia] = useState([]);
+  const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
+  const [noticiaprincipal, setnoticiaprincipal] = useState([]);
+
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
   const URL_n = process.env.REACT_APP_API_URL_NOTIC;
@@ -30,6 +36,7 @@ function App() {
     consultarAdmin();
     consultaServer();
     consultarCat();
+    noticiaspaginaprincipal();
   }, []);
 
   const consultarUser = async () => {
@@ -74,18 +81,68 @@ function App() {
     }
   };
 
+  const noticiaspaginaprincipal = async () => {
+    try {
+      const respuesta = await fetch(URL_n);
+      if (respuesta.status === 200) {
+        const noticias = await respuesta.json();
+        const articulosdeportes = await noticias
+          .filter((noticia) => noticia.categoria === "deportes")
+          .splice(1);
+        setnoticiasdeportes(articulosdeportes);
+        const articulospolitica = await noticias
+          .filter((noticia) => noticia.categoria === "politica")
+          .splice(1);
+        setnoticiaspolitica(articulospolitica);
+        const articuloseconomia = await noticias
+          .filter((noticia) => noticia.categoria === "economia")
+          .splice(1);
+        setnoticiaseconomia(articuloseconomia);
+        const articulosdestacados = await noticias
+          .filter((noticia) => noticia.destacada === true)
+          .splice(1);
+        setnoticiasdestacadas(articulosdestacados);
+        const articuloprincipal = await noticias.filter(
+          (noticia) => noticia.principal === true
+        );
+
+        setnoticiaprincipal(articuloprincipal);
+      }
+    } catch (error) {
+      console.log(error);
+      console.log("desde consultasServer");
+    }
+  };
+
   return (
-    <BrowserRouter>
+    <Router>
       <Navigation />
+
       <Routes>
-        <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/seccion/actualidad"></Route>
-        <Route exact path="/seccion/espectaculos"></Route>
-        <Route exact path="/seccion/tecnologia"></Route>
-        <Route exact path="/seccion/deportes"></Route>
-        <Route exact path="/seccion/politica"></Route>
-        <Route exact path="/seccion/economia"></Route>
-        <Route exact path="/seccion/salud"></Route>
+        <Route
+          exact
+          path="/"
+          element={
+            <Inicio
+              noticiasdeportes={noticiasdeportes}
+              noticiaspolitica={noticiaspolitica}
+              noticiaseconomia={noticiaseconomia}
+              noticiasdestacadas={noticiasdestacadas}
+              noticiaprincipal={noticiaprincipal}
+              consultaServer={consultaServer}
+            ></Inicio>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/noticias/seccion/:categoria"
+          element={
+            <NoticiasporCategoria
+              noticias={noticias}
+              consultaServer={consultaServer}
+            ></NoticiasporCategoria>
+          }
+        ></Route>
         <Route exact path="/seccion/fotografias"></Route>
         <Route exact path="/servicio/clima"></Route>
         <Route exact path="/servicio/moneda"></Route>
@@ -164,7 +221,7 @@ function App() {
         ></Route>
       </Routes>
       <Fotter />
-    </BrowserRouter>
+    </Router>
   );
 }
 

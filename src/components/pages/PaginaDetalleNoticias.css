@@ -27,16 +27,7 @@ html {
   justify-content: left;
   padding-left: 50px;
 }
-h1 {
-  color: #c10000;
-  text-align: center;
-  margin: 5px 0px;
-}
-h2 {
-  text-align: center;
-  color: #c10000;
-  margin: 20px 0px;
-}
+
 .banner {
   display: grid;
   align-items: center;
@@ -94,7 +85,7 @@ h2 {
   font-size: 12px;
   margin: 20px 0;
 }
-.masnoticias h3 {
+/* .masnoticias {
   padding: 6px;
   cursor: pointer;
   position: relative;
@@ -103,4 +94,4 @@ h2 {
   content: "<> ";
   position: flex;
   left: -12px;
-}
+} */

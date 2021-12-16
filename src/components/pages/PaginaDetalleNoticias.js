@@ -6,7 +6,7 @@ import BannerPublicitario from "./BannerPublicitario";
 const PaginaDetalleNoticias = (props) => {
   
   const {id} =  useParams();
-  console.log(props.noticias)
+
 
      return (
     <div>
