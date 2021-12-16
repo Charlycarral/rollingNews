@@ -6,14 +6,11 @@ import "../pages/Login.css";
 import ItemsCategorias from "./ItemsCategorias";
 
 const Navigation = (props) => {
-<<<<<<< HEAD
 
   const salirLogin = () =>{
     props.setLoginCtr(false);
   }
 
-=======
->>>>>>> e440852822521f9a0bfbb071b6914e77a7494482
   return (
     <>
       <Navbar expand={false} id="Nav">
@@ -89,7 +86,7 @@ const Navigation = (props) => {
            <Link to="/" id="botonIngresar" className="w-auto p-2 colorFuenteGris" onClick={() => {salirLogin()}}>
                Salir </Link>
             </div>)}
-          
+          </div>
         </Container>
       </Navbar>
     </>
