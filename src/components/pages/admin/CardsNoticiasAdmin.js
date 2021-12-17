@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit, faEye } from "@fortawesome/free-solid-svg-icons";
 import "./admin.css";
 
 const CardsNoticiasAdmin = (props) => {
@@ -19,7 +21,8 @@ const CardsNoticiasAdmin = (props) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + props.noticia.id;
+          const URL =
+            process.env.REACT_APP_API_URL_NOTIC + "/" + props.noticia.id;
 
           const respuesta = await fetch(URL, {
             method: "DELETE",
@@ -44,32 +47,46 @@ const CardsNoticiasAdmin = (props) => {
   };
 
   return (
-    <div className="col-sm-12 col-md-4 col-lg-3 my-3 ">
-      <Card>
+    <tr className="text-center align-middle">
+      <td>{props.noticia.id}</td>
+      <td>
         <Link to={`/noticias/${props.noticia.id}`}>
-          <Card.Img variant="top" src={props.noticia.imagen} />
+          <Card.Img
+            variant="top"
+            src={props.noticia.imagen}
+            className="imagenCardsAdmin m-2 efectoCard shadow-sm"
+          />
         </Link>
-        <Card.Body>
-          <Card.Title>
-            <h4>{props.noticia.titulo}</h4>
-          </Card.Title>
-          <Card.Text>
-            <p>{props.noticia.leadnoticia}</p>
-          </Card.Text>
-          <div className=" d-flex justify-content-end align-items-center">
-            <Link
-              to={`/admin/editar/${props.noticia.id}`}
-              className="mx-1 btn btn-editar"
-            >
-              Editar
-            </Link>
-            <Button variant="danger" onClick={() => eliminarNoticia()}>
-              Borrar
-            </Button>
-          </div>
-        </Card.Body>
-      </Card>
-    </div>
+      </td>
+      <td className="text-uppercase align-middle"><Link to={`/noticias/${props.noticia.id}`} className="text-decoration-none text-black">{props.noticia.titulo}
+            
+          </Link></td>
+      <td className="text-uppercase">
+        <div className="d-flex align-items-center justify-content-center">
+        <Link to={`/noticias/seccion/${props.noticia.categoria}`} className="text-decoration-none text-black fw-bold">
+        {props.noticia.categoria}
+          </Link>
+        
+        </div>
+      </td>
+
+      <td>
+        <div className="d-flex align-items-center justify-content-center">
+          <Link to={`/noticias/${props.noticia.id}`} className="">
+            <FontAwesomeIcon icon={faEye} className="fs-1 m-2 text-gris" />
+          </Link>
+          <Link to={`/admin/editar/${props.noticia.id}`} className="">
+            <FontAwesomeIcon icon={faEdit} className="fs-1 m-2 text-primary" />
+          </Link>
+          <Button variant="btn btn-link" onClick={() => eliminarNoticia()}>
+            <FontAwesomeIcon
+              icon={faTrash}
+              className="fs-1 text-rojo"
+            ></FontAwesomeIcon>
+          </Button>
+        </div>
+      </td>
+    </tr>
   );
 };
 

@@ -87,17 +87,17 @@ const EditarNoticia = (props) => {
   const handleDestacada = () => {
     if (destacada === false) {
       setDestacada(true);
-      }else {
+    } else {
       setDestacada(false);
-     }
-  }
+    }
+  };
   const handlePrincipal = () => {
     if (destacada === false) {
       setPrincipal(true);
-      }else {
+    } else {
       setPrincipal(false);
-     }
-  }
+    }
+  };
 
   return (
     <div>
@@ -114,10 +114,13 @@ const EditarNoticia = (props) => {
           </BreadcrumbItem>
         </Breadcrumb>
       </section>
-      <h1 className="mt-3 mb-5 pt-4 text-center">Editar Noticias</h1>
-      <section className="container">
-        <Form onSubmit={handleSubmit}>
-          <div className="form-top">
+      <h1 className="text-center mt-5 mb-2 fuenteTitulosAdmin fw-bold">
+        Editar Noticias
+      </h1>
+      <hr className="mb-5 text-rojo" />
+      <section className="container fluid">
+        <Form onSubmit={handleSubmit} className="responsive">
+          <div className="form-top d-flex justify-content-between">
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Autor</Form.Label>
               <Form.Control
@@ -126,6 +129,7 @@ const EditarNoticia = (props) => {
                 required
                 defaultValue={noticia.autor}
                 ref={autorNoticiaRef}
+                className="imputAutor"
               />
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
@@ -136,31 +140,27 @@ const EditarNoticia = (props) => {
                 required
                 defaultValue={noticia.fechanoticia}
                 ref={fechanoticiaRef}
-                
+                className="imputFecha"
               />
-                 </Form.Group>
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="Noticia Destacada"
-                  onChange={(e) => handleDestacada()}
-                  defaultChecked={noticia.destacada && noticia.destacada === true}
-                  
-                  
-
-                />
             </Form.Group>
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="Noticia Principal"
-                  onChange={(e) => handlePrincipal()}
-                  defaultChecked={noticia.destacada && noticia.destacada === true}
-                  
-                  
-
-                />
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Check
+                type="checkbox"
+                label="Noticia Destacada"
+                onChange={(e) => handleDestacada()}
+                defaultChecked={noticia.destacada && noticia.destacada === true}
+              />
             </Form.Group>
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Check
+                type="checkbox"
+                label="Noticia Principal"
+                onChange={(e) => handlePrincipal()}
+                defaultChecked={noticia.destacada && noticia.destacada === true}
+              />
+            </Form.Group>
+          </div>
+          <div className="form-top">
             <Form.Group className="mb-3 inputgrande">
               <Form.Label>Titulo</Form.Label>
               <Form.Control
@@ -169,21 +169,10 @@ const EditarNoticia = (props) => {
                 required
                 defaultValue={noticia.titulo}
                 ref={tituloNoticiaRef}
-                
+                className="imputTitulo"
               />
             </Form.Group>
-          </div>
-          <div className="form-top">
-            <Form.Group className="mb-3 inputgrande">
-              <Form.Label>Url Imagen</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder=""
-                required
-                defaultValue={noticia.imagen}
-                ref={imagenNoticiaRef}
-              />
-            </Form.Group>
+            
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Categoria</Form.Label>
               <Form.Select
@@ -203,6 +192,16 @@ const EditarNoticia = (props) => {
               </Form.Select>
             </Form.Group>
           </div>
+          <Form.Group className="mb-3 inputgrande">
+              <Form.Label>Url Imagen</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder=""
+                required
+                defaultValue={noticia.imagen}
+                ref={imagenNoticiaRef}
+              />
+            </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control

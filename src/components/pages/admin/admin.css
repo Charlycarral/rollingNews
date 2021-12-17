@@ -1,65 +1,112 @@
-.contenedor{
-    border:red 1px solid;
-    padding: 30px 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.caja{
-    font-size: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(128, 128, 128, 0.411);
-    width: 200px;
-    height: 100px;
-    border-radius: 10px;
-    margin: 25px 0px;
-}
-.form-top{
-    display: flex;
-    justify-content: space-between;
-}
-.inputchico{
-    width: 32%;
-}
-.btn-borrar{
-    background: #c00000;
-    border: none;
-    width:80px;
-    height: 32px;
-    color: white;
-    border-radius: 5px;
-    
-}
-.btn-editar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background: #000;
-    border: none;
-    width:80px;
-    height: 32px;
-    color: white;
-    border-radius: 5px;
-    
-}
-.btn-editar:hover{
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&display=swap");
 
-    color: white;
+.contenedor {
+  border: red 1px solid;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.inputgrande{
-    width: 65%;
+
+.text-gris {
+  color: rgb(71, 69, 69);
 }
-.btn-publish{
-    width: 60%;
-    height: 38px;
-    margin: 25px 0px;
-    background: #c00000;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 17px;
+
+.text-rojo {
+  color: #d81d26;
+}
+
+.bordetabla {
+  border-bottom: #d81d26 3px solid;
+}
+
+.bordetablacompleto {
+  border: #d81d26 3px solid;
+}
+.fuenteTitulosAdmin {
+  font-family: "Raleway", sans-serif;
+}
+
+.imagenCardsAdmin {
+  width: 100px;
+  height: 80px;
+  border-radius: 15px;
+}
+
+.efectoCard {
+  opacity: 85%;
+
+}
+.efectoCard:hover {
+  opacity: 95%;
+}
+
+.caja {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(128, 128, 128, 0.411);
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  margin: 25px 0px;
+}
+.form-top {
+  display: flex;
+  justify-content: space-between;
+}
+.inputchico {
+  width: 32%;
+}
+.btn-borrar {
+  background: #c00000;
+  border: none;
+  width: 80px;
+  height: 32px;
+  color: white;
+  border-radius: 5px;
+}
+.btn-editar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #000;
+  border: none;
+  width: 80px;
+  height: 32px;
+  color: white;
+  border-radius: 5px;
+}
+.btn-editar:hover {
+  color: white;
+}
+.inputgrande {
+  width: 100%;
+}
+
+.imputAutor{
+    width: 70%;
+}
+.imputFecha{
+    width: 62%;
+}
+
+.imputTitulo{
+    width: 94%;
+
+
+}
+
+.btn-publish {
+  width: 60%;
+  height: 38px;
+  margin: 25px 0px;
+  background: #c00000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
 }
