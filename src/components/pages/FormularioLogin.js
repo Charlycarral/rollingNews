@@ -8,6 +8,7 @@ const FormularioLogin = (props) => {
   const [emailUsuario, setEmailUsuario] = useState([]);
   const [contrasenaUsuario, setContrasenaUsuario] = useState([]);
   const navegacion = useNavigate();
+  const bcrypt = require('bcryptjs');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,13 +22,15 @@ const FormularioLogin = (props) => {
         let user = props.usuarios.find((usuario) => {return usuario.email === nuevoUsuario.email});
         let admin = props.admins.find((usuario) => {return usuario.email === nuevoUsuario.email});
         if (user !== undefined){
-            if (user.contrasena === nuevoUsuario.contrasena){
+            const validoUser = await bcrypt.compare(nuevoUsuario.contrasena, user.contrasena);
+            if (validoUser){
               props.setLoginCtr(true);
               navegacion('/admin');
               
             }
         }else if (admin !== undefined){
-          if (admin.contrasena === nuevoUsuario.contrasena){
+          const validoAdmin = await bcrypt.compare(nuevoUsuario.contrasena, admin.contrasena);
+          if (validoAdmin){
             props.setLoginCtr(true);
              navegacion('/admin');  
           }

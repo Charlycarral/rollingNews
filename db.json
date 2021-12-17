@@ -41,6 +41,12 @@
       "nombre": "carlos",
       "contrasena": "1234",
       "id": 7
+    },
+    {
+      "email": "ramiro_isa@gmail.com",
+      "nombre": "Ramiro Isa Jara",
+      "contrasena": "$2a$10$sdNKAwu3N22ZNmb.fbA0WuIP0tB1XENvGwxL91isO.AS2FyKa0DEW",
+      "id": 8
     }
   ],
   "admins": [

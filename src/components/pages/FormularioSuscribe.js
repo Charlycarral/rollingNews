@@ -11,19 +11,21 @@ const FormularioSuscribe = (props) => {
     const [contrasenaUsuario_, setContrasenaUsuario_] = useState([]);
     const URL = process.env.REACT_APP_API_URL_USER;
     const navegacion = useNavigate();
+    const bcrypt = require('bcryptjs');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validarCorreo(emailUsuario) && campoRequerido(nombreUsuario) && campoRequerido(contrasenaUsuario) 
             && campoRequerido(contrasenaUsuario_)){
                 if (contrasenaUsuario === contrasenaUsuario_){
+                    // encriptar contrasena
+                    const contrasenaEncriptada = await bcrypt.hash(contrasenaUsuario, 10);
                     // crear objeto Usuario
                     const nuevoUsuario = {
                         "email": emailUsuario,
                         "nombre": nombreUsuario,
-                        "contrasena": contrasenaUsuario
+                        "contrasena": contrasenaEncriptada
                     };
-                    
                     let existe = props.usuarios.find((usuario) => {return usuario.email === nuevoUsuario.email});
                     console.log(existe)
                     if (existe === undefined) {
