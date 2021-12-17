@@ -117,7 +117,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation loginCtr={loginCtr} setLoginCtr={setLoginCtr}/>
+      <Navigation loginCtr={loginCtr} setLoginCtr={setLoginCtr} categorias={categorias}/>
 
       <Routes>
         <Route
