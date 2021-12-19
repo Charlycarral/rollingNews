@@ -25,8 +25,10 @@ function App() {
   const [noticiasdeportes, setnoticiasdeportes] = useState([]);
   const [noticiaspolitica, setnoticiaspolitica] = useState([]);
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
+  const [noticiasespectaculos, setnoticiasespectaculos] = useState([]);
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
+  const [loginCtr, setLoginCtr] = useState(false);
 
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
@@ -89,23 +91,27 @@ function App() {
         const noticias = await respuesta.json();
         const articulosdeportes = await noticias
           .filter((noticia) => noticia.categoria === "deportes")
-          .splice(1);
+          .splice(-3);
         setnoticiasdeportes(articulosdeportes);
         const articulospolitica = await noticias
           .filter((noticia) => noticia.categoria === "politica")
-          .splice(1);
+          .splice(-3);
         setnoticiaspolitica(articulospolitica);
         const articuloseconomia = await noticias
           .filter((noticia) => noticia.categoria === "economia")
-          .splice(1);
+          .splice(-3);
         setnoticiaseconomia(articuloseconomia);
+        const articuloespectaculos = await noticias
+          .filter((noticia) => noticia.categoria === "espectaculos")
+          .splice(-3);
+          setnoticiasespectaculos(articuloespectaculos);
         const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
           .splice(1);
         setnoticiasdestacadas(articulosdestacados);
         const articuloprincipal = await noticias.filter(
           (noticia) => noticia.principal === true
-        );
+        ).splice(-1);
 
         setnoticiaprincipal(articuloprincipal);
       }
@@ -117,7 +123,8 @@ function App() {
 
   return (
     <Router>
-      <Navigation categorias={categorias} />
+      <Navigation loginCtr={loginCtr} setLoginCtr={setLoginCtr} categorias={categorias}/>
+
       <Routes>
         <Route
           exact
@@ -127,6 +134,7 @@ function App() {
               noticiasdeportes={noticiasdeportes}
               noticiaspolitica={noticiaspolitica}
               noticiaseconomia={noticiaseconomia}
+              noticiasespectaculos={noticiasespectaculos}
               noticiasdestacadas={noticiasdestacadas}
               noticiaprincipal={noticiaprincipal}
               consultaServer={consultaServer}
@@ -152,7 +160,7 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login admins={admins} usuarios={usuarios}></Login>}
+          element={<Login loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
         ></Route>
         <Route exact path="/admin" element={<Admin></Admin>}></Route>
         <Route

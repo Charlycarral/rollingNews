@@ -13,19 +13,15 @@ const Inicio = (props) => {
       <ConsultarApis></ConsultarApis>
       {props.noticiaprincipal && (<NoticiaPrincipal categoria={props.noticiaprincipal} ></NoticiaPrincipal>)}
       {props.noticiasdestacadas && (<NoticiasDestacadas categoria={props.noticiasdestacadas} ></NoticiasDestacadas>)}
-      {/* <NoticiasCategoriaInicio></NoticiasCategoriaInicio> */}
       <BannerPublicitario></BannerPublicitario>
       {props.noticiasdeportes && (<NoticiasCategoriaInicio categoria={props.noticiasdeportes} ></NoticiasCategoriaInicio>)}
       <BannerPublicitario></BannerPublicitario>
       {props.noticiaspolitica && (<NoticiasCategoriaInicio categoria={props.noticiaspolitica} ></NoticiasCategoriaInicio>)}
       <BannerPublicitario></BannerPublicitario>
       {props.noticiaseconomia && (<NoticiasCategoriaInicio categoria={props.noticiaseconomia} ></NoticiasCategoriaInicio>)}
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiasespectaculos && (<NoticiasCategoriaInicio categoria={props.noticiasespectaculos} ></NoticiasCategoriaInicio>)}
 
-      {/* {props.noticiasdeportes && (
-      <NoticiasCategoriaInicio
-        categoria={props.noticiasdeportes} */}
-      {/* ></NoticiasCategoriaInicio>
-    )} */}
     </section>
   );
 };

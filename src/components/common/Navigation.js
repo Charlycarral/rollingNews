@@ -6,6 +6,11 @@ import "../pages/Login.css";
 import ItemsCategorias from "./ItemsCategorias";
 
 const Navigation = (props) => {
+
+  const salirLogin = () =>{
+    props.setLoginCtr(false);
+  }
+
   return (
     <>
       <Navbar expand={false} id="Nav">
@@ -68,21 +73,19 @@ const Navigation = (props) => {
             <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
           </Link>
           <div className="d-flex justify-content-center">
-            <div>
-              <Link to="/suscribe" id="botonSub" className="w-auto p-2">
-                Suscribite
-              </Link>
+            <div >
+            <Link to="/suscribe" id="botonSub" className="w-auto p-2" >
+              Suscribite
+            </Link>
             </div>
 
-            <div className="colorFuenteGris">
-              <Link
-                to="/login"
-                id="botonIngresar"
-                className="w-auto p-2 colorFuenteGris"
-              >
-                Ingresar
-              </Link>
-            </div>
+            { props.loginCtr === false ? (<div className="colorFuenteGris" >
+           <Link to="/login" id="botonIngresar" className="w-auto p-2 colorFuenteGris">
+               Ingresar </Link>
+            </div>) : (<div className="colorFuenteGris" >
+           <Link to="/" id="botonIngresar" className="w-auto p-2 colorFuenteGris" onClick={() => {salirLogin()}}>
+               Salir </Link>
+            </div>)}
           </div>
         </Container>
       </Navbar>
