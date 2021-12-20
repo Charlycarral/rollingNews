@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faEye } from "@fortawesome/free-solid-svg-icons";
 import "./admin.css";
 
+
 const CardsNoticiasAdmin = (props) => {
   const eliminarNoticia = () => {
     console.log(props.noticia.id);
