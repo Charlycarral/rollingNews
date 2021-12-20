@@ -45,16 +45,20 @@ const ItemListaCategoria = (props) => {
 
   return (
     <ListGroup.Item className="d-flex justify-content-between align-items-center w-50">
-      <Link to={`/noticias/seccion/${props.categoria.categoria.toLowerCase()}`} className="btn ">
-      <span className="mx-3 fs-4">
-        {props.categoria.categoria.toUpperCase()}
-      </span>
-          
-        </Link>
-      
-      
+      <Link
+        to={`/noticias/seccion/${props.categoria.categoria.toLowerCase()}`}
+        className="btn "
+      >
+        <span className="mx-3 fs-4">
+          {props.categoria.categoria.toUpperCase()}
+        </span>
+      </Link>
+
       <div>
-        <Link to={`/noticias/seccion/${props.categoria.categoria.toLowerCase()}`} className="btn ">
+        <Link
+          to={`/noticias/seccion/${props.categoria.categoria.toLowerCase()}`}
+          className="btn "
+        >
           <FontAwesomeIcon icon={faEye} className="fs-1 m-2 text-gris" />
         </Link>
         <Link

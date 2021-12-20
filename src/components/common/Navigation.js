@@ -42,13 +42,13 @@ const Navigation = (props) => {
                       <hr />
                       <section className="d-flex flex-column">
                         <Link
-                          to=""
+                          to="/institucional/contacto"
                           className="text-decoration-none text-white my-1"
                         >
                           Contacto
                         </Link>
                         <Link
-                          to=""
+                          to="/institucional/acerca-de"
                           className="text-decoration-none text-white my-1"
                         >
                           Acerca de nosotros

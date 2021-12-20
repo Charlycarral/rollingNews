@@ -18,7 +18,7 @@
 }
 
 .bordetabla {
-  border-bottom: F30016 3px solid;
+  border-bottom: #F30016 3px solid;
 }
 
 .bordetablacompleto {
@@ -45,14 +45,17 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   width: 100px;
   height: 80px;
   border-radius: 15px;
+  
 }
 
 .efectoCard {
   opacity: 85%;
+  filter: grayscale(55%);
 
 }
 .efectoCard:hover {
   opacity: 95%;
+  filter: grayscale(0%);
 }
 
 .w-imagen{

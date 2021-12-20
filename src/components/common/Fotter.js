@@ -25,10 +25,10 @@ const Fotter = (props) => {
               <h3 className="text-white">Institucional</h3>
               <hr />
               <section className="d-flex flex-column">
-                <Link to="" className="text-decoration-none text-white my-1">
+                <Link to="/institucional/contacto" className="text-decoration-none text-white my-1">
                   Contacto
                 </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
+                <Link to="/institucional/acerca-de" className="text-decoration-none text-white my-1">
                   Acerca de nosotros
                 </Link>
                 <Link to="" className="text-decoration-none text-white my-1">

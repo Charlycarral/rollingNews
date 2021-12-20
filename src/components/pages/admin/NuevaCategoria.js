@@ -43,10 +43,10 @@ const NuevaCategoria = (props) => {
   };
   return (
     <div className="m-5 p-5">
-      <h1 className="text-center mt-5 mb-2 fuenteTitulosAdmin fw-bold">
+      <h1 className="text-center mt-3 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
         Alta de Categorías
       </h1>
-      <hr className="mb-5 text-rojo" />
+     
       <Form className="container w-25" onSubmit={handleSubmit}>
         <Form.Group className="mb-3 fs-4">
           <Form.Label className="fs-4">Nombre de Categoría</Form.Label>

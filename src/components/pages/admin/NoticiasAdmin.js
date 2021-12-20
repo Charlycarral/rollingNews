@@ -4,9 +4,10 @@ import CardsNoticiasAdmin from "./CardsNoticiasAdmin";
 import { Link } from "react-router-dom";
 import "./admin.css";
 import Paginacion from "./Paginacion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const NoticiasAdmin = (props) => {
-
   // PAGINACION
   const [paginaActual, setPaginaActual] = useState(1);
   const [noticiasPorPagina] = useState(25);
@@ -35,10 +36,10 @@ const NoticiasAdmin = (props) => {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <h1 className="text-center mt-5 mb-2 fuenteTitulosAdmin fw-bold">
+      <h1 className="text-center mt-5 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
         Administrador de Noticias
       </h1>
-      <hr className="mb-5 text-rojo" />
+
       <Table
         bordered
         hover
@@ -51,7 +52,15 @@ const NoticiasAdmin = (props) => {
             <th className="text-center">Imagen</th>
             <th className="text-center">Titulo</th>
             <th className="text-center">Categoría</th>
-            <th className="text-center">Botones</th>
+            <th className="text-center pe-2">
+              Acciones
+              <Link to="/admin/agregar" className="text-decoration-none">
+                <FontAwesomeIcon
+                  icon={faPlus}
+                  className="fs-1 ms-4 text-primary"
+                />
+              </Link>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -64,13 +73,14 @@ const NoticiasAdmin = (props) => {
           ))}
         </tbody>
       </Table>
-
-      <Paginacion className="d-flex justify-content-center align-items-center"
-        noticiasPorPagina={noticiasPorPagina}
-        totalNoticias={props.noticias.length}
-        paginacion={paginacion}
-        paginaActual={paginaActual}
-      ></Paginacion>
+      <div className="d-flex justify-content-center align-items-center">
+        <Paginacion
+          noticiasPorPagina={noticiasPorPagina}
+          totalNoticias={props.noticias.length}
+          paginacion={paginacion}
+          paginaActual={paginaActual}
+        ></Paginacion>
+      </div>
     </section>
   );
 };

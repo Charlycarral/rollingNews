@@ -16,6 +16,8 @@ import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 import Suscribe from "./components/pages/Suscribe";
 import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
 import EditarCategoria from "./components/pages/admin/EditarCategoria";
+import Contacto from "./components/pages/Contacto";
+import AboutUs from "./components/pages/AboutUs";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -34,7 +36,7 @@ function App() {
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
   const URL_n = process.env.REACT_APP_API_URL_NOTIC;
   const URL_c = process.env.REACT_APP_API_URL_CAT;
-  
+
   useEffect(() => {
     consultarUser();
     consultarAdmin();
@@ -105,14 +107,14 @@ function App() {
         const articuloespectaculos = await noticias
           .filter((noticia) => noticia.categoria === "espectaculos")
           .splice(-3);
-          setnoticiasespectaculos(articuloespectaculos);
+        setnoticiasespectaculos(articuloespectaculos);
         const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
           .splice(1);
         setnoticiasdestacadas(articulosdestacados);
-        const articuloprincipal = await noticias.filter(
-          (noticia) => noticia.principal === true
-        ).splice(-1);
+        const articuloprincipal = await noticias
+          .filter((noticia) => noticia.principal === true)
+          .splice(-1);
 
         setnoticiaprincipal(articuloprincipal);
       }
@@ -124,7 +126,11 @@ function App() {
 
   return (
     <Router>
-      <Navigation loginCtr={loginCtr} setLoginCtr={setLoginCtr} categorias={categorias}/>
+      <Navigation
+        loginCtr={loginCtr}
+        setLoginCtr={setLoginCtr}
+        categorias={categorias}
+      />
 
       <Routes>
         <Route
@@ -153,13 +159,28 @@ function App() {
           }
         ></Route>
         <Route exact path="/seccion/fotografias"></Route>
-        <Route exact path="/institucional/contacto"></Route>
-        <Route exact path="/institucional/acerca-de"></Route>
+        <Route
+          exact
+          path="/institucional/contacto"
+          element={<Contacto></Contacto>}
+        ></Route>
+        <Route
+          exact
+          path="/institucional/acerca-de"
+          element={<AboutUs></AboutUs>}
+        ></Route>
         <Route exact path="/institucional/publicidad"></Route>
         <Route
           exact
           path="/login"
-          element={<Login loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
+          element={
+            <Login
+              loginCtr={loginCtr}
+              setLoginCtr={setLoginCtr}
+              admins={admins}
+              usuarios={usuarios}
+            ></Login>
+          }
         ></Route>
         <Route exact path="/admin" element={<Admin></Admin>}></Route>
         <Route
@@ -203,7 +224,10 @@ function App() {
           exact
           path="/admin/agregar"
           element={
-            <AgregarNoticia consultaServer={consultaServer} categorias={categorias}></AgregarNoticia>
+            <AgregarNoticia
+              consultaServer={consultaServer}
+              categorias={categorias}
+            ></AgregarNoticia>
           }
         ></Route>
         <Route
@@ -237,7 +261,7 @@ function App() {
           }
         ></Route>
       </Routes>
-      <Fotter categorias={categorias}/>
+      <Fotter categorias={categorias} />
     </Router>
   );
 }
