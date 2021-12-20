@@ -1,11 +1,21 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Breadcrumb, BreadcrumbItem, Table } from "react-bootstrap";
 import CardsNoticiasAdmin from "./CardsNoticiasAdmin";
 import { Link } from "react-router-dom";
-
 import "./admin.css";
 
 const NoticiasAdmin = (props) => {
+
+const [noticias, setnoticias] = useState([]);
+const [paginaActual, setPaginaActual] = useState(1);
+const [noticiasPorPagina, setNoticiasPorPagina] = useState(15);
+
+props.consultaServer();
+
+const indexUltimaNoticia = paginaActual * noticiasPorPagina;
+const indexPrimerNoticia = indexUltimaNoticia - noticiasPorPagina;
+const currentPost = noticias.slice(indexPrimerNoticia, indexUltimaNoticia);
+
   return (
     <section className="container">
       <Breadcrumb className="mt-4">
@@ -25,7 +35,7 @@ const NoticiasAdmin = (props) => {
       </h1>
       <hr className="mb-5 text-rojo" />
       <Table bordered hover responsive className="shadow-lg p-3 mb-5 bg-body rounded">
-        <thead className="bordetabla text-center">
+        <thead className="bordetabla text-center bordetablacompleto">
           <tr className="text-rojo fs-5">
             <th className="text-center">#</th>
             <th className="text-center">Imagen</th>

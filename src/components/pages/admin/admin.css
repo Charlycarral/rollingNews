@@ -14,16 +14,29 @@
 }
 
 .text-rojo {
-  color: #d81d26;
+  color: #F30016;
 }
 
 .bordetabla {
-  border-bottom: #d81d26 3px solid;
+  border-bottom: F30016 3px solid;
 }
 
 .bordetablacompleto {
-  border: #d81d26 3px solid;
+border-top:rgba(0, 0, 0, 0.39)  1px solid;
+border-left:rgba(0, 0, 0, 0.39)  1px solid;
+border-right: rgba(0, 0, 0, 0.39) 1px solid;
 }
+.bordetablacompletodos {
+border:rgba(0, 0, 0, 0.39)  1px solid;
+}
+
+.htitulocategoria{
+  height: 150px;
+  width: 100%;
+  border-bottom: #F30016 4px solid;
+
+}
+
 .fuenteTitulosAdmin {
   font-family: "Raleway", sans-serif;
 }
@@ -40,6 +53,10 @@
 }
 .efectoCard:hover {
   opacity: 95%;
+}
+
+.w-imagen{
+  width: 300px;
 }
 
 .caja {
@@ -61,7 +78,7 @@
   width: 32%;
 }
 .btn-borrar {
-  background: #c00000;
+  background: #F30016;
   border: none;
   width: 80px;
   height: 32px;

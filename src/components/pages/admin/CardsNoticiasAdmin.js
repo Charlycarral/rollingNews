@@ -47,7 +47,7 @@ const CardsNoticiasAdmin = (props) => {
   };
 
   return (
-    <tr className="text-center align-middle">
+    <tr className="text-center align-middle bordetablacompleto">
       <td>{props.noticia.id}</td>
       <td>
         <Link to={`/noticias/${props.noticia.id}`}>
@@ -58,15 +58,22 @@ const CardsNoticiasAdmin = (props) => {
           />
         </Link>
       </td>
-      <td className="text-uppercase align-middle"><Link to={`/noticias/${props.noticia.id}`} className="text-decoration-none text-black">{props.noticia.titulo}
-            
-          </Link></td>
+      <td className="text-uppercase align-middle">
+        <Link
+          to={`/noticias/${props.noticia.id}`}
+          className="text-decoration-none text-black"
+        >
+          {props.noticia.titulo}
+        </Link>
+      </td>
       <td className="text-uppercase">
         <div className="d-flex align-items-center justify-content-center">
-        <Link to={`/noticias/seccion/${props.noticia.categoria}`} className="text-decoration-none text-black fw-bold">
-        {props.noticia.categoria}
+          <Link
+            to={`/noticias/seccion/${props.noticia.categoria}`}
+            className="text-decoration-none text-black fw-bold"
+          >
+            {props.noticia.categoria}
           </Link>
-        
         </div>
       </td>
 

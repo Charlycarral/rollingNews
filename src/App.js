@@ -34,6 +34,7 @@ function App() {
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
   const URL_n = process.env.REACT_APP_API_URL_NOTIC;
   const URL_c = process.env.REACT_APP_API_URL_CAT;
+  
   useEffect(() => {
     consultarUser();
     consultarAdmin();
@@ -152,8 +153,6 @@ function App() {
           }
         ></Route>
         <Route exact path="/seccion/fotografias"></Route>
-        <Route exact path="/servicio/clima"></Route>
-        <Route exact path="/servicio/moneda"></Route>
         <Route exact path="/institucional/contacto"></Route>
         <Route exact path="/institucional/acerca-de"></Route>
         <Route exact path="/institucional/publicidad"></Route>
