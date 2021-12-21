@@ -386,5 +386,12 @@
       "categoria": "Deportes",
       "id": 11
     }
+  ],
+  "mensajes": [
+    {
+      "nombre": "Aimé",
+      "email": "maimesaracho@gmail.com",
+      "mensaje": "Está muy buena la página! Continúen así"
+    }
   ]
 }
