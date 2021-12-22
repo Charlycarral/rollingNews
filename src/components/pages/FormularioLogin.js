@@ -25,14 +25,14 @@ const FormularioLogin = (props) => {
             const validoUser = await bcrypt.compare(nuevoUsuario.contrasena, user.contrasena);
             if (validoUser){
               props.setLoginCtr(true);
-              navegacion('/admin');
-              
+              navegacion('/');
             }
         }else if (admin !== undefined){
           const validoAdmin = await bcrypt.compare(nuevoUsuario.contrasena, admin.contrasena);
           if (validoAdmin){
             props.setLoginCtr(true);
-             navegacion('/admin');  
+            props.setLoginCtrAd(true);
+            navegacion('/admin');  
           }
         }else{
           Swal.fire({

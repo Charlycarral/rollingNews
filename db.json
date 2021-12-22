@@ -5,20 +5,26 @@
       "nombre": "Ramiro Isa Jara",
       "contrasena": "$2a$10$sdNKAwu3N22ZNmb.fbA0WuIP0tB1XENvGwxL91isO.AS2FyKa0DEW",
       "id": 1
+    },
+    {
+      "email": "ale@gmail.com",
+      "nombre": "Alejandro",
+      "contrasena": "$2a$10$jOYxaQHdD1ORg6h6cEuv.ux6pPxznFeMxJKRLQyzLEgEZj4/ySS2m",
+      "id": 2
+    },
+    {
+      "email": "silv@html.com",
+      "nombre": "Silvia",
+      "contrasena": "$2a$10$.poXHiBmrIr3N1A22owpiOMZbTE1SQdTPv8CsVOh8mUBk0o9PLhE.",
+      "id": 3
     }
   ],
   "admins": [
     {
-      "id": 1,
-      "email": "ramiroI@gmail.com",
-      "nombre": "Ramiro Isa Jara",
-      "contrasena": "1234"
-    },
-    {
-      "id": 2,
-      "email": "carlosC@gmail.com",
+      "email": "carlos@gmail.com",
       "nombre": "Carlos Carral",
-      "contrasena": "12345"
+      "contrasena": "$2a$10$RghR7m1TbNROA8BCzWtU6.3A8aVfnyeK5PKRCNIh6NxPosaEr6CNu",
+      "id": 1
     }
   ],
   "noticias": [

@@ -15,6 +15,7 @@ import ListaCategoria from "./components/pages/admin/ListaCategoria";
 import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 import Suscribe from "./components/pages/Suscribe";
 import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
+import Error404 from "./components/pages/Error404";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -26,7 +27,8 @@ function App() {
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
-  const [loginCtr, setLoginCtr] = useState(false);
+  const [loginCtr, setLoginCtr] = useState();
+  const [loginCtrAd, setLoginCtrAd] = useState();
 
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
@@ -38,6 +40,7 @@ function App() {
     consultaServer();
     consultarCat();
     noticiaspaginaprincipal();
+    consultarInicio();
   }, []);
 
   const consultarUser = async () => {
@@ -59,6 +62,20 @@ function App() {
       console.log(err);
     }
   };
+
+  const consultarInicio = ()=>{
+    if (loginCtr === true){
+      setLoginCtr(true);
+    }else{
+      setLoginCtr(false);
+    }
+    if (loginCtrAd === true){
+      setLoginCtrAd(true);
+    }else{
+      setLoginCtrAd(false);
+    }
+  }
+
   const consultarCat = async () => {
     try {
       const respuesta = await fetch(URL_c);
@@ -117,8 +134,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation loginCtr={loginCtr} setLoginCtr={setLoginCtr} categorias={categorias}/>
-
+      <Navigation loginCtrAd={loginCtrAd} setLoginCtrAd={setLoginCtrAd} loginCtr={loginCtr} setLoginCtr={setLoginCtr} categorias={categorias}/>
       <Routes>
         <Route
           exact
@@ -153,9 +169,14 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
+          element={<Login loginCtrAd={loginCtrAd} setLoginCtrAd={setLoginCtrAd} loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
         ></Route>
-        <Route exact path="/admin" element={<Admin></Admin>}></Route>
+        
+     
+        
+        {loginCtrAd === true ? (<Route exact path="/admin" element={<Admin></Admin>}></Route>)
+          : (<Route exact path="/" element={<Error404></Error404>}></Route>)}
+        
         <Route
           exact
           path="/suscribe"
@@ -163,6 +184,8 @@ function App() {
             <Suscribe
               consultarUser={consultarUser}
               usuarios={usuarios}
+              admins = {admins}
+              consultarAdmin = {consultarAdmin}
             ></Suscribe>
           }
         ></Route>

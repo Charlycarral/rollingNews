@@ -19,7 +19,7 @@ const Suscribe = (props) => {
         </div>
 
         <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end me-lg-1 ms-5">
-          <FormularioSuscribe consultarUser={props.consultarUser} usuarios={props.usuarios}></FormularioSuscribe>
+          <FormularioSuscribe consultarUser={props.consultarUser} consultarAdmin={props.consultarAdmin} admins={props.admins} usuarios={props.usuarios}></FormularioSuscribe>
         </div>
       </section>
     </section>

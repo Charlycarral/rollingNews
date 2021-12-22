@@ -9,6 +9,7 @@ const Navigation = (props) => {
 
   const salirLogin = () =>{
     props.setLoginCtr(false);
+    props.setLoginCtrAd(false);
   }
 
   return (
