@@ -54,26 +54,12 @@ const EditarCategoria = (props) => {
     }
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  return (
+return (
     <div>
       <div className="m-5 p-5">
-        <h1 className="my-4 pt-2">Alta de Categorías</h1>
-        <hr />
+      <h1 className="text-center mt-3 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
+        Editar Categoría
+      </h1>
         <Form className="container w-25" onSubmit={handleSubmit}>
           <Form.Group className="mb-3 fs-4">
             <Form.Label className="fs-4">Nombre de Categoría</Form.Label>
@@ -86,7 +72,7 @@ const EditarCategoria = (props) => {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Agregar
+            Editar
           </Button>
         </Form>
       </div>

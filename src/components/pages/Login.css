@@ -48,6 +48,10 @@
 .bgNavbar{
 background: #4D4D4D;
 }
+.bgNavbartras{
+  background: #4d4d4d00;
+  border: 0px;
+}
 
 .wboton{
 margin-left: 50px; 

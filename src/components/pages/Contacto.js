@@ -51,10 +51,10 @@ const Contacto = () => {
     } else {
       setErrorContact(true);
     }
-    //esconder resultado
+    /*//esconder resultado
     setTimeout(() => {
       setResult(false);
-    }, 5000);
+    }, 5000);*/
   };
 
   return (

@@ -9,7 +9,7 @@ const Fotter = (props) => {
         <div className="container my-5 text-center">
           <section className="flex-row pe-3 row mt-5  justify-content-center">
             <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-              <h3 className="text-white">Secciones</h3>
+              <h3 className="text-white text-uppercase">Secciones</h3>
               <hr />
               <section className="d-flex flex-column ">
                 {props.categorias.map((categoria) => (
@@ -22,16 +22,16 @@ const Fotter = (props) => {
             </div>
 
             <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-              <h3 className="text-white">Institucional</h3>
+              <h3 className="text-white text-uppercase">Institucional</h3>
               <hr />
               <section className="d-flex flex-column">
-                <Link to="/institucional/contacto" className="text-decoration-none text-white my-1">
+                <Link to="/institucional/contacto" className="text-decoration-none text-white my-1 text-uppercase">
                   Contacto
                 </Link>
-                <Link to="/institucional/acerca-de" className="text-decoration-none text-white my-1">
+                <Link to="/institucional/acerca-de" className="text-decoration-none text-white my-1 text-uppercase">
                   Acerca de nosotros
                 </Link>
-                <Link to="" className="text-decoration-none text-white my-1">
+                <Link to="" className="text-decoration-none text-white my-1 text-uppercase">
                   Publicidad
                 </Link>
               </section>
