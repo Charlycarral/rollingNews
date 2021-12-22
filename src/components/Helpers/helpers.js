@@ -24,7 +24,7 @@ function validarImagen(input) {
   }
 }
 
-const validarNombre = (input) => {
+const validarNombre = (nombre) => {
   if (nombre.trim().length > 0) {
     return true;
   } else {
