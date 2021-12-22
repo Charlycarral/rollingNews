@@ -10,7 +10,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 const NoticiasAdmin = (props) => {
   // PAGINACION
   const [paginaActual, setPaginaActual] = useState(1);
-  const [noticiasPorPagina] = useState(25);
+  const [noticiasPorPagina] = useState(10);
 
   const indexUltimaNoticia = paginaActual * noticiasPorPagina;
   const indexPrimerNoticia = indexUltimaNoticia - noticiasPorPagina;

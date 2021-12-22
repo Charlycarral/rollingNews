@@ -5,6 +5,12 @@
       "nombre": "Ramiro Isa Jara",
       "contrasena": "$2a$10$sdNKAwu3N22ZNmb.fbA0WuIP0tB1XENvGwxL91isO.AS2FyKa0DEW",
       "id": 1
+    },
+    {
+      "email": "carlos@live.com",
+      "nombre": "Carlos Carral",
+      "contrasena": "$2a$10$gNU/RGmsQO0LdvbBX3sJ1ea.KCeHAGRqs0jjvrqJP/cSKl.eIseP.",
+      "id": 2
     }
   ],
   "admins": [
@@ -31,8 +37,8 @@
       "cuerponoticia": "est dolore commodo voluptate fugiat velit elit et proident dolore deserunt do proident mollit pariatur do ex nulla reprehenderit magna ipsum Lorem Lorem deserunt velit quis consectetur amet excepteur ad id proident proident officia est voluptate pariatur adipisicing labore cillum culpa ut voluptate proident nulla sunt incididunt sit pariatur nulla tempor magna est laboris proident ad sit et do cupidatat reprehenderit sit sint laborum ea est nulla veniam laborum non ea ad amet aute nulla ad fugiat ipsum non dolore duis id cupidatat commodo adipisicing laboris excepteur quis fugiat qui Lorem occaecat consequat aute aliqua in ea",
       "fechanoticia": "2021-04-17",
       "destacada": false,
-      "principal": false,
-      "categoria": "politica",
+      "principal": true,
+      "categoria": "política",
       "id": 102
     },
     {
@@ -45,7 +51,7 @@
       "fechanoticia": "2021-07-21",
       "destacada": false,
       "principal": false,
-      "categoria": "politica",
+      "categoria": "política",
       "id": 76
     },
     {
@@ -57,8 +63,8 @@
       "cuerponoticia": "reprehenderit dolore irure nulla ut magna cupidatat sunt ut commodo consectetur consequat nulla ut ea est do incididunt deserunt do deserunt sint cupidatat nisi velit deserunt quis officia aute amet eu occaecat consectetur eiusmod labore esse elit cupidatat aute do veniam sint incididunt consectetur officia culpa anim et est id sit non veniam laborum ut anim quis magna ullamco voluptate duis aliquip ut ad sint occaecat qui ullamco commodo quis ullamco et esse ad laboris et aliqua enim cillum mollit et ipsum officia proident minim consequat ipsum sit occaecat officia commodo elit fugiat dolore culpa reprehenderit qui amet ullamco consectetur",
       "fechanoticia": "2021-06-04",
       "destacada": false,
-      "principal": true,
-      "categoria": "economia",
+      "principal": false,
+      "categoria": "economía",
       "id": 17
     },
     {
@@ -71,7 +77,7 @@
       "fechanoticia": "2021-02-16",
       "destacada": false,
       "principal": false,
-      "categoria": "economia",
+      "categoria": "economía",
       "id": 61
     },
     {
@@ -82,9 +88,9 @@
       "leadnoticia": "fugiat deserunt cupidatat pariatur eiusmod deserunt non deserunt amet laboris elit reprehenderit mollit ex excepteur aute consectetur ex eiusmod consequat dolore reprehenderit sint laborum consectetur anim in adipisicing pariatur elit deserunt quis ipsum magna incididunt ea quis adipisicing ex ea nostrud proident non esse quis nulla dolore irure esse",
       "cuerponoticia": "ullamco et consequat consectetur labore dolore aliqua qui occaecat laborum duis cupidatat labore tempor dolore reprehenderit ipsum ullamco esse dolore irure aliqua laborum laboris eiusmod minim dolor mollit in nulla ut dolor non elit sint proident proident minim officia qui labore eu laboris exercitation veniam pariatur elit do et ipsum quis adipisicing qui ut velit aliqua cillum laboris et tempor sint consequat culpa id id ipsum nisi laboris excepteur sunt ipsum sunt duis elit velit anim voluptate eiusmod quis laboris ex ullamco laborum officia dolore labore commodo id ut dolore commodo eiusmod adipisicing in fugiat consequat pariatur veniam",
       "fechanoticia": "2021-01-19",
-      "destacada": true,
+      "destacada": false,
       "principal": false,
-      "categoria": "economia",
+      "categoria": "economía",
       "id": 24
     },
     {
@@ -97,7 +103,7 @@
       "fechanoticia": "2021-03-27",
       "destacada": false,
       "principal": false,
-      "categoria": "politica",
+      "categoria": "política",
       "id": 81
     },
     {
@@ -110,7 +116,7 @@
       "fechanoticia": "2021-10-23",
       "destacada": false,
       "principal": false,
-      "categoria": "politica",
+      "categoria": "política",
       "id": 25
     },
     {
@@ -162,7 +168,7 @@
       "fechanoticia": "2020-12-21",
       "destacada": false,
       "principal": false,
-      "categoria": "politica",
+      "categoria": "política",
       "id": 75
     },
     {
@@ -175,7 +181,7 @@
       "fechanoticia": "2021-08-19",
       "destacada": false,
       "principal": false,
-      "categoria": "economia",
+      "categoria": "economía",
       "id": 59
     },
     {
@@ -227,7 +233,7 @@
       "fechanoticia": "2021-02-04",
       "destacada": false,
       "principal": false,
-      "categoria": "espectaculos",
+      "categoria": "espectáculos",
       "id": 52
     },
     {
@@ -240,7 +246,7 @@
       "fechanoticia": "2021-12-05",
       "destacada": false,
       "principal": false,
-      "categoria": "espectaculos",
+      "categoria": "espectáculos",
       "id": 87
     },
     {
@@ -251,9 +257,9 @@
       "leadnoticia": "Lorem fugiat dolore incididunt velit excepteur exercitation nulla proident est veniam cupidatat Lorem anim laboris ipsum veniam ea anim deserunt exercitation anim exercitation deserunt proident nostrud non amet non eu enim quis id ut culpa minim ad magna elit quis ut laborum non ad aliqua officia culpa incididunt minim excepteur",
       "cuerponoticia": "ad deserunt esse do occaecat qui do duis proident voluptate pariatur labore consequat laborum dolor amet dolore exercitation amet in anim excepteur exercitation duis sunt esse officia elit occaecat dolore amet esse ad reprehenderit sunt ipsum magna do consectetur deserunt dolore aute sit id laborum nisi aute sint reprehenderit velit nisi qui laboris cupidatat reprehenderit cillum magna ad et excepteur veniam incididunt eu proident velit labore nostrud tempor minim consectetur quis eu mollit nisi ad eiusmod incididunt consectetur occaecat sit occaecat dolor et duis culpa do minim nostrud adipisicing velit nulla laborum ex elit anim eu",
       "fechanoticia": "2021-02-19",
-      "destacada": true,
+      "destacada": false,
       "principal": false,
-      "categoria": "espectaculos",
+      "categoria": "espectáculos",
       "id": 83
     },
     {
@@ -266,7 +272,7 @@
       "fechanoticia": "2021-10-05",
       "destacada": false,
       "principal": false,
-      "categoria": "espectaculos",
+      "categoria": "espectáculos",
       "id": 31
     },
     {
@@ -279,7 +285,7 @@
       "fechanoticia": "2021-07-03",
       "destacada": false,
       "principal": false,
-      "categoria": "tecnologia",
+      "categoria": "tecnología",
       "id": 85
     },
     {
@@ -292,7 +298,7 @@
       "fechanoticia": "2021-12-04",
       "destacada": false,
       "principal": false,
-      "categoria": "tecnologia",
+      "categoria": "tecnología",
       "id": 19
     },
     {
@@ -305,7 +311,7 @@
       "fechanoticia": "2020-12-31",
       "destacada": false,
       "principal": false,
-      "categoria": "espectaculos",
+      "categoria": "espectáculos",
       "id": 93
     },
     {
@@ -316,9 +322,9 @@
       "leadnoticia": "est aliqua esse consectetur sit labore sit duis et nulla id deserunt do aute veniam aliquip ullamco minim incididunt quis ea cupidatat excepteur nostrud non eiusmod laborum ipsum non aute culpa non officia qui tempor id reprehenderit pariatur nulla et ipsum eiusmod pariatur duis sunt sit irure mollit Lorem",
       "cuerponoticia": "minim irure aliqua incididunt commodo culpa minim aute est elit ut laborum in cupidatat duis culpa cillum mollit irure ea anim anim consequat aliqua qui ipsum in anim aute amet aute fugiat mollit nisi pariatur sunt veniam voluptate nostrud consequat proident eu ad voluptate eiusmod voluptate occaecat in irure esse esse velit ad reprehenderit id quis ullamco veniam ad nisi sit irure est velit aliqua ea incididunt nulla voluptate et excepteur commodo nulla proident fugiat consequat id labore labore ex voluptate et minim laborum quis sunt voluptate amet dolor in mollit laboris et quis quis qui aliquip non",
       "fechanoticia": "2021-01-03",
-      "destacada": true,
+      "destacada": false,
       "principal": false,
-      "categoria": "tecnologia",
+      "categoria": "fotografía",
       "id": 50
     },
     {
@@ -331,7 +337,7 @@
       "fechanoticia": "2021-07-27",
       "destacada": false,
       "principal": false,
-      "categoria": "tecnologia",
+      "categoria": "tecnología",
       "id": 39
     },
     {
@@ -344,8 +350,73 @@
       "fechanoticia": "2021-04-05",
       "destacada": false,
       "principal": false,
-      "categoria": "tecnologia",
+      "categoria": "tecnología",
       "id": 74
+    },
+    {
+      "autor": "Pedro Candelaria",
+      "titulo": "officia Lorem magna consequat magna consequat laboris dolore pariatur pariatur ex",
+      "bajadanoticia": "sit sunt reprehenderit aliquip in mollit ipsum culpa eiusmod cillum ut est laboris ad ut tempor dolor ut velit consequat aliqua incididunt deserunt ullamco qui duis commodo minim eiusmod ad eiusmod ut anim",
+      "imagen": "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "leadnoticia": "esse cupidatat aute ea pariatur aliqua qui esse anim minim proident dolore reprehenderit exercitation consectetur quis ad nulla sit velit pariatur pariatur consequat minim mollit non voluptate do sit fugiat id anim cupidatat fugiat sit ipsum in commodo do tempor in aliquip officia consequat proident mollit anim eiusmod ipsum duis",
+      "cuerponoticia": "sint aute ea eu adipisicing labore qui elit dolor in ea officia consequat ipsum labore incididunt duis velit labore qui ullamco adipisicing reprehenderit excepteur aliquip ex ex fugiat mollit laboris proident id proident cupidatat et aute adipisicing qui aliquip nostrud ea pariatur dolor sint enim enim dolore dolore ullamco nisi commodo et ea nisi voluptate ullamco non occaecat minim labore consequat sint elit voluptate eu cillum voluptate ut aliquip id id non ullamco tempor officia qui consectetur proident aliqua fugiat dolore voluptate voluptate non id sint nisi irure sit labore esse amet proident commodo eu",
+      "fechanoticia": "2021-04-05",
+      "destacada": false,
+      "principal": false,
+      "categoria": "fotografía",
+      "id": 105
+    },
+    {
+      "autor": "Pedro Candelaria",
+      "titulo": "officia Lorem magna consequat magna consequat laboris dolore pariatur pariatur ex",
+      "bajadanoticia": "sit sunt reprehenderit aliquip in mollit ipsum culpa eiusmod cillum ut est laboris ad ut tempor dolor ut velit consequat aliqua incididunt deserunt ullamco qui duis commodo minim eiusmod ad eiusmod ut anim",
+      "imagen": "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "leadnoticia": "esse cupidatat aute ea pariatur aliqua qui esse anim minim proident dolore reprehenderit exercitation consectetur quis ad nulla sit velit pariatur pariatur consequat minim mollit non voluptate do sit fugiat id anim cupidatat fugiat sit ipsum in commodo do tempor in aliquip officia consequat proident mollit anim eiusmod ipsum duis",
+      "cuerponoticia": "sint aute ea eu adipisicing labore qui elit dolor in ea officia consequat ipsum labore incididunt duis velit labore qui ullamco adipisicing reprehenderit excepteur aliquip ex ex fugiat mollit laboris proident id proident cupidatat et aute adipisicing qui aliquip nostrud ea pariatur dolor sint enim enim dolore dolore ullamco nisi commodo et ea nisi voluptate ullamco non occaecat minim labore consequat sint elit voluptate eu cillum voluptate ut aliquip id id non ullamco tempor officia qui consectetur proident aliqua fugiat dolore voluptate voluptate non id sint nisi irure sit labore esse amet proident commodo eu",
+      "fechanoticia": "2021-04-05",
+      "destacada": false,
+      "principal": false,
+      "categoria": "fotografía",
+      "id": 106
+    },
+    {
+      "autor": "Pedro Candelaria",
+      "titulo": "officia Lorem magna consequat magna consequat laboris dolore pariatur pariatur ex",
+      "bajadanoticia": "sit sunt reprehenderit aliquip in mollit ipsum culpa eiusmod cillum ut est laboris ad ut tempor dolor ut velit consequat aliqua incididunt deserunt ullamco qui duis commodo minim eiusmod ad eiusmod ut anim",
+      "imagen": "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "leadnoticia": "esse cupidatat aute ea pariatur aliqua qui esse anim minim proident dolore reprehenderit exercitation consectetur quis ad nulla sit velit pariatur pariatur consequat minim mollit non voluptate do sit fugiat id anim cupidatat fugiat sit ipsum in commodo do tempor in aliquip officia consequat proident mollit anim eiusmod ipsum duis",
+      "cuerponoticia": "sint aute ea eu adipisicing labore qui elit dolor in ea officia consequat ipsum labore incididunt duis velit labore qui ullamco adipisicing reprehenderit excepteur aliquip ex ex fugiat mollit laboris proident id proident cupidatat et aute adipisicing qui aliquip nostrud ea pariatur dolor sint enim enim dolore dolore ullamco nisi commodo et ea nisi voluptate ullamco non occaecat minim labore consequat sint elit voluptate eu cillum voluptate ut aliquip id id non ullamco tempor officia qui consectetur proident aliqua fugiat dolore voluptate voluptate non id sint nisi irure sit labore esse amet proident commodo eu",
+      "fechanoticia": "2021-04-05",
+      "destacada": false,
+      "principal": false,
+      "categoria": "fotografía",
+      "id": 107
+    },
+    {
+      "autor": "Pedro Candelaria",
+      "titulo": "officia Lorem magna consequat magna consequat laboris dolore pariatur pariatur ex",
+      "bajadanoticia": "sit sunt reprehenderit aliquip in mollit ipsum culpa eiusmod cillum ut est laboris ad ut tempor dolor ut velit consequat aliqua incididunt deserunt ullamco qui duis commodo minim eiusmod ad eiusmod ut anim",
+      "imagen": "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "leadnoticia": "esse cupidatat aute ea pariatur aliqua qui esse anim minim proident dolore reprehenderit exercitation consectetur quis ad nulla sit velit pariatur pariatur consequat minim mollit non voluptate do sit fugiat id anim cupidatat fugiat sit ipsum in commodo do tempor in aliquip officia consequat proident mollit anim eiusmod ipsum duis",
+      "cuerponoticia": "sint aute ea eu adipisicing labore qui elit dolor in ea officia consequat ipsum labore incididunt duis velit labore qui ullamco adipisicing reprehenderit excepteur aliquip ex ex fugiat mollit laboris proident id proident cupidatat et aute adipisicing qui aliquip nostrud ea pariatur dolor sint enim enim dolore dolore ullamco nisi commodo et ea nisi voluptate ullamco non occaecat minim labore consequat sint elit voluptate eu cillum voluptate ut aliquip id id non ullamco tempor officia qui consectetur proident aliqua fugiat dolore voluptate voluptate non id sint nisi irure sit labore esse amet proident commodo eu",
+      "fechanoticia": "2021-04-05",
+      "destacada": false,
+      "principal": false,
+      "categoria": "fotografía",
+      "id": 108
+    },
+    {
+      "autor": "Pedro Candelaria",
+      "titulo": "officia Lorem magna consequat magna consequat laboris dolore pariatur pariatur ex",
+      "bajadanoticia": "sit sunt reprehenderit aliquip in mollit ipsum culpa eiusmod cillum ut est laboris ad ut tempor dolor ut velit consequat aliqua incididunt deserunt ullamco qui duis commodo minim eiusmod ad eiusmod ut anim",
+      "imagen": "https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+      "leadnoticia": "esse cupidatat aute ea pariatur aliqua qui esse anim minim proident dolore reprehenderit exercitation consectetur quis ad nulla sit velit pariatur pariatur consequat minim mollit non voluptate do sit fugiat id anim cupidatat fugiat sit ipsum in commodo do tempor in aliquip officia consequat proident mollit anim eiusmod ipsum duis",
+      "cuerponoticia": "sint aute ea eu adipisicing labore qui elit dolor in ea officia consequat ipsum labore incididunt duis velit labore qui ullamco adipisicing reprehenderit excepteur aliquip ex ex fugiat mollit laboris proident id proident cupidatat et aute adipisicing qui aliquip nostrud ea pariatur dolor sint enim enim dolore dolore ullamco nisi commodo et ea nisi voluptate ullamco non occaecat minim labore consequat sint elit voluptate eu cillum voluptate ut aliquip id id non ullamco tempor officia qui consectetur proident aliqua fugiat dolore voluptate voluptate non id sint nisi irure sit labore esse amet proident commodo eu",
+      "fechanoticia": "2021-04-05",
+      "destacada": false,
+      "principal": false,
+      "categoria": "fotografía",
+      "id": 109
     },
     {
       "autor": "Daniel Holguín",
@@ -357,34 +428,42 @@
       "fechanoticia": "2021-03-14",
       "destacada": false,
       "principal": false,
-      "categoria": "tecnologia",
+      "categoria": "tecnología",
       "id": 20
     }
   ],
   "categorias": [
     {
-      "categoria": "Espectaculos",
+      "categoria": "actualidad",
+      "id": 1
+    },
+    {
+      "categoria": "espectáculos",
+      "id": 2
+    },
+    {
+      "categoria": "tecnología",
       "id": 3
     },
     {
-      "categoria": "Salud",
+      "categoria": "deportes",
+      "id": 4
+    },
+    {
+      "categoria": "economía",
+      "id": 5
+    },
+    {
+      "categoria": "política",
       "id": 6
     },
     {
-      "categoria": "Tecnologias",
+      "categoria": "salud",
       "id": 7
     },
     {
-      "categoria": "Politica",
+      "categoria": "fotografía",
       "id": 8
-    },
-    {
-      "categoria": "Economia",
-      "id": 9
-    },
-    {
-      "categoria": "Deportes",
-      "id": 11
     }
   ]
 }

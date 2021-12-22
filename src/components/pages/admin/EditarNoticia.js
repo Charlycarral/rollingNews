@@ -172,25 +172,19 @@ const EditarNoticia = (props) => {
                 className="imputTitulo"
               />
             </Form.Group>
-            
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Categoria</Form.Label>
               <Form.Select
-                value={categoria}
-                onChange={(e) => setCategoria(e.target.value)}
                 required
+                onChange={(e) => setCategoria(e.target.value)}
               >
-                <option value="">Seleccione una categoria</option>
-                <option value="actualidad">Actualidad</option>
-                <option value="espectaculos">Espectaculo</option>
-                <option value="tecnologia">Tecnologia</option>
-                <option value="deportes">Deportes</option>
-                <option value="politica">Politica</option>
-                <option value="economia">Economia</option>
-                <option value="salud">Salud</option>
-                <option value="fotografias">Fotografias</option>
+                <option value="" className="text-uppercase">Seleccione una categoria</option>
+                {
+                  props.categorias.map((categoria)=><option className="text-uppercase" value={(categoria.categoria).toLowerCase()} key={categoria.id}>{categoria.categoria}</option>)
+                }
               </Form.Select>
             </Form.Group>
+           
           </div>
           <Form.Group className="mb-3 inputgrande">
               <Form.Label>Url Imagen</Form.Label>

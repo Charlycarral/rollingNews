@@ -18,6 +18,7 @@ import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
 import EditarCategoria from "./components/pages/admin/EditarCategoria";
 import Contacto from "./components/pages/Contacto";
 import AboutUs from "./components/pages/AboutUs";
+import Fotografia from "./components/pages/Fotografia";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -28,6 +29,7 @@ function App() {
   const [noticiaspolitica, setnoticiaspolitica] = useState([]);
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
   const [noticiasespectaculos, setnoticiasespectaculos] = useState([]);
+
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
   const [loginCtr, setLoginCtr] = useState(false);
@@ -97,15 +99,15 @@ function App() {
           .splice(-3);
         setnoticiasdeportes(articulosdeportes);
         const articulospolitica = await noticias
-          .filter((noticia) => noticia.categoria === "politica")
+          .filter((noticia) => noticia.categoria === "política")
           .splice(-3);
         setnoticiaspolitica(articulospolitica);
         const articuloseconomia = await noticias
-          .filter((noticia) => noticia.categoria === "economia")
+          .filter((noticia) => noticia.categoria === "economía")
           .splice(-3);
         setnoticiaseconomia(articuloseconomia);
         const articuloespectaculos = await noticias
-          .filter((noticia) => noticia.categoria === "espectaculos")
+          .filter((noticia) => noticia.categoria === "espectáculos")
           .splice(-3);
         setnoticiasespectaculos(articuloespectaculos);
         const articulosdestacados = await noticias
@@ -115,7 +117,6 @@ function App() {
         const articuloprincipal = await noticias
           .filter((noticia) => noticia.principal === true)
           .splice(-1);
-
         setnoticiaprincipal(articuloprincipal);
       }
     } catch (error) {
@@ -158,7 +159,11 @@ function App() {
             ></NoticiasporCategoria>
           }
         ></Route>
-        <Route exact path="/seccion/fotografias"></Route>
+        <Route
+          exact
+          path="/seccion/fotografias"
+          element={<Fotografia></Fotografia>}
+        ></Route>
         <Route
           exact
           path="/institucional/contacto"
@@ -217,7 +222,10 @@ function App() {
           exact
           path="/admin/editar/:id"
           element={
-            <EditarNoticia consultaServer={consultaServer}></EditarNoticia>
+            <EditarNoticia
+              consultaServer={consultaServer}
+              categorias={categorias}
+            ></EditarNoticia>
           }
         ></Route>
         <Route
