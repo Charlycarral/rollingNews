@@ -20,26 +20,41 @@ const Contacto = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
+    console.log("nombre", nombre);
+    console.log("email", email);
+    console.log("mensaje", mensaje);
     if (
       validarNombre(nombre) &&
       validarCorreo(email) &&
       campoRequerido(mensaje)
     ) {
+      const datos = { nombre: nombre, email: email, mensaje: mensaje };
+      console.log(datos);
+      setErrorContact(false);
       emailjs
-        .sendForm(
-          "Yservice_jwca2yg",
+        .send(
+          "service_uxw7bsv",
           "template_112y3kj",
-          Form,
+          datos,
           "user_AFJBEpDF707f2LYrcR8B5"
         )
-        .then((result) => {
-          console.log(result.text);
-        });
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        );
       e.target.reset();
       setResult(true);
     } else {
       setErrorContact(true);
     }
+    //esconder resultado
+    setTimeout(() => {
+      setResult(false);
+    }, 5000);
   };
 
   return (
@@ -50,7 +65,6 @@ const Contacto = () => {
           <Form.Label>Nombre completo</Form.Label>
           <Form.Control
             type="text"
-            required
             onChange={(e) => setNombre(e.target.value)}
           />
         </Form.Group>
@@ -59,7 +73,6 @@ const Contacto = () => {
           <Form.Control
             type="email"
             placeholder="name@example.com"
-            required
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
@@ -68,8 +81,7 @@ const Contacto = () => {
           <Form.Control
             as="textarea"
             rows={3}
-            required
-            minLength="40"
+            minLength="10"
             maxLength="200"
             onChange={(e) => setMensaje(e.target.value)}
           />
