@@ -25,6 +25,12 @@
       "nombre": "Carlos Carral",
       "contrasena": "$2a$10$RghR7m1TbNROA8BCzWtU6.3A8aVfnyeK5PKRCNIh6NxPosaEr6CNu",
       "id": 1
+    },
+    {
+      "email": "ramiro@gmail.com",
+      "nombre": "Ramiro",
+      "contrasena": "$2a$10$FigjAL10k1aImu7AYPXcHewsWM3dnzSM.Bl/XQcpUV2IdyUPJ4Hra",
+      "id": 2
     }
   ],
   "noticias": [

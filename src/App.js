@@ -27,8 +27,8 @@ function App() {
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
-  const [loginCtr, setLoginCtr] = useState();
-  const [loginCtrAd, setLoginCtrAd] = useState();
+  const [loginCtr, setLoginCtr] = useState(false);
+  const [loginCtrAd, setLoginCtrAd] = useState(false);
 
   const URL = process.env.REACT_APP_API_URL_USER;
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
@@ -171,11 +171,9 @@ function App() {
           path="/login"
           element={<Login loginCtrAd={loginCtrAd} setLoginCtrAd={setLoginCtrAd} loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
         ></Route>
-        
-     
-        
+               
         {loginCtrAd === true ? (<Route exact path="/admin" element={<Admin></Admin>}></Route>)
-          : (<Route exact path="/" element={<Error404></Error404>}></Route>)}
+          : (<Route exact path="/admin" element={<Error404></Error404>}></Route>)}
         
         <Route
           exact

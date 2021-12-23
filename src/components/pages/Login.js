@@ -19,7 +19,7 @@ const Login = (props) => {
         </div>
 
         <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end me-lg-1 ms-5">
-          <FormularioLogin loginCtrAd={props.loginCtrAd} setLoginCtrAd={props.setLoginCtrAd} loginCtr={props.loginCtr} setLoginCtr={props.setLoginCtr} admins={props.admins} usuarios={props.usuarios}></FormularioLogin>
+          <FormularioLogin  loginCtrAd={props.loginCtrAd} setLoginCtrAd={props.setLoginCtrAd} loginCtr={props.loginCtr} setLoginCtr={props.setLoginCtr} admins={props.admins} usuarios={props.usuarios}></FormularioLogin>
         </div>
       </section>
     </section>
