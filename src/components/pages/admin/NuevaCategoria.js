@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { campoRequerido } from "../../Helpers/helpers";
 
 const NuevaCategoria = (props) => {
@@ -10,7 +10,7 @@ const NuevaCategoria = (props) => {
   const navegacion = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const nuevaCat = { categoria: nuevaCategoria };
     try {
       const parametros = {
@@ -20,10 +20,7 @@ const NuevaCategoria = (props) => {
         },
         body: JSON.stringify(nuevaCat),
       };
-      const respuesta = await fetch(
-        URL_c,
-        parametros
-      );
+      const respuesta = await fetch(URL_c, parametros);
       if (respuesta.status === 201) {
         Swal.fire(
           "Categoria agregada",
@@ -40,15 +37,16 @@ const NuevaCategoria = (props) => {
           "error"
         );
       }
-      
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <div className="m-5 p-5">
-      <h1 className="my-4 pt-2">Alta de Categorías</h1>
-      <hr />
+      <h1 className="text-center mt-3 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
+        Alta de Categorías
+      </h1>
+     
       <Form className="container w-25" onSubmit={handleSubmit}>
         <Form.Group className="mb-3 fs-4">
           <Form.Label className="fs-4">Nombre de Categoría</Form.Label>

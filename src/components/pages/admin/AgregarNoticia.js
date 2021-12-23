@@ -112,7 +112,10 @@ const AgregarNoticia = (props) => {
           </BreadcrumbItem>
         </Breadcrumb>
       </section>
-      <h1 className="my-4 pt-2 text-center">Alta de Noticias</h1>
+      <h1 className="text-center mt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla" >
+        Alta de Noticias
+      </h1>
+      
       <section className="container">
         <Form onSubmit={handleSubmit}>
           <div className="form-top">

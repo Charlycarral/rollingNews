@@ -10,7 +10,7 @@ const NoticiasCategoriaInicio = (props) => {
         {props.categoria[0] && (
           <div className="mt-2 border-bottom border-2 d">
             <div className="d-flex justify-content-between border-bottom fw-bold">
-              <Link
+              <Link 
                 className="text-uppercase text-decoration-none text-secondary"
                 to={`/noticias/seccion/${props.categoria[0].categoria}`}
               >
@@ -18,9 +18,9 @@ const NoticiasCategoriaInicio = (props) => {
                 {props.categoria[0].categoria}
               </Link>
 
-              <Link
+              <Link 
                 className="text-uppercase text-decoration-none text-danger fs-6"
-                to="/admin"
+                to={`/noticias/seccion/${props.categoria[0].categoria}`}
               >
                 {" "}
                 ver mas{" "}

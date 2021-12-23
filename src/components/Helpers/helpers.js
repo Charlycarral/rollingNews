@@ -1,18 +1,19 @@
 const campoRequerido = (input) => {
-  if (input.trim().length > 0) {
+  if (input.trim() === "") {
+    return false;
+  } else {
+    return true;
+  }
+};
+const validarCorreo = (dato) => {
+  let patron =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (patron.test(dato)) {
     return true;
   } else {
     return false;
   }
 };
-const validarCorreo = (dato) => {
-    let patron = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (patron.test(dato)){
-        return true;
-    }else{
-        return false;
-    }
-}
 
 function validarImagen(input) {
   let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
@@ -21,7 +22,6 @@ function validarImagen(input) {
   } else {
     return false;
   }
-};
+}
 
-
-export {campoRequerido,validarImagen, validarCorreo}
+export { campoRequerido, validarImagen, validarCorreo };

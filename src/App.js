@@ -16,6 +16,10 @@ import NuevaCategoria from "./components/pages/admin/NuevaCategoria";
 import Suscribe from "./components/pages/Suscribe";
 import NoticiasporCategoria from "./components/pages/NoticiasporCategoria";
 import Error404 from "./components/pages/Error404";
+import EditarCategoria from "./components/pages/admin/EditarCategoria";
+import Contacto from "./components/pages/Contacto";
+import AboutUs from "./components/pages/AboutUs";
+import Fotografia from "./components/pages/Fotografia";
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -25,6 +29,8 @@ function App() {
   const [noticiasdeportes, setnoticiasdeportes] = useState([]);
   const [noticiaspolitica, setnoticiaspolitica] = useState([]);
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
+  const [noticiasespectaculos, setnoticiasespectaculos] = useState([]);
+
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
   const [loginCtr, setLoginCtr] = useState(false);
@@ -34,6 +40,7 @@ function App() {
   const URL_a = process.env.REACT_APP_API_URL_ADMIN;
   const URL_n = process.env.REACT_APP_API_URL_NOTIC;
   const URL_c = process.env.REACT_APP_API_URL_CAT;
+
   useEffect(() => {
     consultarUser();
     consultarAdmin();
@@ -106,24 +113,27 @@ function App() {
         const noticias = await respuesta.json();
         const articulosdeportes = await noticias
           .filter((noticia) => noticia.categoria === "deportes")
-          .splice(1);
+          .splice(-3);
         setnoticiasdeportes(articulosdeportes);
         const articulospolitica = await noticias
-          .filter((noticia) => noticia.categoria === "politica")
-          .splice(1);
+          .filter((noticia) => noticia.categoria === "política")
+          .splice(-3);
         setnoticiaspolitica(articulospolitica);
         const articuloseconomia = await noticias
-          .filter((noticia) => noticia.categoria === "economia")
-          .splice(1);
+          .filter((noticia) => noticia.categoria === "economía")
+          .splice(-3);
         setnoticiaseconomia(articuloseconomia);
+        const articuloespectaculos = await noticias
+          .filter((noticia) => noticia.categoria === "espectáculos")
+          .splice(-3);
+        setnoticiasespectaculos(articuloespectaculos);
         const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
           .splice(1);
         setnoticiasdestacadas(articulosdestacados);
-        const articuloprincipal = await noticias.filter(
-          (noticia) => noticia.principal === true
-        );
-
+        const articuloprincipal = await noticias
+          .filter((noticia) => noticia.principal === true)
+          .splice(-1);
         setnoticiaprincipal(articuloprincipal);
       }
     } catch (error) {
@@ -144,6 +154,7 @@ function App() {
               noticiasdeportes={noticiasdeportes}
               noticiaspolitica={noticiaspolitica}
               noticiaseconomia={noticiaseconomia}
+              noticiasespectaculos={noticiasespectaculos}
               noticiasdestacadas={noticiasdestacadas}
               noticiaprincipal={noticiaprincipal}
               consultaServer={consultaServer}
@@ -160,11 +171,21 @@ function App() {
             ></NoticiasporCategoria>
           }
         ></Route>
-        <Route exact path="/seccion/fotografias"></Route>
-        <Route exact path="/servicio/clima"></Route>
-        <Route exact path="/servicio/moneda"></Route>
-        <Route exact path="/institucional/contacto"></Route>
-        <Route exact path="/institucional/acerca-de"></Route>
+        <Route
+          exact
+          path="/seccion/fotografias"
+          element={<Fotografia></Fotografia>}
+        ></Route>
+        <Route
+          exact
+          path="/institucional/contacto"
+          element={<Contacto></Contacto>}
+        ></Route>
+        <Route
+          exact
+          path="/institucional/acerca-de"
+          element={<AboutUs></AboutUs>}
+        ></Route>
         <Route exact path="/institucional/publicidad"></Route>
         <Route
           exact
@@ -211,14 +232,20 @@ function App() {
           exact
           path="/admin/editar/:id"
           element={
-            <EditarNoticia consultaServer={consultaServer}></EditarNoticia>
+            <EditarNoticia
+              consultaServer={consultaServer}
+              categorias={categorias}
+            ></EditarNoticia>
           }
         ></Route>
         <Route
           exact
           path="/admin/agregar"
           element={
-            <AgregarNoticia consultaServer={consultaServer} categorias={categorias}></AgregarNoticia>
+            <AgregarNoticia
+              consultaServer={consultaServer}
+              categorias={categorias}
+            ></AgregarNoticia>
           }
         ></Route>
         <Route
@@ -241,8 +268,18 @@ function App() {
             ></NuevaCategoria>
           }
         ></Route>
+        <Route
+          exact
+          path="/admin/editar-categoria/:id"
+          element={
+            <EditarCategoria
+              categorias={categorias}
+              consultarCat={consultarCat}
+            ></EditarCategoria>
+          }
+        ></Route>
       </Routes>
-      <Fotter categorias={categorias}/>
+      <Fotter categorias={categorias} />
     </Router>
   );
 }

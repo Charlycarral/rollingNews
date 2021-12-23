@@ -5,13 +5,16 @@
 }
 
 .rotuloCategoria {
-  border: 1px solid #4d4d4d;
+  border: #F30016 2px solid;
   width: 130px;
 }
 
 .detalleNoticia {
   text-align: center;
   font-size: 18px;
+}
+.wbajada{
+  width: 65%;
 }
 
 .fs8 {
