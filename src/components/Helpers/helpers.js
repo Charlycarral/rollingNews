@@ -24,4 +24,12 @@ function validarImagen(input) {
   }
 }
 
-export { campoRequerido, validarImagen, validarCorreo };
+const validarNombre = (nombre) => {
+  if (nombre.trim().length > 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export { campoRequerido, validarImagen, validarCorreo, validarNombre };
