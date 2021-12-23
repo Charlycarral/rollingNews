@@ -112,7 +112,7 @@ function App() {
         setnoticiasespectaculos(articuloespectaculos);
         const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
-          .splice(1);
+          .splice(-3);
         setnoticiasdestacadas(articulosdestacados);
         const articuloprincipal = await noticias
           .filter((noticia) => noticia.principal === true)

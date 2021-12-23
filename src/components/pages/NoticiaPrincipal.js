@@ -10,7 +10,7 @@ const NoticiaPrincipal = (props) => {
       {props.categoria[0] &&
         props.categoria.map((categoria) => (
           <div className="d-flex justify-content-center w-100">
-            <Card className="bg-dark text-white w-100">
+            <Card className="bg-dark text-white w-75">
               <Card.Img
                 src={categoria.imagen}
                 alt="{categoria.imagen.titulo}"
