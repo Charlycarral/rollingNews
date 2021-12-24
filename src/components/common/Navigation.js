@@ -118,7 +118,7 @@ const Navigation = (props) => {
                           Acerca de nosotros
                         </Link>
                         <Link
-                          to=""
+                          to="/error404"
                           className="text-decoration-none text-white my-1 text-uppercase"
                         >
                           Publicidad

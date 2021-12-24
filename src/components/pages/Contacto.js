@@ -59,7 +59,7 @@ const Contacto = () => {
 
   return (
     <Container>
-      <Form className="container my-5 mb-4 col-md-6" onSubmit={sendEmail}>
+      <Form className="container my-5 pt-5 mb-4 col-md-6" onSubmit={sendEmail}>
         <h1 className="d-flex align-items-center mt-5">CONTÁCTENOS</h1>
         <Form.Group className=" flex-column align-items">
           <Form.Label>Nombre completo</Form.Label>

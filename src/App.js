@@ -21,6 +21,7 @@ import Contacto from "./components/pages/Contacto";
 import AboutUs from "./components/pages/AboutUs";
 import Fotografia from "./components/pages/Fotografia";
 
+
 function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [admins, setAdmins] = useState([]);
@@ -169,6 +170,13 @@ function App() {
               noticias={noticias}
               consultaServer={consultaServer}
             ></NoticiasporCategoria>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/error404"
+          element={
+            <Error404></Error404>
           }
         ></Route>
         <Route
