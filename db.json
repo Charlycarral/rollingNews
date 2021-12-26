@@ -17,6 +17,13 @@
       "nombre": "Silvia",
       "contrasena": "$2a$10$.poXHiBmrIr3N1A22owpiOMZbTE1SQdTPv8CsVOh8mUBk0o9PLhE.",
       "id": 3
+    },
+    {
+      "email": "roberto@live.com",
+      "nombre": "roberto ",
+      "online": "f",
+      "contrasena": "$2a$10$pzG341KV4rEKLJ32TmyIPOQf4erBTPDF1tLCTWXAGVf3xfBosfS9m",
+      "id": 4
     }
   ],
   "admins": [
@@ -89,7 +96,7 @@
       "fechanoticia": "2021-02-16",
       "destacada": false,
       "principal": false,
-      "categoria": "economía",
+      "categoria": "suscriptores",
       "id": 61
     },
     {
@@ -102,7 +109,7 @@
       "fechanoticia": "2021-01-19",
       "destacada": false,
       "principal": false,
-      "categoria": "economía",
+      "categoria": "suscriptores",
       "id": 24
     },
     {
@@ -232,7 +239,7 @@
       "fechanoticia": "2021-07-01",
       "destacada": false,
       "principal": false,
-      "categoria": "deportes",
+      "categoria": "suscriptores",
       "id": 67
     },
     {
@@ -476,6 +483,10 @@
     {
       "categoria": "fotografía",
       "id": 8
+    },
+    {
+      "categoria": "suscriptores",
+      "id": 9
     }
   ],
   "mensajes": [

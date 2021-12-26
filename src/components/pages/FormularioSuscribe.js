@@ -8,6 +8,7 @@ const FormularioSuscribe = (props) => {
     const [emailUsuario, setEmailUsuario] = useState([]);
     const [nombreUsuario, setNombreUsuario] = useState([]);
     const [contrasenaUsuario, setContrasenaUsuario] = useState([]);
+    const [onlineuser, setOnlineUsers] = ('false');
     const [claveAdmin, setClaveAdmin] = useState([]);
     const [contrasenaUsuario_, setContrasenaUsuario_] = useState([]);
     const URL = process.env.REACT_APP_API_URL_USER;
@@ -29,6 +30,7 @@ const FormularioSuscribe = (props) => {
                       const nuevoUsuario = {
                           "email": emailUsuario,
                           "nombre": nombreUsuario,
+                          "online": onlineuser,
                           "contrasena": contrasenaEncriptada
                       };
                       let existe = props.usuarios.find((usuario) => {return usuario.email === nuevoUsuario.email});

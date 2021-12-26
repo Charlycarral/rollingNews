@@ -21,7 +21,6 @@ import Contacto from "./components/pages/Contacto";
 import AboutUs from "./components/pages/AboutUs";
 import Fotografia from "./components/pages/Fotografia";
 
-
 function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [admins, setAdmins] = useState([]);
@@ -31,6 +30,7 @@ function App() {
   const [noticiaspolitica, setnoticiaspolitica] = useState([]);
   const [noticiaseconomia, setnoticiaseconomia] = useState([]);
   const [noticiasespectaculos, setnoticiasespectaculos] = useState([]);
+  const [suscriptores, setSuscriptores] = useState([]);
 
   const [noticiasdestacadas, setnoticiasdestacadas] = useState([]);
   const [noticiaprincipal, setnoticiaprincipal] = useState([]);
@@ -71,18 +71,18 @@ function App() {
     }
   };
 
-  const consultarInicio = ()=>{
-    if (loginCtr === true){
+  const consultarInicio = () => {
+    if (loginCtr === true) {
       setLoginCtr(true);
-    }else{
+    } else {
       setLoginCtr(false);
     }
-    if (loginCtrAd === true){
+    if (loginCtrAd === true) {
       setLoginCtrAd(true);
-    }else{
+    } else {
       setLoginCtrAd(false);
     }
-  }
+  };
 
   const consultarCat = async () => {
     try {
@@ -128,6 +128,10 @@ function App() {
           .filter((noticia) => noticia.categoria === "espectáculos")
           .splice(-3);
         setnoticiasespectaculos(articuloespectaculos);
+        const articulosuscriptores = await noticias
+          .filter((noticia) => noticia.categoria === "suscriptores")
+          .splice(-3);
+        setSuscriptores(articulosuscriptores);
         const articulosdestacados = await noticias
           .filter((noticia) => noticia.destacada === true)
           .splice(-3);
@@ -145,7 +149,13 @@ function App() {
 
   return (
     <Router>
-      <Navigation loginCtrAd={loginCtrAd} setLoginCtrAd={setLoginCtrAd} loginCtr={loginCtr} setLoginCtr={setLoginCtr} categorias={categorias}/>
+      <Navigation
+        loginCtrAd={loginCtrAd}
+        setLoginCtrAd={setLoginCtrAd}
+        loginCtr={loginCtr}
+        setLoginCtr={setLoginCtr}
+        categorias={categorias}
+      />
       <Routes>
         <Route
           exact
@@ -158,6 +168,7 @@ function App() {
               noticiasespectaculos={noticiasespectaculos}
               noticiasdestacadas={noticiasdestacadas}
               noticiaprincipal={noticiaprincipal}
+              suscriptores={suscriptores}
               consultaServer={consultaServer}
             ></Inicio>
           }
@@ -172,13 +183,7 @@ function App() {
             ></NoticiasporCategoria>
           }
         ></Route>
-        <Route
-          exact
-          path="/error404"
-          element={
-            <Error404></Error404>
-          }
-        ></Route>
+        <Route exact path="/error404" element={<Error404></Error404>}></Route>
         <Route
           exact
           path="/seccion/fotografias"
@@ -198,12 +203,24 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<Login loginCtrAd={loginCtrAd} setLoginCtrAd={setLoginCtrAd} loginCtr={loginCtr} setLoginCtr={setLoginCtr} admins={admins} usuarios={usuarios}></Login>}
+          element={
+            <Login
+              loginCtrAd={loginCtrAd}
+              setLoginCtrAd={setLoginCtrAd}
+              loginCtr={loginCtr}
+              setLoginCtr={setLoginCtr}
+              admins={admins}
+              usuarios={usuarios}
+            ></Login>
+          }
         ></Route>
-               
-        {loginCtrAd === true ? (<Route exact path="/admin" element={<Admin></Admin>}></Route>)
-          : (<Route exact path="/admin" element={<Error404></Error404>}></Route>)}
-        
+
+        {loginCtrAd === true ? (
+          <Route exact path="/admin" element={<Admin></Admin>}></Route>
+        ) : (
+          <Route exact path="/admin" element={<Error404></Error404>}></Route>
+        )}
+
         <Route
           exact
           path="/suscribe"
@@ -211,8 +228,8 @@ function App() {
             <Suscribe
               consultarUser={consultarUser}
               usuarios={usuarios}
-              admins = {admins}
-              consultarAdmin = {consultarAdmin}
+              admins={admins}
+              consultarAdmin={consultarAdmin}
             ></Suscribe>
           }
         ></Route>
@@ -223,6 +240,10 @@ function App() {
             <PaginaDetalleNoticias
               noticias={noticias}
               consultaServer={consultaServer}
+              loginCtrAd={loginCtrAd}
+              setLoginCtrAd={setLoginCtrAd}
+              loginCtr={loginCtr}
+              setLoginCtr={setLoginCtr}
             ></PaginaDetalleNoticias>
           }
         ></Route>
@@ -233,6 +254,11 @@ function App() {
             <NoticiasAdmin
               noticias={noticias}
               consultaServer={consultaServer}
+              consultarUser={consultarUser}
+              usuarios={usuarios}
+              admins={admins}
+              consultarAdmin={consultarAdmin}
+              consultarInicio={consultarInicio}
             ></NoticiasAdmin>
           }
         ></Route>

@@ -3,25 +3,50 @@ import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
 import BannerPublicitario from "./BannerPublicitario";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
-import './Inicio.css'
-
-
+import "./Inicio.css";
+import Suscriptores from "./Suscriptores";
 
 const Inicio = (props) => {
   return (
-    <section className="w-100 container-fluid" >
+    <section className="w-100 container-fluid">
       <ConsultarApis></ConsultarApis>
-      {props.noticiaprincipal && (<NoticiaPrincipal categoria={props.noticiaprincipal} ></NoticiaPrincipal>)}
-      {props.noticiasdestacadas && (<NoticiasDestacadas categoria={props.noticiasdestacadas} ></NoticiasDestacadas>)}
+      {props.noticiaprincipal && (
+        <NoticiaPrincipal categoria={props.noticiaprincipal}></NoticiaPrincipal>
+      )}
+      {props.noticiasdestacadas && (
+        <NoticiasDestacadas
+          categoria={props.noticiasdestacadas}
+        ></NoticiasDestacadas>
+      )}
       <BannerPublicitario></BannerPublicitario>
-      {props.noticiasdeportes && (<NoticiasCategoriaInicio categoria={props.noticiasdeportes} ></NoticiasCategoriaInicio>)}
+      {props.noticiasdeportes && (
+        <NoticiasCategoriaInicio
+          categoria={props.noticiasdeportes}
+        ></NoticiasCategoriaInicio>
+      )}
       <BannerPublicitario></BannerPublicitario>
-      {props.noticiaspolitica && (<NoticiasCategoriaInicio categoria={props.noticiaspolitica} ></NoticiasCategoriaInicio>)}
-      <BannerPublicitario></BannerPublicitario>
-      {props.noticiaseconomia && (<NoticiasCategoriaInicio categoria={props.noticiaseconomia} ></NoticiasCategoriaInicio>)}
-      <BannerPublicitario></BannerPublicitario>
-      {props.noticiasespectaculos && (<NoticiasCategoriaInicio categoria={props.noticiasespectaculos} ></NoticiasCategoriaInicio>)}
+      {props.suscriptores && (
+        <Suscriptores categoria={props.suscriptores}></Suscriptores>
+      )}
 
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiaspolitica && (
+        <NoticiasCategoriaInicio
+          categoria={props.noticiaspolitica}
+        ></NoticiasCategoriaInicio>
+      )}
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiaseconomia && (
+        <NoticiasCategoriaInicio
+          categoria={props.noticiaseconomia}
+        ></NoticiasCategoriaInicio>
+      )}
+      <BannerPublicitario></BannerPublicitario>
+      {props.noticiasespectaculos && (
+        <NoticiasCategoriaInicio
+          categoria={props.noticiasespectaculos}
+        ></NoticiasCategoriaInicio>
+      )}
     </section>
   );
 };
