@@ -44,6 +44,12 @@
       "nombre": "Carlos Carral",
       "contrasena": "$2a$10$YTzsY/z5XFn7ideyt0s9numEOyhGoWuvhSCVKqz5RYq6YJ/ojbqpK",
       "id": 3
+    },
+    {
+      "email": "minervisha@gmail.com",
+      "nombre": "Aimé Saracho",
+      "contrasena": "$2a$10$k0CUpKMLlToqNDmUYesFK.PVwybTinAPW19tBIA750ccAta71jv2.",
+      "id": 4
     }
   ],
   "noticias": [
