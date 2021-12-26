@@ -23,8 +23,8 @@ const NoticiasAdmin = (props) => {
   const paginacion = (pagina) => setPaginaActual(pagina);
 
   return (
-    <section className="container">
-      <Breadcrumb className="mt-4">
+    <section className="container mt-5">
+      <Breadcrumb className="mt-5 text-decoration-none">
         <BreadcrumbItem>
           <Link to="/">Inicio</Link>
         </BreadcrumbItem>

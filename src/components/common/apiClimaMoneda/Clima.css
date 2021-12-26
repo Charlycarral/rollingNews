@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&display=swap");
+
 .bannerClima {
   height: 30px;
 }
 .iconosClima {
   height: 40px;
+  width: 40px;
 }
 .fuente {
   font-size: 14px;
@@ -21,4 +24,8 @@
 
 .colorFuenteGris {
   color: #666666;
+}
+
+.fuenteRolling{
+  font-family: "Raleway", sans-serif;
 }

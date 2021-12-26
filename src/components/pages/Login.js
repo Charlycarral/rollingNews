@@ -6,19 +6,16 @@ import FormularioLogin from "./FormularioLogin";
 const Login = (props) => {
   return (
     <section className="bgLogin">
-      <div className="botonInicio">
-        <button className="bgBotonInicio mt-4">INICIO</button>
-      </div>
-      <section className="d-flex flex-wrap">
-        <div className="col-md-11 col-lg-5">
+       <section className="d-flex flex-wrap mt-3">
+        <div className="col-md-11 col-lg-5 ">
           <img
             src={logo}
             alt="logo rollingnews"
-            className="ms-5 ps-sm-1 ps-md-5 w-75 my-5 "
+            className="ms-5 ps-sm-1 ps-md-5 w-75 my-5 d-none d-lg-block d-xl-none "
           />
         </div>
 
-        <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end me-lg-1 ms-5">
+        <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center align-items-sm-center justify-content-lg-end me-lg-1 ps-1 ms-4 mt-5">
           <FormularioLogin  loginCtrAd={props.loginCtrAd} setLoginCtrAd={props.setLoginCtrAd} loginCtr={props.loginCtr} setLoginCtr={props.setLoginCtr} admins={props.admins} usuarios={props.usuarios}></FormularioLogin>
         </div>
       </section>

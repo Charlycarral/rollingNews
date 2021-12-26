@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ItemsCategorias from "./ItemsCategorias";
+import '../pages/Login.css'
 
 const Fotter = (props) => {
   return (
-    <div>
+    <div className="fuentenav">
       <section className="footer">
         <div className="container my-5 text-center">
           <section className="flex-row pe-3 row mt-5  justify-content-center">

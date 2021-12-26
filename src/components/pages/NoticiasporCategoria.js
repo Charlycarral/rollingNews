@@ -54,7 +54,7 @@ const NoticiasporCategoria = () => {
 
         
   return (
-    <div className="mt-4 d-flex flex-column justify-content-center align-items-center ">
+    <div className="mt-5 d-flex flex-column justify-content-center align-items-center ">
       <div className="bordetabla htitulocategoria d-flex flex-column justify-content-center align-items-center">
         {" "}
         <h2 className="mt-5 fs-1 text-uppercase fuenteTitulosAdmin fw-bold ">

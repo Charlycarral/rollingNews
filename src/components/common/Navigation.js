@@ -4,7 +4,8 @@ import {
   Nav,
   Container,
   Offcanvas,
-  Form,
+  Row,
+  Col,
   Dropdown,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -18,11 +19,8 @@ const Navigation = (props) => {
     props.setLoginCtrAd(false);
   };
 
-  console.log(props.categorias);
   const categoriasPrincipales = props.categorias.slice(0, 4);
   const categoriasSecundarias = props.categorias.slice(4);
-  console.log(categoriasPrincipales);
-  console.log(categoriasSecundarias);
 
   return (
     <>
@@ -140,15 +138,21 @@ const Navigation = (props) => {
               </section>
             </Navbar.Offcanvas>
           </section>
+
           <Link
             to="/"
             className=" d-flex justify-content-center text-decoration-none text-white logoNav"
           >
-            <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
+            <img src={logo} alt="logo rolling news" className="w-50 wlogo" />
           </Link>
-          <div className="d-flex justify-content-center">
+
+          <div className="d-flex justify-content-start ms-5 ps-5 mt-2">
             <div>
-              <Link to="/suscribe" id="botonSub" className="w-auto p-2 fuentenav">
+              <Link
+                to="/suscribe"
+                id="botonSub"
+                className="w-auto p-2 fuentenav"
+              >
                 Suscribite
               </Link>
             </div>
