@@ -1,5 +1,6 @@
 import React from "react";
 import Suscribite from "../../img/suscribite.png";
+
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './Inicio.css'
@@ -7,10 +8,10 @@ import './Inicio.css'
 const SuscribiteAhora = () => {
   return (
     <Card className="bg-dark text-white mt-5">
-      <Card.Img src={Suscribite} alt="Card image" />
+      <Card.Img src={Suscribite} alt="Card image" className="wimagensuscribete"/>
       <Card.ImgOverlay>
-        <div className="ms-3 mt-5 pt-5 w-75">
-          <Card.Title className="fs-1 fw-bold w-50 fuenteRolling">
+        <div className="msuscribeteahora pt-5 w-75">
+          <Card.Title className="fs-1 fw-bold wsuscribeteahora fuenteRolling">
             Registrate gratis y segui disfrutando del mejor contenido
           </Card.Title>
           <Card.Text className="fuenteRolling">

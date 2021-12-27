@@ -1,9 +1,9 @@
-import { useParams, useNavigate  } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import { campoRequerido } from "../../Helpers/helpers";
 import Swal from "sweetalert2";
-
+import "./admin.css";
 
 const EditarCategoria = (props) => {
   const { id } = useParams();
@@ -54,20 +54,22 @@ const EditarCategoria = (props) => {
     }
   };
 
-return (
-    <div>
+  return (
+    <div className="fuenteTitulosAdmin">
       <div className="m-5 p-5">
-      <h1 className="text-center mt-3 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
-        Editar Categoría
-      </h1>
-        <Form className="container w-25" onSubmit={handleSubmit}>
-          <Form.Group className="mb-3 fs-4">
+        <h1 className="text-center mt-3 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
+          Editar Categoría
+        </h1>
+
+        <Form className="container wForm" onSubmit={handleSubmit}>
+          <Form.Group className="mb-3 fs-4 ">
             <Form.Label className="fs-4">Nombre de Categoría</Form.Label>
             <Form.Control
               type="text"
               placeholder="Nueva Categoría"
               defaultValue={categoria.categoria}
               ref={categoriaRef}
+              className="wEditarCategoria"
             />
           </Form.Group>
 
