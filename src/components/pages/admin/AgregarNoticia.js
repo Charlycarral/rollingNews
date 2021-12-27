@@ -73,7 +73,7 @@ const AgregarNoticia = (props) => {
         }
         e.target.reset();
         props.consultarServer();
-      } catch(error){
+      } catch(error) {
         console.log(error);
       }
     } else {
