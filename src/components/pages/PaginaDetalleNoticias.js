@@ -64,11 +64,7 @@ const PaginaDetalleNoticias = (props) => {
 
                 <BannerPublicitario></BannerPublicitario>
                 <div className="cuerpo">
-                  <p>
-                    {" "}
-                    cuerponoticia
-                    {noticiaid.cuerponoticia}
-                  </p>
+                  <p> {noticiaid.cuerponoticia}</p>
                 </div>
 
                 <div className="ending fs-4 me-5">
@@ -122,11 +118,7 @@ const PaginaDetalleNoticias = (props) => {
             <BannerPublicitario></BannerPublicitario>
             <div className="d-flex justify-content-center">
               <div className="cuerpo lead wdetalle  ms-2 text-left">
-                <p>
-                  {" "}
-                  cuerponoticia
-                  {noticiaid.cuerponoticia}
-                </p>
+                <p> {noticiaid.cuerponoticia}</p>
               </div>
             </div>
             <div className="ending fs-4 me-5">
