@@ -142,6 +142,17 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
+  #dolar{
+    margin-top: 50px;
+  }
+
+  #clima{
+    margin-top: 50px;
+  }
+
+  #cateIni{
+    height: 50%;
+  }
  
 }
 @media all and (min-width: 300px) and (max-width: 767px) {
@@ -150,6 +161,16 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
     text-align: center;
   }
 
+  #dolar{
+    margin-top: 50px;
+    width: 100% !important;
+
+  }
+
+  #clima{
+    margin-bottom: 10px;
+    width: 75% !important;
+  }
 
   .rseccionprincipal{
    margin-top: 175px;

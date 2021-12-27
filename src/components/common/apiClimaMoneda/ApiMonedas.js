@@ -28,8 +28,8 @@ const ApiMonedas = () => {
     cargando === true ? (
       <Spinner animation="border" size="sm"></Spinner>
     ) : (
-      <div className="ps-5 w-50 fuente fuenteRolling">
-        <Carousel indicators={false} controls={false} interval="3000" className="ps-4 mt-3">
+      <div id="dolar" className="ps-5 w-50 fuente fuenteRolling">
+        <Carousel indicators={false} controls={false} interval="3000"  className="ps-4 mt-3">
           <Carousel.Item>
             <p>
               Dólar Oficial: $ {dolar[0]?.casa.compra} / $ {dolar[0]?.casa.venta}

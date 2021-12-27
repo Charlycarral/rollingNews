@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NotiIndividual = (props) => {
   return (
     <div className="ms-5 ps-1">
-      <Card style={{ width: "24rem" }}>
+      <Card style={{width: "24rem"}}>
         <Link to={`/noticias/${props.noticia.id}`} href="categoria">
           <Card.Img variant="top" src={props.noticia.imagen} />
         </Link>

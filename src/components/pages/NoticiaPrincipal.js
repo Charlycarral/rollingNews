@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const NoticiaPrincipal = (props) => {
   return (
-    <section className="ms-1 w-100">
+    <section id="notiP" className="ms-1 w-100">
       {props.categoria[0] &&
         props.categoria.map((categoria) => (
           <div className="d-flex justify-content-center w-100">

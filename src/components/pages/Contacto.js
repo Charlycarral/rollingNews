@@ -88,7 +88,7 @@ const Contacto = () => {
         </Form.Group>
 
         <Button variant="danger" type="submit">
-          Submit
+          Enviar
         </Button>
       </Form>
       {errorContact === true ? (
