@@ -4,7 +4,8 @@ import {
   Nav,
   Container,
   Offcanvas,
-  Form,
+  Row,
+  Col,
   Dropdown,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -18,11 +19,8 @@ const Navigation = (props) => {
     props.setLoginCtrAd(false);
   };
 
-  console.log(props.categorias);
   const categoriasPrincipales = props.categorias.slice(0, 4);
   const categoriasSecundarias = props.categorias.slice(4);
-  console.log(categoriasPrincipales);
-  console.log(categoriasSecundarias);
 
   return (
     <>
@@ -34,13 +32,13 @@ const Navigation = (props) => {
               <Offcanvas.Header
                 closeButton
                 className="btn-close-dark centrado"
-              ></Offcanvas.Header>      
-              
-              <section>
+              ></Offcanvas.Header>
+
+              <section className="fuentenav">
                 <div className="container my-5 text-center ">
                   <Nav className="flex-row pe-3 row mt-5  justify-content-center">
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-                      <h3 className="text-white text-uppercase">Secciones</h3>
+                      <h3 className="text-white text-uppercase ">Secciones</h3>
                       <hr />
                       <section className="d-flex flex-column ">
                         {categoriasPrincipales.map((categoria) => (
@@ -60,7 +58,7 @@ const Navigation = (props) => {
 
                           <Dropdown.Menu className="bgNavbartras">
                             {categoriasSecundarias.map((categoria) => (
-                              <Dropdown.Item href="#/action-1" >
+                              <Dropdown.Item href="#/action-1">
                                 <ItemsCategorias
                                   key={categoria.id}
                                   categoria={categoria}
@@ -71,38 +69,48 @@ const Navigation = (props) => {
                         </Dropdown>
                       </section>
                     </div>
+
+                    {props.loginCtrAd === false ? (
+                      <div className="col-sm-1 col-md-1 col-lg-1"></div>
+                    ) : (
+                      <div className="col-sm-12 col-md-6 col-lg-4 text-white">
+                        <h3 className="text-white text-uppercase">
+                          administrador
+                        </h3>
+                        <hr />
+                        <section className="d-flex flex-column">
+                          <Link
+                            to="/admin/lista-noticias"
+                            className="text-decoration-none text-white my-1 text-uppercase"
+                          >
+                            administrador de noticias
+                          </Link>
+                          <Link
+                            to="/admin/agregar"
+                            className="text-decoration-none text-white my-1 text-uppercase"
+                          >
+                            nueva noticia
+                          </Link>
+                          <Link
+                            to="/admin/categorias"
+                            className="text-decoration-none text-white my-1 text-uppercase"
+                          >
+                            Categorías
+                          </Link>
+                          <Link
+                            to="/admin/agregar-categoria"
+                            className="text-decoration-none text-white my-1 text-uppercase"
+                          >
+                            Nueva categoría
+                          </Link>
+                        </section>
+                      </div>
+                    )}
+
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-                      <h3 className="text-white text-uppercase" >administrador</h3>
-                      <hr />
-                      <section className="d-flex flex-column">
-                        <Link
-                          to='/admin/lista-noticias' 
-                          className="text-decoration-none text-white my-1 text-uppercase"
-                        >
-                          administrador de noticias
-                        </Link>
-                        <Link
-                          to='/admin/agregar'
-                          className="text-decoration-none text-white my-1 text-uppercase"
-                        >
-                          nueva noticia
-                        </Link>
-                        <Link
-                          to='/admin/categorias'
-                          className="text-decoration-none text-white my-1 text-uppercase"
-                        >
-                          Categorías
-                        </Link>
-                        <Link
-                          to='/admin/agregar-categoria'
-                          className="text-decoration-none text-white my-1 text-uppercase"
-                        >
-                          Nueva categoría
-                        </Link>
-                      </section>
-                    </div>
-                    <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-                      <h3 className="text-white text-uppercase" >Institucional</h3>
+                      <h3 className="text-white text-uppercase">
+                        Institucional
+                      </h3>
                       <hr />
                       <section className="d-flex flex-column">
                         <Link
@@ -118,7 +126,7 @@ const Navigation = (props) => {
                           Acerca de nosotros
                         </Link>
                         <Link
-                          to=""
+                          to="/error404"
                           className="text-decoration-none text-white my-1 text-uppercase"
                         >
                           Publicidad
@@ -130,15 +138,21 @@ const Navigation = (props) => {
               </section>
             </Navbar.Offcanvas>
           </section>
+
           <Link
             to="/"
             className=" d-flex justify-content-center text-decoration-none text-white logoNav"
           >
-            <img src={logo} alt="logo rolling news" className="mt-1 w-50" />
+            <img src={logo} alt="logo rolling news" className="w-50 wlogo" />
           </Link>
-          <div className="d-flex justify-content-center">
+
+          <div className="d-flex justify-content-start ms-5 ps-5 mt-2">
             <div>
-              <Link to="/suscribe" id="botonSub" className="w-auto p-2">
+              <Link
+                to="/suscribe"
+                id="botonSub"
+                className="w-auto p-2 fuentenav"
+              >
                 Suscribite
               </Link>
             </div>
@@ -148,7 +162,7 @@ const Navigation = (props) => {
                 <Link
                   to="/login"
                   id="botonIngresar"
-                  className="w-auto p-2 colorFuenteGris"
+                  className="w-auto p-2 colorFuenteGris fuentenav"
                 >
                   Ingresar{" "}
                 </Link>
@@ -158,7 +172,7 @@ const Navigation = (props) => {
                 <Link
                   to="/"
                   id="botonIngresar"
-                  className="w-auto p-2 colorFuenteGris"
+                  className="w-auto p-2 colorFuenteGris "
                   onClick={() => {
                     salirLogin();
                   }}

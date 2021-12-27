@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { campoRequerido, validarCorreo } from "../Helpers/helpers";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import './Login.css'
 
 const FormularioLogin = (props) => {
   const [emailUsuario, setEmailUsuario] = useState([]);
@@ -18,21 +19,31 @@ const FormularioLogin = (props) => {
         email: emailUsuario,
         contrasena: contrasenaUsuario,
       };
-      if (props.loginCtr === false){
-        let user = props.usuarios.find((usuario) => {return usuario.email === nuevoUsuario.email});
-        let admin = props.admins.find((usuario) => {return usuario.email === nuevoUsuario.email});
-        if (user !== undefined){
-            const validoUser = await bcrypt.compare(nuevoUsuario.contrasena, user.contrasena);
-            if (validoUser){
-              props.setLoginCtr(true);
-              navegacion('/');
-            }
-        }else if (admin !== undefined){
-          const validoAdmin = await bcrypt.compare(nuevoUsuario.contrasena, admin.contrasena);
-          if (validoAdmin){
+      if (props.loginCtr === false) {
+        let user = props.usuarios.find((usuario) => {
+          return usuario.email === nuevoUsuario.email;
+        });
+        let admin = props.admins.find((usuario) => {
+          return usuario.email === nuevoUsuario.email;
+        });
+        if (user !== undefined) {
+          const validoUser = await bcrypt.compare(
+            nuevoUsuario.contrasena,
+            user.contrasena
+          );
+          if (validoUser) {
+            props.setLoginCtr(true);
+            navegacion("/");
+          }
+        } else if (admin !== undefined) {
+          const validoAdmin = await bcrypt.compare(
+            nuevoUsuario.contrasena,
+            admin.contrasena
+          );
+          if (validoAdmin) {
             props.setLoginCtr(true);
             props.setLoginCtrAd(true);
-            navegacion('/admin');  
+            navegacion("/admin");
           }
         } else if (admin !== undefined) {
           const validoAdmin = await bcrypt.compare(
@@ -64,7 +75,7 @@ const FormularioLogin = (props) => {
     }
   };
   return (
-    <div className="divBienvenidos bg-dark">
+    <div className="divBienvenidos bg-dark fuentenav">
       <h2 className="text-white mt-1 mb-5 fs-4 text-center">BIENVENIDO</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="my-3 text-white">
@@ -84,7 +95,7 @@ const FormularioLogin = (props) => {
             onChange={(e) => setContrasenaUsuario(e.target.value)}
           />
           <Form.Text className="text-muted mb-2 d-flex justify-content-end">
-            ¿Olvidaste tu contraseña?
+            <Link to="/suscribe" className="text-decoration-none text-secondary">¿No tienes cuenta? Regístrate aqui.</Link>
           </Form.Text>
         </Form.Group>
 

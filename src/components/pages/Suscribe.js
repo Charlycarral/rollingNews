@@ -6,19 +6,16 @@ import FormularioSuscribe from "./FormularioSuscribe";
 const Suscribe = (props) => {
   return (
     <section className="bgLogin">
-      <div className="botonInicio">
-        <button className="bgBotonInicio mt-4">INICIO</button>
-      </div>
-      <section className="d-flex flex-wrap">
+      <section className="d-flex flex-wrap mt-5 pt-2">
         <div className="col-md-11 col-lg-5">
           <img
             src={logo}
             alt="logo rollingnews"
-            className="ms-5 ps-sm-1 ps-md-5 w-75 mt-4 "
+            className="ms-5 ps-sm-1 ps-md-5 w-75 d-none d-lg-block d-xl-none"
           />
         </div>
 
-        <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end me-lg-1 ms-5">
+        <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center justify-content-lg-end ms-5 mt-3 ">
           <FormularioSuscribe consultarUser={props.consultarUser} consultarAdmin={props.consultarAdmin} admins={props.admins} usuarios={props.usuarios}></FormularioSuscribe>
         </div>
       </section>

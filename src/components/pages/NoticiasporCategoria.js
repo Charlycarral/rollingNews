@@ -13,7 +13,7 @@ const NoticiasporCategoria = () => {
 
   useEffect(() => {
     busquedaporcategoria();
-  }, []);
+  }, [categoria]);
 
   const busquedaporcategoria = async () => {
     try {
@@ -49,8 +49,12 @@ const NoticiasporCategoria = () => {
             <ItemNoticiaporCategoria noticia={noticia} key={noticia._id} />
           </div>
         ));
+
+
+
+        
   return (
-    <div className="mt-4 d-flex flex-column justify-content-center align-items-center ">
+    <div className="mt-5 d-flex flex-column justify-content-center align-items-center ">
       <div className="bordetabla htitulocategoria d-flex flex-column justify-content-center align-items-center">
         {" "}
         <h2 className="mt-5 fs-1 text-uppercase fuenteTitulosAdmin fw-bold ">
