@@ -50,6 +50,12 @@
       "nombre": "Aimé Saracho",
       "contrasena": "$2a$10$k0CUpKMLlToqNDmUYesFK.PVwybTinAPW19tBIA750ccAta71jv2.",
       "id": 4
+    },
+    {
+      "email": "gproyectofinal15@gmail.com",
+      "nombre": "ADMIN",
+      "contrasena": "$2a$10$mNJO.qrUrZOTTyDFwP2L0elEhhiFqrUPWRIg5AnL3wvmEZGo0Uva6",
+      "id": 5
     }
   ],
   "noticias": [

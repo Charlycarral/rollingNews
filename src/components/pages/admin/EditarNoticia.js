@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
 import "./admin.css";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -139,6 +139,7 @@ const EditarNoticia = (props) => {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="date"
+                max="2021-12-28"
                 placeholder=""
                 defaultValue={noticia.fechanoticia}
                 ref={fechanoticiaRef}

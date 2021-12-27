@@ -3,20 +3,18 @@ import { Form, Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { campoRequerido, validarImagen } from "../../Helpers/helpers";
-import DatePicker from "react-datepicker";
+import { campoRequerido } from "../../Helpers/helpers";
 import "./admin.css";
-import "react-datepicker/dist/react-datepicker.css";
 
 const AgregarNoticia = (props) => {
-  const [autor, setAutor] = useState(" ");
-  const [titulo, setTitulo] = useState(" ");
-  const [bajadanoticia, setBajadaNoticia] = useState(" ");
-  const [imagen, setImagen] = useState(" ");
-  const [categoria, setCategoria] = useState(" ");
-  const [leadnoticia, setLeadNoticia] = useState(" ");
-  const [cuerponoticia, setCuerpoNoticia] = useState(" ");
-  const [fechanoticia, setFechaNoticia] = useState(null);
+  const [autor, setAutor] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const [bajadanoticia, setBajadaNoticia] = useState("");
+  const [imagen, setImagen] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [leadnoticia, setLeadNoticia] = useState("");
+  const [cuerponoticia, setCuerpoNoticia] = useState("");
+  const [fechanoticia, setFechaNoticia] = useState("");
   const [destacada, setDestacada] = useState(false);
   const [principal, setPrincipal] = useState(false);
   const [error, setError] = useState(false);
@@ -24,13 +22,12 @@ const AgregarNoticia = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("desde handleSubmit");
     // aca deberia validar los datos
     if (
       campoRequerido(autor) &&
       campoRequerido(titulo) &&
       campoRequerido(bajadanoticia) &&
-      validarImagen(imagen) &&
+      campoRequerido(imagen) &&
       campoRequerido(categoria) &&
       campoRequerido(leadnoticia) &&
       campoRequerido(cuerponoticia) &&
@@ -61,7 +58,7 @@ const AgregarNoticia = (props) => {
         if (respuesta.status === 201) {
           Swal.fire(
             "Noticia Publicada",
-            "Su noticia fue publicada con éxito",
+            "Su noticia fue publicada con exito",
             "success"
           );
         } else {
@@ -73,11 +70,13 @@ const AgregarNoticia = (props) => {
         }
         e.target.reset();
         props.consultarServer();
-      } catch(error) {
+      } catch (error) {
         console.log(error);
       }
     } else {
-      setError(true)
+      setError(true);
+      console.log("mensaje de error");
+    }
   };
 
   const handleDestacada = () => {
@@ -127,13 +126,12 @@ const AgregarNoticia = (props) => {
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Fecha</Form.Label>
-              <DatePicker
-                className="p-1"
-                selected={fechanoticia}
-                onChange={(date) => setFechaNoticia(date)}
-                dateFormat="dd/MM/yyyy"
-                maxDate={new Date()}
-              ></DatePicker>
+              <Form.Control
+                type="date"
+                max="2021-12-28"
+                placeholder=""
+                onChange={(e) => setFechaNoticia(e.target.value)}
+              />
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
