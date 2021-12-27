@@ -48,6 +48,7 @@ function App() {
     consultarCat();
     noticiaspaginaprincipal();
     consultarInicio();
+    updateDimensions();   
   }, []);
 
   const consultarUser = async () => {
