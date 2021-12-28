@@ -92,7 +92,6 @@ const AgregarNoticia = (props) => {
 
   return (
     <div>
-      
       <h1 className="text-center mt-5 pt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla">
         Alta de Noticias
       </h1>
@@ -114,28 +113,28 @@ const AgregarNoticia = (props) => {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="date"
+                min="1980-01-01"
                 max="2021-12-28"
                 placeholder=""
                 onChange={(e) => setFechaNoticia(e.target.value)}
                 className="imputFecha"
               />
-               </Form.Group>
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="Noticia Destacada"
-                  onClick={(e) => handleDestacada(e.target.value)}
-                />
-                 </Form.Group>
-              
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="Noticia Principal"
-                  onClick={(e) => handlePrincipal(e.target.value)}
-                />
-              </Form.Group>
-            
+            </Form.Group>
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Check
+                type="checkbox"
+                label="Noticia Destacada"
+                onClick={(e) => handleDestacada(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicCheckbox">
+              <Form.Check
+                type="checkbox"
+                label="Noticia Principal"
+                onClick={(e) => handlePrincipal(e.target.value)}
+              />
+            </Form.Group>
           </div>
           <div className="form-top">
             <Form.Group className="mb-3 inputgrande">

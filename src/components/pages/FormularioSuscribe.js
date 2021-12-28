@@ -196,6 +196,7 @@ const FormularioSuscribe = (props) => {
           <Form.Control
             type="email"
             placeholder="Su email"
+            maxlength='35'
             onChange={(e) => setEmailUsuario(e.target.value)}
           />
         </Form.Group>
@@ -205,6 +206,7 @@ const FormularioSuscribe = (props) => {
           <Form.Control
             type="text"
             placeholder="Su nombre"
+            maxlength='25'
             onChange={(e) => setNombreUsuario(e.target.value)}
           />
         </Form.Group>
@@ -219,6 +221,7 @@ const FormularioSuscribe = (props) => {
           <Form.Control
             type="password"
             placeholder="Contraseña"
+            maxlength='20'
             onChange={(e) => setContrasenaUsuario(e.target.value)}
           />
         </Form.Group>
@@ -228,6 +231,7 @@ const FormularioSuscribe = (props) => {
           <Form.Control
             type="password"
             placeholder="Contraseña"
+            maxlength='20'
             onChange={(e) => setContrasenaUsuario_(e.target.value)}
           />
         </Form.Group>
