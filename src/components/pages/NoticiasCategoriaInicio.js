@@ -27,8 +27,8 @@ const NoticiasCategoriaInicio = (props) => {
               </Link>
             </div>
 
-            <div className="row justify-content-center mb-5">
-              <div className="mt-3 col-sm-12 col-lg-4 d-flex justify-content-center">
+            <div className="row justify-content-center">
+              <div className="d-flex col-sm-12 col-lg-4">
                 {props.categoria.map((categoria) => (
                   <NotiIndividual
                     noticia={categoria}

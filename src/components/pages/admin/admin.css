@@ -143,15 +143,19 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
   #dolar{
-    margin-top: 50px;
+    margin-top: 2%;
   }
 
   #clima{
-    margin-top: 50px;
+    margin-top: 2%;
   }
 
-  #cateIni{
-    height: 50%;
+  #cardPrin{
+    width: 100%;
+  }
+
+  #indiv{
+    margin-right: 5px;
   }
  
 }
@@ -162,14 +166,18 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   }
 
   #dolar{
-    margin-top: 50px;
+    margin-top: 15%;
     width: 100% !important;
 
   }
 
   #clima{
-    margin-bottom: 10px;
-    width: 75% !important;
+    margin-bottom: 3%;
+    width: 90% !important;
+  }
+
+  #cardPrin{
+    width: 25%;
   }
 
   .rseccionprincipal{

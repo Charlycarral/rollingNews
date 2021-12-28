@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 
 const NoticiaPrincipal = (props) => {
   return (
-    <section id="notiP" className="ms-1 w-100">
+    <section className="ms-1 w-100">
       {props.categoria[0] &&
         props.categoria.map((categoria) => (
           <div className="d-flex justify-content-center w-100">
             <Card className="bg-dark text-white w-75">
-              <Card.Img
+            <Card.Img
                 src={categoria.imagen}
                 alt="{categoria.imagen.titulo}"
               />
 
-              <Card.ImgOverlay className="d-flex flex-column justify-content-end align-items-center mb-5 pb-5">
+              <Card.ImgOverlay className="d-flex flex-column justify-content-center align-items-center mb-5 pb-5">
                 <Link
                   to={`/noticias/${categoria.id}`}
                   className="text-decoration-none"
