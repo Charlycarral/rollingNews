@@ -122,11 +122,6 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
 .wForm{
   width: 30%;
 }
-
-.fondoTextoPanel{
-  background-color: rgba(219, 217, 217, 0.856);
-
-}
 .btn-publish {
   width: 60%;
   height: 38px;
@@ -138,6 +133,9 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   font-size: 17px;
 }
 
+.rseccionprincipal{
+  
+}
 
 @media all and (max-width: 1023px) {
 
