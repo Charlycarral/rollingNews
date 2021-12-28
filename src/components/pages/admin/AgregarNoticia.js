@@ -128,6 +128,7 @@ const AgregarNoticia = (props) => {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="date"
+                min="1980-01-01"
                 max="2021-12-28"
                 placeholder=""
                 onChange={(e) => setFechaNoticia(e.target.value)}
