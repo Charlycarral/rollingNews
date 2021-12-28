@@ -1,5 +1,4 @@
 import NotiIndividual from "./NotiIndividual.js";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Inicio.css";
 

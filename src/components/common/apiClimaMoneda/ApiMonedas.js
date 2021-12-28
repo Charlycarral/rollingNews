@@ -2,6 +2,7 @@ import React from "react";
 import { Fragment, useState, useEffect } from "react";
 import { Spinner, Carousel } from "react-bootstrap";
 
+
 const ApiMonedas = () => {
   const [dolar, setDolar] = useState([]);
   const [cargando, setCargando] = useState(false);
@@ -28,11 +29,22 @@ const ApiMonedas = () => {
     cargando === true ? (
       <Spinner animation="border" size="sm"></Spinner>
     ) : (
+<<<<<<< HEAD
       <div id="dolar" className="ps-5 w-50 fuente fuenteRolling">
         <Carousel indicators={false} controls={false} interval="3000"  className="ps-4 mt-3">
+=======
+      <div className="ps-5 w-50 fuente fuenteRolling">
+        <Carousel
+          indicators={false}
+          controls={false}
+          interval="3000"
+          className="ps-4 mt-3"
+        >
+>>>>>>> a1a47d822806563a46f470f7722fd3a5c9ebca3d
           <Carousel.Item>
             <p>
-              Dólar Oficial: $ {dolar[0]?.casa.compra} / $ {dolar[0]?.casa.venta}
+              Dólar Oficial: $ {dolar[0]?.casa.compra} / ${" "}
+              {dolar[0]?.casa.venta}
             </p>
           </Carousel.Item>
           <Carousel.Item>

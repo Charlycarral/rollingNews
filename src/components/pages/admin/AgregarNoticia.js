@@ -3,7 +3,7 @@ import { Form, Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { campoRequerido, validarImagen } from "../../Helpers/helpers";
+import { campoRequerido } from "../../Helpers/helpers";
 import "./admin.css";
 
 const AgregarNoticia = (props) => {
@@ -17,6 +17,7 @@ const AgregarNoticia = (props) => {
   const [fechanoticia, setFechaNoticia] = useState("");
   const [destacada, setDestacada] = useState(false);
   const [principal, setPrincipal] = useState(false);
+  const [error, setError] = useState(false);
   const URL = process.env.REACT_APP_API_URL_NOTIC;
 
   const handleSubmit = async (e) => {
@@ -73,11 +74,7 @@ const AgregarNoticia = (props) => {
         console.log(error);
       }
     } else {
-      ["danger"].map((variant, idx) => (
-        <Alert key={idx} variant={variant}>
-          This is a {variant} alert—check it out!
-        </Alert>
-      ));
+      setError(true);
       console.log("mensaje de error");
     }
   };
@@ -112,10 +109,10 @@ const AgregarNoticia = (props) => {
           </BreadcrumbItem>
         </Breadcrumb>
       </section>
-      <h1 className="text-center mt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla" >
+      <h1 className="text-center mt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla">
         Alta de Noticias
       </h1>
-      
+
       <section className="container">
         <Form onSubmit={handleSubmit}>
           <div className="form-top">
@@ -124,7 +121,6 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
-                required
                 onChange={(e) => setAutor(e.target.value)}
               />
             </Form.Group>
@@ -132,8 +128,8 @@ const AgregarNoticia = (props) => {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="date"
+                max="2021-12-28"
                 placeholder=""
-                required
                 onChange={(e) => setFechaNoticia(e.target.value)}
               />
               <Form.Group controlId="formBasicCheckbox">
@@ -141,8 +137,6 @@ const AgregarNoticia = (props) => {
                   type="checkbox"
                   label="Noticia Destacada"
                   onClick={(e) => handleDestacada(e.target.value)}
-                 
-
                 />
               </Form.Group>
               <Form.Group controlId="formBasicCheckbox">
@@ -150,8 +144,6 @@ const AgregarNoticia = (props) => {
                   type="checkbox"
                   label="Noticia Principal"
                   onClick={(e) => handlePrincipal(e.target.value)}
-                 
-
                 />
               </Form.Group>
             </Form.Group>
@@ -160,7 +152,6 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
-                required
                 onChange={(e) => setTitulo(e.target.value)}
               />
             </Form.Group>
@@ -171,20 +162,21 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
-                required
                 onChange={(e) => setImagen(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Categoria</Form.Label>
-              <Form.Select
-                required
-                onChange={(e) => setCategoria(e.target.value)}
-              >
+              <Form.Select onChange={(e) => setCategoria(e.target.value)}>
                 <option value="">Seleccione una categoria</option>
-                {
-                  props.categorias.map((categoria)=><option value={(categoria.categoria).toLowerCase()} key={categoria.id}>{categoria.categoria}</option>)
-                }
+                {props.categorias.map((categoria) => (
+                  <option
+                    value={categoria.categoria.toLowerCase()}
+                    key={categoria.id}
+                  >
+                    {categoria.categoria}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
           </div>
@@ -192,7 +184,6 @@ const AgregarNoticia = (props) => {
             <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              required
               onChange={(e) => setBajadaNoticia(e.target.value)}
             />
           </Form.Group>
@@ -200,7 +191,6 @@ const AgregarNoticia = (props) => {
             <Form.Label>Lead Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              required
               onChange={(e) => setLeadNoticia(e.target.value)}
             />
           </Form.Group>
@@ -208,7 +198,6 @@ const AgregarNoticia = (props) => {
             <Form.Label>Cuerpo Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              required
               onChange={(e) => setCuerpoNoticia(e.target.value)}
             />
           </Form.Group>
@@ -218,6 +207,11 @@ const AgregarNoticia = (props) => {
             </button>
           </div>
         </Form>
+        {error === true ? (
+          <Alert variant="danger" className="mb-5">
+            Debe completar todos los campos
+          </Alert>
+        ) : null}
       </section>
     </div>
   );

@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import ItemNoticiaporCategoria from "./ItemNoticiaporCategoria";
 import Fotografia from "./Fotografia";
 import "./Inicio.css";
-import { Row } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 const NoticiasporCategoria = () => {
   const { categoria } = useParams();
@@ -32,29 +32,31 @@ const NoticiasporCategoria = () => {
   };
 
   const mostrarPagina =
-    categoria === "fotografía"
-      ? fotografias &&
-        fotografias.map((noticia) => (
-          <Row xs={1} md={2} className="g-3">
-            <Fotografia
-              className="bgNoticiasDestacadas"
-              noticia={noticia}
-              key={noticia._id}
-            ></Fotografia>
-          </Row>
-        ))
-      : noticiascategoria &&
-        noticiascategoria.map((noticia) => (
-          <div className="row">
-            <ItemNoticiaporCategoria noticia={noticia} key={noticia._id} />
-          </div>
-        ));
+    categoria === "fotografía" ? (
+      <Row xs={1} sm={1} md={2} lg={3}>
+        {Array.from({ length: 1 }).map(
+          (_, idx) =>
+            fotografias &&
+            fotografias.map((noticia) => (
+              <Fotografia
+                className="bgNoticiasDestacadas"
+                noticia={noticia}
+                key={noticia._id}
+              ></Fotografia>
+            ))
+        )}
+      </Row>
+    ) : (
+      noticiascategoria &&
+      noticiascategoria.map((noticia) => (
+        <div className="row">
+          <ItemNoticiaporCategoria noticia={noticia} key={noticia._id} />
+        </div>
+      ))
+    );
 
-
-
-        
   return (
-    <div className="mt-5 d-flex flex-column justify-content-center align-items-center ">
+    <div className="mt-5 d-flex flex-column justify-content-center align-items-center bg-light">
       <div className="bordetabla htitulocategoria d-flex flex-column justify-content-center align-items-center">
         {" "}
         <h2 className="mt-5 fs-1 text-uppercase fuenteTitulosAdmin fw-bold ">

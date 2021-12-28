@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Alert } from "react-bootstrap";
 import "./admin.css";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -19,8 +19,9 @@ const EditarNoticia = (props) => {
   const imagenNoticiaRef = useRef("");
   const leadnoticiaRef = useRef("");
   const cuerponoticiaRef = useRef("");
-  const fechanoticiaRef = useRef("");
+  const fechanoticiaRef = useRef(null);
   const navegacion = useNavigate();
+  const [error, setError] = useState(false);
 
   useEffect(async () => {
     try {
@@ -38,6 +39,9 @@ const EditarNoticia = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //console.log(autorNoticiaRef);
+    //console.log(autorNoticiaRef.current);
+    //console.log(autorNoticiaRef.current.value);
     if (
       campoRequerido(autorNoticiaRef.current.value) &&
       campoRequerido(tituloNoticiaRef.current.value) &&
@@ -80,7 +84,7 @@ const EditarNoticia = (props) => {
         console.log(error);
       }
     } else {
-      console.log("error en la validacion de los datos");
+      setError(true);
     }
   };
 
@@ -126,7 +130,6 @@ const EditarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
-                required
                 defaultValue={noticia.autor}
                 ref={autorNoticiaRef}
                 className="imputAutor"
@@ -136,8 +139,8 @@ const EditarNoticia = (props) => {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="date"
+                max="2021-12-28"
                 placeholder=""
-                required
                 defaultValue={noticia.fechanoticia}
                 ref={fechanoticiaRef}
                 className="imputFecha"
@@ -166,7 +169,6 @@ const EditarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
-                required
                 defaultValue={noticia.titulo}
                 ref={tituloNoticiaRef}
                 className="imputTitulo"
@@ -174,33 +176,35 @@ const EditarNoticia = (props) => {
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Categoria</Form.Label>
-              <Form.Select
-                required
-                onChange={(e) => setCategoria(e.target.value)}
-              >
-                <option value="" className="text-uppercase">Seleccione una categoria</option>
-                {
-                  props.categorias.map((categoria)=><option className="text-uppercase" value={(categoria.categoria).toLowerCase()} key={categoria.id}>{categoria.categoria}</option>)
-                }
+              <Form.Select onChange={(e) => setCategoria(e.target.value)}>
+                <option value="" className="text-uppercase">
+                  Seleccione una categoria
+                </option>
+                {props.categorias.map((categoria) => (
+                  <option
+                    className="text-uppercase"
+                    value={categoria.categoria.toLowerCase()}
+                    key={categoria.id}
+                  >
+                    {categoria.categoria}
+                  </option>
+                ))}
               </Form.Select>
             </Form.Group>
-           
           </div>
           <Form.Group className="mb-3 inputgrande">
-              <Form.Label>Url Imagen</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder=""
-                required
-                defaultValue={noticia.imagen}
-                ref={imagenNoticiaRef}
-              />
-            </Form.Group>
+            <Form.Label>Url Imagen</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder=""
+              defaultValue={noticia.imagen}
+              ref={imagenNoticiaRef}
+            />
+          </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              required
               defaultValue={noticia.bajadanoticia}
               ref={bajadanoticiaRef}
             />
@@ -209,7 +213,6 @@ const EditarNoticia = (props) => {
             <Form.Label>Lead Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              required
               defaultValue={noticia.leadnoticia}
               ref={leadnoticiaRef}
             />
@@ -218,7 +221,6 @@ const EditarNoticia = (props) => {
             <Form.Label>Cuerpo Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              required
               style={{ height: "250px" }}
               defaultValue={noticia.cuerponoticia}
               ref={cuerponoticiaRef}
@@ -230,6 +232,11 @@ const EditarNoticia = (props) => {
             </button>
           </div>
         </Form>
+        {error === true ? (
+          <Alert variant="danger" className="mb-5">
+            Debe completar todos los campos
+          </Alert>
+        ) : null}
       </section>
     </div>
   );
