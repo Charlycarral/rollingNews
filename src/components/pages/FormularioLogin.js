@@ -83,6 +83,7 @@ const FormularioLogin = (props) => {
           <Form.Control
             type="email"
             placeholder="Ingrese su email"
+            maxlength='35'
             onChange={(e) => setEmailUsuario(e.target.value)}
           />
         </Form.Group>
@@ -92,6 +93,7 @@ const FormularioLogin = (props) => {
           <Form.Control
             type="password"
             placeholder="Contraseña"
+            maxlength='20'
             onChange={(e) => setContrasenaUsuario(e.target.value)}
           />
           <Form.Text className="text-muted mb-2 d-flex justify-content-end">
