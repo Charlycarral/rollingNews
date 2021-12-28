@@ -242,7 +242,7 @@ const FormularioSuscribe = (props) => {
       </Form>
 
       <hr className="text-white" />
-      <Form.Group className="pt-3 mx-3" controlId="formBasicCheckbox">
+      <Form.Group className="pt-3 mx-3">
         <Form.Check
           type="checkbox"
           className="text-secondary fs-6"

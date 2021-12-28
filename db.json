@@ -24,6 +24,13 @@
       "online": "f",
       "contrasena": "$2a$10$pzG341KV4rEKLJ32TmyIPOQf4erBTPDF1tLCTWXAGVf3xfBosfS9m",
       "id": 4
+    },
+    {
+      "email": "carlosssss@live.com",
+      "nombre": "carlos carlos",
+      "online": "f",
+      "contrasena": "$2a$10$gSGQ4bS3Fk6dhMaNaLWWAOOYYL1/gV2vcNZP5FaSivaXverJKCXma",
+      "id": 5
     }
   ],
   "admins": [
@@ -643,12 +650,6 @@
       "categoria": "suscriptores",
       "id": 9
     }
-  ],
-  "mensajes": [
-    {
-      "nombre": "Aimé",
-      "email": "maimesaracho@gmail.com",
-      "mensaje": "Está muy buena la página! Continúen así"
-    }
   ]
+  
 }

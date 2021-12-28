@@ -172,7 +172,7 @@ const AgregarNoticia = (props) => {
                 {props.categorias.map((categoria) => (
                   <option
                     value={categoria.categoria.toLowerCase()}
-                    key={categoria.id}
+                    key={categoria._id}
                   >
                     {categoria.categoria}
                   </option>

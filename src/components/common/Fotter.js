@@ -15,7 +15,7 @@ const Fotter = (props) => {
               <section className="d-flex flex-column ">
                 {props.categorias.map((categoria) => (
                   <ItemsCategorias
-                    key={categoria.id}
+                    key={categoria._id}
                     categoria={categoria}
                   ></ItemsCategorias>
                 ))}

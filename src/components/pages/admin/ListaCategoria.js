@@ -40,7 +40,7 @@ const ListaCategoria = (props) => {
           {props.categorias.map((categoria) => (
             <ItemListaCategoria
               categoria={categoria}
-              key={categoria.id}
+              key={categoria._id}
               consultarCat={props.consultarCat}
             ></ItemListaCategoria>
           ))}

@@ -66,7 +66,7 @@ const NoticiasAdmin = (props) => {
         <tbody>
           {currentPost.map((noticia) => (
             <CardsNoticiasAdmin
-              key={noticia.id}
+              key={noticia._id}
               noticia={noticia}
               consultaServer={props.consultaServer}
             ></CardsNoticiasAdmin>

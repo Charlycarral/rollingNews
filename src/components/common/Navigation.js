@@ -35,7 +35,7 @@ const Navigation = (props) => {
                       <section className="d-flex flex-column ">
                         {categoriasPrincipales.map((categoria) => (
                           <ItemsCategorias
-                            key={categoria.id}
+                            key={categoria._id}
                             categoria={categoria}
                           ></ItemsCategorias>
                         ))}
@@ -52,7 +52,7 @@ const Navigation = (props) => {
                             {categoriasSecundarias.map((categoria) => (
                               <Dropdown.Item href="#/action-1">
                                 <ItemsCategorias
-                                  key={categoria.id}
+                                  key={categoria._id}
                                   categoria={categoria}
                                 ></ItemsCategorias>
                               </Dropdown.Item>

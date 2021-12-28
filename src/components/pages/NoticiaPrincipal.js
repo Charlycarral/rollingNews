@@ -17,7 +17,7 @@ const NoticiaPrincipal = (props) => {
 
               <Card.ImgOverlay className="d-flex flex-column justify-content-end align-items-center mb-5 pb-5">
                 <Link
-                  to={`/noticias/${categoria.id}`}
+                  to={`/noticias/${categoria._id}`}
                   className="text-decoration-none"
                 >
                   <Card.Title className="mb-2 pb-2 text-dark fs-1 fw-bold">
@@ -25,7 +25,7 @@ const NoticiaPrincipal = (props) => {
                   </Card.Title>
                 </Link>
                 <Link
-                  to={`/noticias/${categoria.id}`}
+                  to={`/noticias/${categoria._id}`}
                   className="text-decoration-none text-white"
                 >
                   <Card.Text className="mb-5 pb-5 fw-bolder fs-2 ">

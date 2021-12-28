@@ -13,7 +13,7 @@ const ItemNoticiaporCategoria = (props) => {
       >
         <div>
           <Link
-            to={`/noticias/${props.noticia.id}`}
+            to={`/noticias/${props.noticia._id}`}
             className="d-flex justify-content-center"
           >
             <Card.Img
