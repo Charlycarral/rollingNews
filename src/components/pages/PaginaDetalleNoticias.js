@@ -1,13 +1,14 @@
 import React from "react";
 import "./PaginaDetalleNoticias.css";
 import { useParams } from "react-router";
-import BannerPublicitario from "./BannerPublicitario";
+import BannerPublicitario from "./BannerPublicitarioA";
 import { useState, useEffect } from "react";
 import SuscribiteAhora from "./SuscribiteAhora";
 
 const PaginaDetalleNoticias = (props) => {
   const { id } = useParams();
   const [noticiaid, setNoticiaid] = useState({});
+  const [fecha, setFecha] = useState("");
   const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + id;
   useEffect(async () => {
     try {
@@ -16,6 +17,8 @@ const PaginaDetalleNoticias = (props) => {
         const dato = await respuesta.json();
         console.log(respuesta);
         setNoticiaid(dato);
+        const fechaSub = noticiaid.fechanoticia.substring(0, 10);
+        setFecha(fechaSub);
       }
     } catch (error) {
       console.log(error);
@@ -31,47 +34,47 @@ const PaginaDetalleNoticias = (props) => {
               <section className="banner container pt-5 mt-4 ">
                 <div className="d-flex justify-content-center my-4">
                   <div
-                    className="fs8 text-center rotuloCategoria text-uppercase fw-bold"
+                    className="fs8 text-center rotuloCategoria text-uppercase fw-bold fuenteRolling"
                     id="categoria"
                   >
                     {noticiaid.categoria}
                   </div>
                 </div>
 
-                <div className="titulo d-flex justify-content-center ">
+                <div className="titulo d-flex justify-content-center fuenteRolling">
                   <h2 className="w-75 my-2 text-center">{noticiaid.titulo}</h2>
                 </div>
 
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center lead">
                   <p className="detalleNoticia wbajada m-2">
                     {" "}
                     {noticiaid.bajadanoticia}
                   </p>
                 </div>
-                <div className="media d-flex justify-content-center">
+                <div className="media d-flex justify-content-center ">
                   <img
                     src={noticiaid.imagen}
-                    alt="Johann Biacsics"
+                    alt={noticiaid.titulo}
                     className="w-75 mt-3"
                   />
                 </div>
 
-                <div className="lead mt-3 d-flex justify-content-center ps-3 ms-5 fs-4  ">
+                <div className="lead mt-3 d-flex justify-content-center ps-3 ms-5 fs-4 lead ">
                   <div className="w-75">
                     <p>{noticiaid.leadnoticia}</p>
                   </div>
                 </div>
 
                 <BannerPublicitario></BannerPublicitario>
-                <div className="cuerpo">
+                <div className="cuerpo lead">
                   <p> {noticiaid.cuerponoticia}</p>
                 </div>
 
-                <div className="ending fs-4 me-5">
+                <div className="ending fs-4 me-5 fuenteRolling">
                   <p>Autor: {noticiaid.autor}</p>
                 </div>
-                <div className="ending2 fs-5 me-5">
-                  <span>Fecha: {noticiaid.fechanoticia}</span>
+                <div className="ending2 fs-5 me-5 fuenteRolling">
+                  <span>Fecha: {fecha}</span>
                 </div>
               </section>
             </div>
@@ -84,7 +87,7 @@ const PaginaDetalleNoticias = (props) => {
           <section className="banner container pt-5 mt-4 ">
             <div className="d-flex justify-content-center my-4">
               <div
-                className="fs8 text-center rotuloCategoria text-uppercase fw-bold"
+                className="fs8 text-center rotuloCategoria text-uppercase fw-bold fuenteRolling"
                 id="categoria"
               >
                 {noticiaid.categoria}
@@ -92,7 +95,9 @@ const PaginaDetalleNoticias = (props) => {
             </div>
 
             <div className="titulo d-flex justify-content-center ">
-              <h2 className="wdetalle my-2 text-center">{noticiaid.titulo}</h2>
+              <h2 className="wdetalle my-2 text-center fuenteRolling">
+                {noticiaid.titulo}
+              </h2>
             </div>
 
             <div className="d-flex justify-content-center text-left">
@@ -121,11 +126,11 @@ const PaginaDetalleNoticias = (props) => {
                 <p> {noticiaid.cuerponoticia}</p>
               </div>
             </div>
-            <div className="ending fs-4 me-5">
+            <div className="ending fs-4 me-5 fuenteRolling">
               <p>Autor: {noticiaid.autor}</p>
             </div>
-            <div className="ending2 fs-5 me-5">
-              <span>Fecha: {noticiaid.fechanoticia}</span>
+            <div className="ending2 fs-5 me-5 fuenteRolling">
+              <span>Fecha: {fecha}</span>
             </div>
           </section>
         </div>

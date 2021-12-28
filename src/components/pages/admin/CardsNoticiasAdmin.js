@@ -9,7 +9,7 @@ import "./admin.css";
 
 const CardsNoticiasAdmin = (props) => {
   const eliminarNoticia = () => {
-    console.log(props.noticia.id);
+   
     Swal.fire({
       title: "¿Esta seguro de eliminar este artículo?",
       text: "¡Una vez eliminado no se puede recuperar!",
@@ -23,7 +23,7 @@ const CardsNoticiasAdmin = (props) => {
       if (result.isConfirmed) {
         try {
           const URL =
-            process.env.REACT_APP_API_URL_NOTIC + "/" + props.noticia.id;
+            process.env.REACT_APP_API_URL_NOTIC + "/" + props.noticia._id;
 
           const respuesta = await fetch(URL, {
             method: "DELETE",
@@ -48,10 +48,10 @@ const CardsNoticiasAdmin = (props) => {
   };
 
   return (
-    <tr className="text-center align-middle bordetablacompleto">
-      <td>{props.noticia.id}</td>
+    <tr className="text-center align-middle bordetablacompleto fuenteTitulosAdmin">
+      
       <td>
-        <Link to={`/noticias/${props.noticia.id}`}>
+        <Link to={`/noticias/${props.noticia._id}`}>
           <Card.Img
             variant="top"
             src={props.noticia.imagen}
@@ -61,7 +61,7 @@ const CardsNoticiasAdmin = (props) => {
       </td>
       <td className="text-uppercase align-middle">
         <Link
-          to={`/noticias/${props.noticia.id}`}
+          to={`/noticias/${props.noticia._id}`}
           className="text-decoration-none text-black"
         >
           {props.noticia.titulo}
@@ -80,10 +80,10 @@ const CardsNoticiasAdmin = (props) => {
 
       <td>
         <div className="d-flex align-items-center justify-content-center">
-          <Link to={`/noticias/${props.noticia.id}`} className="">
+          <Link to={`/noticias/${props.noticia._id}`} className="">
             <FontAwesomeIcon icon={faEye} className="fs-1 m-2 text-gris" />
           </Link>
-          <Link to={`/admin/editar/${props.noticia.id}`} className="">
+          <Link to={`/admin/editar/${props.noticia._id}`} className="">
             <FontAwesomeIcon icon={faEdit} className="fs-1 m-2 text-primary" />
           </Link>
           <Button variant="btn btn-link" onClick={() => eliminarNoticia()}>

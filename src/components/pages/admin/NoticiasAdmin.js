@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Breadcrumb, BreadcrumbItem, Pagination, Table } from "react-bootstrap";
 import CardsNoticiasAdmin from "./CardsNoticiasAdmin";
 import { Link } from "react-router-dom";
-import "./admin.css";
 import Paginacion from "./Paginacion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import "./admin.css";
 
 const NoticiasAdmin = (props) => {
   // PAGINACION
@@ -46,9 +46,8 @@ const NoticiasAdmin = (props) => {
         responsive
         className="shadow-lg p-3 mb-5 bg-body rounded"
       >
-        <thead className="bordetabla text-center bordetablacompleto">
+        <thead className="bordetabla text-center bordetablacompleto fuenteTitulosAdmin">
           <tr className="text-rojo fs-5">
-            <th className="text-center">#</th>
             <th className="text-center">Imagen</th>
             <th className="text-center">Titulo</th>
             <th className="text-center">Categoría</th>
@@ -66,7 +65,7 @@ const NoticiasAdmin = (props) => {
         <tbody>
           {currentPost.map((noticia) => (
             <CardsNoticiasAdmin
-              key={noticia.id}
+              key={noticia._id}
               noticia={noticia}
               consultaServer={props.consultaServer}
             ></CardsNoticiasAdmin>

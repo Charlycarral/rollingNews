@@ -122,6 +122,7 @@ const EditarNoticia = (props) => {
         Editar Noticias
       </h1>
       <hr className="mb-5 text-rojo" />
+      
       <section className="container fluid">
         <Form onSubmit={handleSubmit} className="responsive">
           <div className="form-top d-flex justify-content-between">
@@ -222,7 +223,7 @@ const EditarNoticia = (props) => {
             <Form.Label>Cuerpo Noticia</Form.Label>
             <Form.Control
               as="textarea"
-              style={{ height: "250px" }}
+              style={{ height: "200px" }}
               defaultValue={noticia.cuerponoticia}
               ref={cuerponoticiaRef}
             />

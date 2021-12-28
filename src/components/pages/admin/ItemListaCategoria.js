@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,7 +19,7 @@ const ItemListaCategoria = (props) => {
       if (result.isConfirmed) {
         try {
           const URL_c =
-            process.env.REACT_APP_API_URL_CAT + "/" + props.categoria.id;
+            process.env.REACT_APP_API_URL_CAT + "/" + props.categoria._id;
 
           const respuesta = await fetch(URL_c, {
             method: "DELETE",
@@ -63,7 +63,7 @@ const ItemListaCategoria = (props) => {
            <FontAwesomeIcon icon={faEye} className="fs-2  text-gris" />
          </Link>
          <Link
-           to={`/admin/editar-categoria/${props.categoria.id}`}
+           to={`/admin/editar-categoria/${props.categoria._id}`}
            className="btn btn-link"
          >
            <FontAwesomeIcon icon={faEdit} className="fs-2 text-primary" />

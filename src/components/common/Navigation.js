@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Offcanvas,
-  Row,
-  Col,
-  Dropdown,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, Offcanvas, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../img/logoRollingBlanco.svg";
 import "../pages/Login.css";
@@ -37,13 +29,13 @@ const Navigation = (props) => {
               <section className="fuentenav">
                 <div className="container my-5 text-center ">
                   <Nav className="flex-row pe-3 row mt-5  justify-content-center">
-                    <div className="col-sm-12 col-md-6 col-lg-4 text-white">
+                    <div className="col-sm-12 col-md-6 col-lg-4 text-white mb-5">
                       <h3 className="text-white text-uppercase ">Secciones</h3>
-                      <hr />
+                      <hr className="colorRojo"/>
                       <section className="d-flex flex-column ">
                         {categoriasPrincipales.map((categoria) => (
                           <ItemsCategorias
-                            key={categoria.id}
+                            key={categoria._id}
                             categoria={categoria}
                           ></ItemsCategorias>
                         ))}
@@ -51,7 +43,7 @@ const Navigation = (props) => {
                           <Dropdown.Toggle
                             variant="secondary"
                             id="dropdown-basic"
-                            className="border-0"
+                            className="border-0 mt-3"
                           >
                             MAS CATEGORIAS...
                           </Dropdown.Toggle>
@@ -60,7 +52,7 @@ const Navigation = (props) => {
                             {categoriasSecundarias.map((categoria) => (
                               <Dropdown.Item href="#/action-1">
                                 <ItemsCategorias
-                                  key={categoria.id}
+                                  key={categoria._id}
                                   categoria={categoria}
                                 ></ItemsCategorias>
                               </Dropdown.Item>
@@ -77,7 +69,7 @@ const Navigation = (props) => {
                         <h3 className="text-white text-uppercase">
                           administrador
                         </h3>
-                        <hr />
+                        <hr className="colorRojo" />
                         <section className="d-flex flex-column">
                           <Link
                             to="/admin/lista-noticias"
@@ -107,11 +99,11 @@ const Navigation = (props) => {
                       </div>
                     )}
 
-                    <div className="col-sm-12 col-md-6 col-lg-4 text-white">
+                    <div className="col-sm-12 col-md-6 col-lg-4 text-white d-none d-md-block ">
                       <h3 className="text-white text-uppercase">
                         Institucional
                       </h3>
-                      <hr />
+                      <hr className="colorRojo" />
                       <section className="d-flex flex-column">
                         <Link
                           to="/institucional/contacto"
@@ -126,10 +118,10 @@ const Navigation = (props) => {
                           Acerca de nosotros
                         </Link>
                         <Link
-                          to="/error404"
+                          to="/institucional/politicas-de-privacidad"
                           className="text-decoration-none text-white my-1 text-uppercase"
                         >
-                          Publicidad
+                          Políticas de privacidad
                         </Link>
                       </section>
                     </div>
@@ -143,15 +135,15 @@ const Navigation = (props) => {
             to="/"
             className=" d-flex justify-content-center text-decoration-none text-white logoNav"
           >
-            <img src={logo} alt="logo rolling news" className="w-50 wlogo" />
+            <img src={logo} alt="logo rolling news" className="wlogo" />
           </Link>
 
-          <div className="d-flex justify-content-start ms-5 ps-5 mt-2">
+          <div className="d-flex justify-content-start ms-5 ps-5 mt-2 ">
             <div>
               <Link
                 to="/suscribe"
                 id="botonSub"
-                className="w-auto p-2 fuentenav"
+                className="w-auto p-2 fuentenav fsuscribe"
               >
                 Suscribite
               </Link>
@@ -162,17 +154,17 @@ const Navigation = (props) => {
                 <Link
                   to="/login"
                   id="botonIngresar"
-                  className="w-auto p-2 colorFuenteGris fuentenav"
+                  className="w-auto p-2 colorFuenteGris fuentenav fsuscribe"
                 >
                   Ingresar{" "}
                 </Link>
               </div>
             ) : (
-              <div className="colorFuenteGris">
+              <div className="colorFuenteGris fsuscribe">
                 <Link
                   to="/"
                   id="botonIngresar"
-                  className="w-auto p-2 colorFuenteGris "
+                  className="w-auto p-2 colorFuenteGris fsuscribe"
                   onClick={() => {
                     salirLogin();
                   }}

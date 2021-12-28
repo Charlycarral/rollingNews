@@ -7,7 +7,7 @@ import './Inicio.css'
 
 const SuscribiteAhora = () => {
   return (
-    <Card className="bg-dark text-white mt-5">
+    <Card className="bg-dark text-white pt-4 mt-5">
       <Card.Img src={Suscribite} alt="Card image" className="wimagensuscribete"/>
       <Card.ImgOverlay>
         <div className="msuscribeteahora pt-5 w-75">

@@ -96,34 +96,24 @@ const AgregarNoticia = (props) => {
 
   return (
     <div>
-      <section className="container">
-        <Breadcrumb className="mt-5 pt-2">
-          <BreadcrumbItem>
-            <Link to="/">Inicio</Link>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <Link to="/admin">Admin</Link>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <Link to="/admin/lista-noticias">Alta Noticias</Link>
-          </BreadcrumbItem>
-        </Breadcrumb>
-      </section>
-      <h1 className="text-center mt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla">
+      
+      <h1 className="text-center mt-5 pt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla">
         Alta de Noticias
       </h1>
 
-      <section className="container">
-        <Form onSubmit={handleSubmit}>
-          <div className="form-top">
+      <section className="container fluid">
+        <Form onSubmit={handleSubmit} className="responsive">
+          <div className="form-top  d-flex justify-content-between">
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Autor</Form.Label>
               <Form.Control
                 type="text"
                 placeholder=""
                 onChange={(e) => setAutor(e.target.value)}
+                className="imputAutor"
               />
             </Form.Group>
+
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Fecha</Form.Label>
               <Form.Control
@@ -132,14 +122,17 @@ const AgregarNoticia = (props) => {
                 max="2021-12-28"
                 placeholder=""
                 onChange={(e) => setFechaNoticia(e.target.value)}
+                className="imputFecha"
               />
+               </Form.Group>
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
                   label="Noticia Destacada"
                   onClick={(e) => handleDestacada(e.target.value)}
                 />
-              </Form.Group>
+                 </Form.Group>
+              
               <Form.Group controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"
@@ -147,23 +140,16 @@ const AgregarNoticia = (props) => {
                   onClick={(e) => handlePrincipal(e.target.value)}
                 />
               </Form.Group>
-            </Form.Group>
+            
+          </div>
+          <div className="form-top">
             <Form.Group className="mb-3 inputgrande">
               <Form.Label>Titulo</Form.Label>
               <Form.Control
                 type="text"
                 placeholder=""
                 onChange={(e) => setTitulo(e.target.value)}
-              />
-            </Form.Group>
-          </div>
-          <div className="form-top">
-            <Form.Group className="mb-3 inputgrande">
-              <Form.Label>Url Imagen</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder=""
-                onChange={(e) => setImagen(e.target.value)}
+                className="imputTitulo"
               />
             </Form.Group>
             <Form.Group className="mb-3 inputchico">
@@ -173,7 +159,7 @@ const AgregarNoticia = (props) => {
                 {props.categorias.map((categoria) => (
                   <option
                     value={categoria.categoria.toLowerCase()}
-                    key={categoria.id}
+                    key={categoria._id}
                   >
                     {categoria.categoria}
                   </option>
@@ -181,7 +167,15 @@ const AgregarNoticia = (props) => {
               </Form.Select>
             </Form.Group>
           </div>
-          <Form.Group className="mb-3">
+          <Form.Group className="mb-3 inputgrande">
+            <Form.Label>Url Imagen</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder=""
+              onChange={(e) => setImagen(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3 inputgrande">
             <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control
               as="textarea"
@@ -199,6 +193,7 @@ const AgregarNoticia = (props) => {
             <Form.Label>Cuerpo Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              style={{ height: "200px" }}
               onChange={(e) => setCuerpoNoticia(e.target.value)}
             />
           </Form.Group>

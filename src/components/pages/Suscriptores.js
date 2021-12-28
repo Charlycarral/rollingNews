@@ -1,6 +1,6 @@
 import NotiIndividual from "./NotiIndividual.js";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {Row, Col} from "react-bootstrap";
 import "./Inicio.css";
 
 const Suscriptores = (props) => {
@@ -26,17 +26,16 @@ const Suscriptores = (props) => {
                 ver mas{" "}
               </Link>
             </div>
-
-            <div className="row justify-content-center mb-5">
-              <div className="mt-3 col-sm-12 col-lg-4 d-flex justify-content-center">
+            <Row>
                 {props.categoria.map((categoria) => (
+                  <Col xs={12} md={6} lg={4}>
                   <NotiIndividual
                     noticia={categoria}
                     key={categoria._id}
                   ></NotiIndividual>
+                  </Col>
                 ))}
-              </div>
-            </div>
+            </Row>
           </div>
         )}
       </div>

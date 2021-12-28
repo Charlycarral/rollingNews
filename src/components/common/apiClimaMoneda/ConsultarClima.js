@@ -1,8 +1,7 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import InfoClima from "./InfoClima";
 import { Spinner } from "react-bootstrap";
-import "./Clima.css"
-
+import "./Clima.css";
 
 const ConsultarClima = () => {
   const [infoClima, setinfoClima] = useState({});
@@ -34,12 +33,9 @@ const ConsultarClima = () => {
     );
 
   return (
-    <section className="bannerClima me-auto w-50">{mostrarComp}
-  
+    <section id="clima" className=" bannerClima w-50">
+      {mostrarComp}
     </section>
-    
-  
-  
   );
 };
 

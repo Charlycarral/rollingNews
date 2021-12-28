@@ -14,27 +14,26 @@
 }
 
 .text-rojo {
-  color: #F30016;
+  color: #f30016;
 }
 
 .bordetabla {
-  border-bottom: #F30016 3px solid;
+  border-bottom: #f30016 3px solid;
 }
 
 .bordetablacompleto {
-border-top:rgba(0, 0, 0, 0.39)  1px solid;
-border-left:rgba(0, 0, 0, 0.39)  1px solid;
-border-right: rgba(0, 0, 0, 0.39) 1px solid;
+  border-top: rgba(0, 0, 0, 0.39) 1px solid;
+  border-left: rgba(0, 0, 0, 0.39) 1px solid;
+  border-right: rgba(0, 0, 0, 0.39) 1px solid;
 }
 .bordetablacompletodos {
-border:rgba(0, 0, 0, 0.39)  1px solid;
+  border: rgba(0, 0, 0, 0.39) 1px solid;
 }
 
-.htitulocategoria{
+.htitulocategoria {
   height: 150px;
   width: 100%;
-  border-bottom: #F30016 4px solid;
-
+  border-bottom: #f30016 4px solid;
 }
 
 .fuenteTitulosAdmin {
@@ -45,21 +44,20 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   width: 100px;
   height: 80px;
   border-radius: 15px;
-  
 }
 
 .efectoCard {
   opacity: 85%;
   filter: grayscale(55%);
-
 }
 .efectoCard:hover {
   opacity: 95%;
   filter: grayscale(0%);
 }
 
-.w-imagen{
-  width: 300px;
+.w-imagen {
+  width: 350px;
+  height: 270px;
 }
 
 .caja {
@@ -81,7 +79,7 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   width: 32%;
 }
 .btn-borrar {
-  background: #F30016;
+  background: #f30016;
   border: none;
   width: 80px;
   height: 32px;
@@ -107,19 +105,17 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   width: 100%;
 }
 
-.imputAutor{
-    width: 70%;
+.imputAutor {
+  width: 70%;
 }
-.imputFecha{
-    width: 62%;
+.imputFecha {
+  width: 62%;
 }
 
-.imputTitulo{
-    width: 94%;
-
-
+.imputTitulo {
+  width: 94%;
 }
-.wForm{
+.wForm {
   width: 30%;
 }
 .btn-publish {
@@ -133,25 +129,62 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   font-size: 17px;
 }
 
-.rseccionprincipal{
-  
+.rseccionprincipal {
+}
+.fsizefooter {
+  font-size: 15px;
+}
+.wCardCategoria {
+  width: 550px;
 }
 
 @media all and (max-width: 1023px) {
-
-  }
+}
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
- 
+  #dolar {
+    margin-top: 2%;
+  }
+
+  #clima {
+    margin-top: 2%;
+  }
+
+  #cardPrin {
+    width: 100%;
+  }
+
+  #indiv {
+    margin-right: 5px;
+  }
+  .wCardCategoria {
+    width: 280px;
+  }
 }
 @media all and (min-width: 300px) and (max-width: 767px) {
-  .wForm{
+  .wForm {
     width: 100%;
     text-align: center;
   }
 
+  #dolar {
+    margin-top: 15%;
+    width: 100% !important;
+  }
 
-  .rseccionprincipal{
-   margin-top: 175px;
-     }
+  #clima {
+    margin-bottom: 3%;
+    width: 90% !important;
+  }
+
+  #cardPrin {
+    width: 25%;
+  }
+
+  .rseccionprincipal {
+    margin-top: 175px;
+  }
+  .wCardCategoria {
+    width: 280px;
+  }
 }
