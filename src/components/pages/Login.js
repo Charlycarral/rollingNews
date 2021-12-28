@@ -6,7 +6,7 @@ import FormularioLogin from "./FormularioLogin";
 const Login = (props) => {
   return (
     <section className="bgLogin">
-       <section className="d-flex flex-wrap mt-3">
+      <section className="d-flex flex-wrap mt-3">
         <div className="col-md-11 col-lg-5 ">
           <img
             src={logo}
@@ -16,7 +16,14 @@ const Login = (props) => {
         </div>
 
         <div className="col-md-10 col-lg-5 d-flex justify-content-sm-center align-items-sm-center justify-content-lg-end me-lg-1 ps-1 ms-4 mt-5">
-          <FormularioLogin  loginCtrAd={props.loginCtrAd} setLoginCtrAd={props.setLoginCtrAd} loginCtr={props.loginCtr} setLoginCtr={props.setLoginCtr} admins={props.admins} usuarios={props.usuarios}></FormularioLogin>
+          <FormularioLogin
+            loginCtrAd={props.loginCtrAd}
+            setLoginCtrAd={props.setLoginCtrAd}
+            loginCtr={props.loginCtr}
+            setLoginCtr={props.setLoginCtr}
+            admins={props.admins}
+            usuarios={props.usuarios}
+          ></FormularioLogin>
         </div>
       </section>
     </section>

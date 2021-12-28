@@ -4,7 +4,11 @@ import { Card } from "react-bootstrap";
 
 const AboutUs = () => {
   return (
-    <div className="mt-5 pt-3 container">
+    <div className="bg-light">
+
+
+   
+    <div className="mt-5 pt-3 container fuenteTitulosAdmin ">
       <div className="main">
         <div clasName="texto mt-5">
           <h1 className="text-center mt-5 mb-4 pb-4 fuenteTitulosAdmin fw-bold bordetabla">
@@ -18,7 +22,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <h2 className="text-center">Nuestro Equipo</h2>
+      <h2 className="text-center my-5 fw-bold">Nuestro Equipo</h2>
       <div className="row">
         <div className="col-12 w-100">
           <Card className="">
@@ -102,7 +106,7 @@ const AboutUs = () => {
           </Card>
         </div>
         <div className="col-12 w-100">
-          <Card>
+          <Card className="mb-5">
             <Card.Img
               variant="top"
               className="w-25"
@@ -121,6 +125,7 @@ const AboutUs = () => {
           </Card>
         </div>
       </div>
+    </div>
     </div>
   );
 };
