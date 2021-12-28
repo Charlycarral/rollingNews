@@ -8,7 +8,7 @@ import Suscriptores from "./Suscriptores";
 
 const Inicio = (props) => {
   return (
-    <section className="w-100 container-fluid">
+    <section className="">
       <ConsultarApis></ConsultarApis>
       {props.noticiaprincipal && (
         <NoticiaPrincipal categoria={props.noticiaprincipal}></NoticiaPrincipal>
@@ -22,8 +22,7 @@ const Inicio = (props) => {
       {props.noticiasdeportes && (
         <NoticiasCategoriaInicio
           categoria={props.noticiasdeportes}
-        ></NoticiasCategoriaInicio>
-      )}
+        ></NoticiasCategoriaInicio>      )}
       <BannerPublicitario></BannerPublicitario>
       {props.suscriptores && (
         <Suscriptores categoria={props.suscriptores}></Suscriptores>

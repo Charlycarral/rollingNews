@@ -1,12 +1,13 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './Inicio.css'
 const NotiIndividual = (props) => {
   return (
-    <div id="indiv" className="ms-3 ps-1">
-      <Card style={{width: "19rem"}}>
+    <div id="indiv" className="ms-2 ">
+      <Card style={{width: "19rem"}} className="hcardpaginainicio">
         <Link to={`/noticias/${props.noticia._id}`} href="categoria">
-          <Card.Img variant="top" src={props.noticia.imagen} />
+          <Card.Img variant="top" className="himgCardPaginainicio" src={props.noticia.imagen} />
         </Link>
 
         <Card.Body>

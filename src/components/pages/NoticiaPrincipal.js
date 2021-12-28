@@ -5,39 +5,36 @@ import { Link } from "react-router-dom";
 
 const NoticiaPrincipal = (props) => {
   return (
-    <section className="ms-1 w-100">
+      
+    <section className="w-100 ">
       {props.categoria[0] &&
         props.categoria.map((categoria) => (
-          <div className="d-flex justify-content-center w-100">
-            <Card className="bg-dark text-white w-100">
+          <div className="bg-dark text-white w-100 bgseccionPrincipal">
             <Card.Img
-                src={categoria.imagen}
-                alt="{categoria.imagen.titulo}"
-              />
+              src={categoria.imagen}
+              alt="{categoria.imagen.titulo}"
+              className="sizeImagen mx-auto p-3"
+            />
 
-              <Row>
-                <Col xs={12} md={6} lg={4}>
-              <Card.ImgOverlay>
-                <Link
-                  to={`/noticias/${categoria._id}`}
-                  className="text-decoration-none"
-                >
-                  <Card.Title className="mb-2 pb-2 text-red fs-1 fw-bold">
-                    {categoria.titulo}
-                  </Card.Title>
-                </Link>
-                <Link
-                  to={`/noticias/${categoria._id}`}
-                  className="text-decoration-none text-white"
-                >
-                  <Card.Text className="mb-5 pb-5 fw-bolder fs-2 ">
-                    {categoria.bajadanoticia}
-                  </Card.Text>
-                </Link>
-              </Card.ImgOverlay>
-              </Col>
-              </Row>
-            </Card>
+            <Card.ImgOverlay className="d-flex flex-column mtituloprincipal mt-5 pt-5 mx-auto w-75">
+             
+              <Link
+                to={`/noticias/${categoria._id}`}
+                className="text-decoration-none mtituloprincipal"
+              >
+                <Card.Title className="mb-2 pb-2 text-red fuenteTituloPrincipal fw-bold fuenteColorRojo fuenteRolling bgTituloNoticiaPrincipal">
+                  {categoria.titulo}
+                </Card.Title>
+              </Link>
+              <Link
+                to={`/noticias/${categoria._id}`}
+                className="text-decoration-none text-white  fuenteRolling bgTituloNoticiaPrincipal"
+              >
+                <Card.Text className="mb-5 pb-5 fw-bolder fuenteTituloSecundario">
+                  {categoria.bajadanoticia}
+                </Card.Text>
+              </Link>
+            </Card.ImgOverlay>
           </div>
         ))}
     </section>

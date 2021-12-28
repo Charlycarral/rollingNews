@@ -9,10 +9,10 @@ const Fotter = (props) => {
       <section className="bgfooter py-2">
         <div className="container my-5 text-center">
           <section className="flex-row pe-3 row mt-5  justify-content-center">
-            <div className="col-sm-12 col-md-6 col-lg-4 text-white">
+            <div className="col-sm-12 col-md-6 col-lg-4 text-white mb-5">
               <h3 className="text-white text-uppercase">Secciones</h3>
               <hr className="colorRojo" />
-              <section className="d-flex flex-column ">
+              <section className="d-flex flex-column mt-3">
                 {props.categorias.map((categoria) => (
                   <ItemsCategorias
                     key={categoria._id}
@@ -47,7 +47,7 @@ const Fotter = (props) => {
               </section>
             </div>
             <section className="my-4">
-              <h5 className="text-white">Seguinos en nuestras redes:</h5>
+              <h5 className="text-white mb-2">Seguinos en nuestras redes:</h5>
               <div>
                 <Link
                   to="/error404"

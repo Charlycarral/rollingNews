@@ -5,10 +5,10 @@ import "./Inicio.css";
 
 const NoticiasCategoriaInicio = (props) => {
   return (
-    <section>
+    
       <div className="container">
         {props.categoria[0] && (
-          <div className="mt-2 border-bottom border-2 d">
+          <div className="mt-2 border-bottom ">
             <div className="d-flex justify-content-between border-bottom fw-bold">
               
               <Link 
@@ -40,7 +40,7 @@ const NoticiasCategoriaInicio = (props) => {
           </div>
         )}
       </div>
-    </section>
+    
   );
 };
 
