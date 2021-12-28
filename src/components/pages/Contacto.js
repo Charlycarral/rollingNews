@@ -5,6 +5,7 @@ import {
   validarCorreo,
   campoRequerido,
 } from "../Helpers/helpers";
+import "./Login.css";
 import emailjs from "emailjs-com";
 
 const Result = () => {
@@ -58,47 +59,49 @@ const Contacto = () => {
   };
 
   return (
-    <Container>
-      <Form className="container my-5 pt-5 mb-4 col-md-6" onSubmit={sendEmail}>
-        <h1 className="d-flex align-items-center mt-5">CONTÁCTENOS</h1>
-        <Form.Group className=" flex-column align-items">
-          <Form.Label>Nombre completo</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setNombre(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="name@example.com"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Mensaje</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={3}
-            minLength="10"
-            maxLength="200"
-            onChange={(e) => setMensaje(e.target.value)}
-          />
-        </Form.Group>
+    <section className="bgContacto textcontacto fuentenav p-5 mt-5">
+      <Container>
+        <Form className="container col-md-6 pb-5" onSubmit={sendEmail}>
+          <h1 className="d-flex align-items-center mt-5 fw-bold">CONTÁCTENOS</h1>
+          <Form.Group className=" flex-column align-items">
+            <Form.Label className="fs-5">Nombre completo</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={(e) => setNombre(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label className="fs-5">Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="name@example.com"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label className="fs-5">Mensaje</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              minLength="10"
+              maxLength="200"
+              onChange={(e) => setMensaje(e.target.value)}
+            />
+          </Form.Group>
 
-        <Button variant="danger" type="submit">
-          Submit
-        </Button>
-      </Form>
-      {errorContact === true ? (
-        <Alert variant="danger" className="mb-5">
-          Debe completar todos los campos
-        </Alert>
-      ) : null}
+          <Button variant="primary" type="submit">
+            Enviar
+          </Button>
+        </Form>
+        {errorContact === true ? (
+          <Alert variant="danger" className="mb-5">
+            Debe completar todos los campos
+          </Alert>
+        ) : null}
 
-      {result ? <Result /> : null}
-    </Container>
+        {result ? <Result /> : null}
+      </Container>
+    </section>
   );
 };
 

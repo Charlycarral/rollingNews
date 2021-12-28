@@ -20,6 +20,10 @@ import EditarCategoria from "./components/pages/admin/EditarCategoria";
 import Contacto from "./components/pages/Contacto";
 import AboutUs from "./components/pages/AboutUs";
 import Fotografia from "./components/pages/Fotografia";
+import PolicticaDePrivacidad from "./components/pages/PolicticaDePrivacidad";
+import PublicidadA from './img/publicidadA.jpg'
+import PublicidadB from './img/publicidadA.jpg'
+import PublicidadC from './img/publicidadA.jpg'
 
 function App() {
   const [usuarios, setUsuarios] = useState([]);
@@ -170,6 +174,9 @@ function App() {
               noticiaprincipal={noticiaprincipal}
               suscriptores={suscriptores}
               consultaServer={consultaServer}
+              PublicidadA={PublicidadA}
+              PublicidadB={PublicidadB}
+              PublicidadC={PublicidadC}
             ></Inicio>
           }
         ></Route>
@@ -198,6 +205,11 @@ function App() {
           exact
           path="/institucional/acerca-de"
           element={<AboutUs></AboutUs>}
+        ></Route>
+        <Route
+          exact
+          path="/institucional/politicas-de-privacidad"
+          element={<PolicticaDePrivacidad></PolicticaDePrivacidad>}
         ></Route>
         <Route exact path="/institucional/publicidad"></Route>
         <Route

@@ -24,44 +24,73 @@
   color: white;
   width: 90px;
 }
-.divLogin{
+.divLogin {
   width: 750px;
   position: relative;
-
 }
 
-.fuentenav{
+.fuentenav {
   font-family: "Raleway", sans-serif;
 }
 
-.bgLogin{
+.bgLogin {
   background-image: url(/src/img/redaccion.jpg);
   background-size: cover;
   height: 700px;
   width: 100%;
-  
 }
 
-.borderPrueba{
-  border: 1px red solid;
+.bgBannerTiempo {
+  background: rgb(233, 226, 226);
+  background: linear-gradient(
+    90deg,
+    rgba(233, 226, 226, 1) 0%,
+    rgba(215, 209, 209, 1) 31%,
+    rgba(224, 217, 217, 1) 100%
+  );
 }
 
-.bgBannerTiempo{
-  background: rgb(233,226,226);
-  background: linear-gradient(90deg, rgba(233,226,226,1) 0%, rgba(215,209,209,1) 31%, rgba(224,217,217,1) 100%);
+.bgNavbar {
+  background: #4d4d4d;
 }
-
-.bgNavbar{
-background: #4D4D4D;
-}
-.bgNavbartras{
+.bgNavbartras {
   background: #4d4d4d00;
   border: 0px;
 }
 
-.wboton{
-margin-left: 50px; 
-width: 100px;
+.wboton {
+  margin-left: 50px;
+  width: 100px;
+}
+
+.bgfooter {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1900' height='800' preserveAspectRatio='none' viewBox='0 0 1900 800'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1016%26quot%3b)' fill='none'%3e%3crect width='1900' height='800' x='0' y='0' fill='url(%23SvgjsRadialGradient1017)'%3e%3c/rect%3e%3cpath d='M1900 0L1524.5 0L1900 166.1z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1524.5 0L1900 166.1L1900 350.63L1522.91 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M1522.91 0L1900 350.63L1900 561.5L694.8600000000001 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M694.8600000000001 0L1900 561.5L1900 651.67L535.2500000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 800L920.7 800L0 547.22z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 547.22L920.7 800L1378.66 800L0 461.36z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 461.36L1378.66 800L1662.0900000000001 800L0 185.77000000000004z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 185.76999999999998L1662.0900000000001 800L1805.8700000000001 800L0 184.40999999999997z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1016'%3e%3crect width='1900' height='800' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='0%25' cy='100%25' r='2061.55' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1017'%3e%3cstop stop-color='rgba(16%2c 16%2c 16%2c 0.97)' offset='1'%3e%3c/stop%3e%3cstop stop-color='rgba(16%2c 16%2c 16%2c 0.97)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3c/defs%3e%3c/svg%3e");
+}
+.bgContacto {
+  background-image: url("../../img/contacto2.png");
+  background-size: cover;
+}
+.bgPoliticas {
+  background: rgb(233, 226, 226);
+  background: linear-gradient(
+    90deg,
+    rgba(233, 226, 226, 1) 0%,
+    rgba(179, 179, 179, 1) 31%,
+    rgba(224, 217, 217, 1) 100%
+  );
+}
+.titulopolitica {
+  width: 80%;
+  border-bottom: #f30016 4px solid;
+}
+
+.colorRojo{
+  color: #f30016 ;
+  border: #f30016  2px solid;
+}
+
+.textcontacto {
+  color: rgba(27, 27, 27, 0.822);
 }
 
 @media all and (max-width: 1023px) {

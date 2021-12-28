@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { campoRequerido } from "../../Helpers/helpers";
 
 const NuevaCategoria = (props) => {
   const [nuevaCategoria, setNuevaCategoria] = useState();
@@ -46,7 +45,7 @@ const NuevaCategoria = (props) => {
       <h1 className="text-center mt-3 mb-5 pb-3 fuenteTitulosAdmin fw-bold bordetabla">
         Alta de Categorías
       </h1>
-     
+
       <Form className="container w-25" onSubmit={handleSubmit}>
         <Form.Group className="mb-3 fs-4">
           <Form.Label className="fs-4">Nombre de Categoría</Form.Label>

@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Offcanvas,
-  Row,
-  Col,
-  Dropdown,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, Offcanvas, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../img/logoRollingBlanco.svg";
 import "../pages/Login.css";
@@ -39,7 +31,7 @@ const Navigation = (props) => {
                   <Nav className="flex-row pe-3 row mt-5  justify-content-center">
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white">
                       <h3 className="text-white text-uppercase ">Secciones</h3>
-                      <hr />
+                      <hr className="colorRojo"/>
                       <section className="d-flex flex-column ">
                         {categoriasPrincipales.map((categoria) => (
                           <ItemsCategorias
@@ -77,7 +69,7 @@ const Navigation = (props) => {
                         <h3 className="text-white text-uppercase">
                           administrador
                         </h3>
-                        <hr />
+                        <hr className="colorRojo" />
                         <section className="d-flex flex-column">
                           <Link
                             to="/admin/lista-noticias"
@@ -111,7 +103,7 @@ const Navigation = (props) => {
                       <h3 className="text-white text-uppercase">
                         Institucional
                       </h3>
-                      <hr />
+                      <hr className="colorRojo" />
                       <section className="d-flex flex-column">
                         <Link
                           to="/institucional/contacto"
@@ -126,10 +118,10 @@ const Navigation = (props) => {
                           Acerca de nosotros
                         </Link>
                         <Link
-                          to="/error404"
+                          to="/institucional/politicas-de-privacidad"
                           className="text-decoration-none text-white my-1 text-uppercase"
                         >
-                          Publicidad
+                          Políticas de privacidad
                         </Link>
                       </section>
                     </div>

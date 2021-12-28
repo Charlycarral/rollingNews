@@ -12,7 +12,7 @@ const Admin = () => {
         <Card.Title className="text-black fs-1 fw-bold fuenteTitulosAdmin text-center ">
           Bienvenido Administrador
         </Card.Title>
-        <Card.Text className="text-secondary fuenteTitulosAdmin fs-3 text-center d-none d-lg-block d-xl-block ">
+        <Card.Text className="text-secondary fuenteTitulosAdmin fs-3 text-center d-none d-lg-block d-xl-block fondoTextoPanel ">
           Desde el Menu Secciones puede acceder a todas las opciones de
           Administrador.
         </Card.Text>
