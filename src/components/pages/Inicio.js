@@ -1,7 +1,8 @@
 import NoticiaPrincipal from "./NoticiaPrincipal";
 import NoticiasDestacadas from "./NoticiasDestacadas";
 import NoticiasCategoriaInicio from "./NoticiasCategoriaInicio";
-import BannerPublicitario from "./BannerPublicitario";
+import BannerPublicitarioA from "./BannerPublicitarioA";
+import BannerPublicitarioB from "./BannerPublicitarioB";
 import ConsultarApis from "../common/apiClimaMoneda/ConsultarApis";
 import "./Inicio.css";
 import Suscriptores from "./Suscriptores";
@@ -18,29 +19,29 @@ const Inicio = (props) => {
           categoria={props.noticiasdestacadas}
         ></NoticiasDestacadas>
       )}
-      <BannerPublicitario></BannerPublicitario>
+      <BannerPublicitarioA></BannerPublicitarioA>
       {props.noticiasdeportes && (
         <NoticiasCategoriaInicio
           categoria={props.noticiasdeportes}
         ></NoticiasCategoriaInicio>      )}
-      <BannerPublicitario></BannerPublicitario>
       {props.suscriptores && (
         <Suscriptores categoria={props.suscriptores}></Suscriptores>
-      )}
+        )}
+        <BannerPublicitarioB></BannerPublicitarioB>
 
-      <BannerPublicitario></BannerPublicitario>
       {props.noticiaspolitica && (
         <NoticiasCategoriaInicio
-          categoria={props.noticiaspolitica}
+        categoria={props.noticiaspolitica}
         ></NoticiasCategoriaInicio>
-      )}
-      <BannerPublicitario></BannerPublicitario>
+        )}
+        <BannerPublicitarioA></BannerPublicitarioA>
       {props.noticiaseconomia && (
         <NoticiasCategoriaInicio
-          categoria={props.noticiaseconomia}
+        categoria={props.noticiaseconomia}
         ></NoticiasCategoriaInicio>
-      )}
-      <BannerPublicitario></BannerPublicitario>
+        )}
+        <BannerPublicitarioB></BannerPublicitarioB>
+     
       {props.noticiasespectaculos && (
         <NoticiasCategoriaInicio
           categoria={props.noticiasespectaculos}

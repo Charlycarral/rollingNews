@@ -10,7 +10,7 @@ const Fotter = (props) => {
         <div className="container my-5 text-center">
           <section className="flex-row pe-3 row mt-5  justify-content-center">
             <div className="col-sm-12 col-md-6 col-lg-4 text-white mb-5">
-              <h3 className="text-white text-uppercase">Secciones</h3>
+              <h3 className="text-white text-uppercase fs-4">Secciones</h3>
               <hr className="colorRojo" />
               <section className="d-flex flex-column mt-3">
                 {props.categorias.map((categoria) => (
@@ -23,9 +23,9 @@ const Fotter = (props) => {
             </div>
 
             <div className="col-sm-12 col-md-6 col-lg-4 text-white">
-              <h3 className="text-white text-uppercase">Institucional</h3>
+              <h3 className="text-white text-uppercase fs-4">Institucional</h3>
               <hr className="colorRojo" />
-              <section className="d-flex flex-column">
+              <section className="d-flex flex-column fsizefooter">
                 <Link
                   to="/institucional/contacto"
                   className="text-decoration-none text-white my-1 text-uppercase"

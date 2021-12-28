@@ -29,12 +29,12 @@ const ApiMonedas = () => {
       <Spinner animation="border" size="sm"></Spinner>
     ) : (
       <Col >
-        <div className="col-sm-9 col-md-6 ps-5 w-75 fuente fuenteRolling">
+        <div className="w-75 fuente fuenteRolling mx-auto">
           <Carousel
             indicators={false}
             controls={false}
             interval="3000"
-            className="ps-4 mt-3"
+            className="ps-1 mt-3"
           >
             <Carousel.Item>
               <p>

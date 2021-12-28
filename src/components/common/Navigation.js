@@ -99,7 +99,7 @@ const Navigation = (props) => {
                       </div>
                     )}
 
-                    <div className="col-sm-12 col-md-6 col-lg-4 text-white">
+                    <div className="col-sm-12 col-md-6 col-lg-4 text-white d-none d-md-block ">
                       <h3 className="text-white text-uppercase">
                         Institucional
                       </h3>

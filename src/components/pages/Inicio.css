@@ -103,6 +103,10 @@ height: 570px;
 height: 200px;
 
 }
+
+.hcardFoto{
+  height: 300px;
+}
 @media all and (max-width: 1023px) {
   .fuenteTituloPrincipal {
     font-size: 31px;

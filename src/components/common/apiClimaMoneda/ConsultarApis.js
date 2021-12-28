@@ -6,8 +6,8 @@ import "./Clima.css"
 
 const ConsultarApis = () => {
     return (
-        <div className="ms-0 row bgBannerTiempo marginApis d-flex justify-content-between align-content-between fixed-top">
-            <Row xs={1} md={1} lg={2}>
+        <div className="ms-0 row bgBannerTiempo marginApis d-flex justify-content-center align-items-center posApi">
+            <Row xs={1} md={2} lg={2}>
             <ApiMonedas></ApiMonedas>
             <ConsultarClima></ConsultarClima>
             </Row>

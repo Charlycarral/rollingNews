@@ -4,17 +4,20 @@ import { Link } from "react-router-dom";
 import "../pages/admin/admin.css";
 
 const ItemNoticiaporCategoria = (props) => {
+  const fecha = props.noticia.fechanoticia.substring(0, 10);
+  console.log(fecha);
+
   return (
-    <div className="my-4 me-auto">
+    <div className="my-4 mx-auto ">
       <Card
         border="light"
         className="d-flex flex-md-row justify-content-center"
-        style={{ width: "85%" }}
+        
       >
         <div>
           <Link
             to={`/noticias/${props.noticia._id}`}
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center "
           >
             <Card.Img
               variant="top"
@@ -26,20 +29,21 @@ const ItemNoticiaporCategoria = (props) => {
         <div>
           <Card.Body>
             <div className="d-flex justify-content-around">
-              <Card.Title className="w-100 fs-6 ">
+              <Card.Title className="w-100 fs-6 fuenteTitulosAdmin ">
                 {props.noticia.autor}
               </Card.Title>
-              <Card.Title className="w-100 fs-6 d-flex justify-content-end">
-                {props.noticia.fechanoticia}
+              <Card.Title className="w-100 fs-6 d-flex justify-content-end fuenteTitulosAdmin">
+                {fecha}
               </Card.Title>
             </div>
-
-            <Card.Title className="w-100 fs-4 d-flex justify-content-start fuenteTitulosAdmin">
-              {props.noticia.titulo}
-            </Card.Title>
-            <Card.Text className="fs-5 lead d-none d-sm-block">
-              {props.noticia.bajadanoticia}
-            </Card.Text>
+            <div className="wCardCategoria">
+              <Card.Title className="w-100 fs-4 d-flex justify-content-start fuenteTitulosAdmin">
+                {props.noticia.titulo}
+              </Card.Title>
+              <Card.Text className="fs-5 lead d-none d-sm-block">
+                {props.noticia.bajadanoticia}
+              </Card.Text>
+            </div>
           </Card.Body>
         </div>
       </Card>

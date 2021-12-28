@@ -3,7 +3,7 @@ import "./Clima.css";
 
 const InfoClima = (props) => {
   return (
-    <div className="d-flex fuenteRolling">
+    <div className="d-flex fuenteRolling mx-auto">
       <img
         src={
           "http://openweathermap.org/img/wn/" +

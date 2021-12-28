@@ -6,7 +6,7 @@ const Fotografia = (props) => {
   return (
     <Col className="g-3">
       <Card className="bg-dark text-white">
-        <Card.Img src={props.noticia.imagen} alt="Card image" />
+        <Card.Img src={props.noticia.imagen} alt={props.noticia.titulo} className="hcardFoto"  />
         <Card.ImgOverlay className="d-flex flex-column justify-content-end align-items-center mb-3 pb-3">
           <Card.Title className="fs-4 fw-bold  fuenteRolling bgtituloFotografia">
             {" "}

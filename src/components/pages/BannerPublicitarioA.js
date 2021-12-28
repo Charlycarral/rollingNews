@@ -1,7 +1,7 @@
 import React from 'react';
 import Publicidad from '../../img/publicidadA.jpg'
 
-const BannerPublicitario = () => {
+const BannerPublicitarioA = () => {
     return (
         <div className="d-flex justify-content-center my-5">
             <img src={Publicidad} alt="publicidad" className="w-75" />
@@ -9,4 +9,4 @@ const BannerPublicitario = () => {
     );
 };
 
-export default BannerPublicitario;
+export default BannerPublicitarioA;

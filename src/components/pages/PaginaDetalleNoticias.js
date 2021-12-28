@@ -1,7 +1,7 @@
 import React from "react";
 import "./PaginaDetalleNoticias.css";
 import { useParams } from "react-router";
-import BannerPublicitario from "./BannerPublicitario";
+import BannerPublicitario from "./BannerPublicitarioA";
 import { useState, useEffect } from "react";
 import SuscribiteAhora from "./SuscribiteAhora";
 

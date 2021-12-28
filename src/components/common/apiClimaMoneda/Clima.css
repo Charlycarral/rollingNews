@@ -30,25 +30,58 @@
   font-family: "Raleway", sans-serif;
 }
 .marginApis{
-  margin-top: 64px;
+  margin-top: 44px;
 
+}
+.posApi{
+  position: relative;
 }
 
 @media all and (max-width: 1023px) {
 
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-width: 998px) and (max-width: 1024px) {
   .marginApis{
     margin-top: 49px;
   
   }
+  .fuente {
+    font-size: 12px;
+    
+  }
 
 }
-@media all and (min-width: 300px) and (max-width: 767px) {
+@media all and (min-width: 768px) and (max-width: 997px) {
   .marginApis{
-    margin-top: 110px;
+    margin-top: 78px;
   
+  }
+  .fuente {
+    font-size: 12px;
+    
+  }
+
+}
+@media all and (min-width:575px) and (max-width: 767px) {
+  .marginApis{
+    margin-top: 75px;
+  
+  }
+  .fuente {
+    font-size: 10px;
+    
+  }
+  
+}
+@media all and (min-width: 300px) and (max-width: 575px) {
+  .marginApis{
+    margin-top: 109px;
+  
+  }
+  .fuente {
+    font-size: 10px;
+    
   }
   
 }

@@ -9,7 +9,7 @@ const NoticiasporCategoria = () => {
   const { categoria } = useParams();
   const [noticiascategoria, setNoticiascategoria] = useState([]);
   const [fotografias, setFotografias] = useState();
-  const URL = `${process.env.REACT_APP_API_URL_NOTIC}?categoria=${categoria}`;
+  const URL = process.env.REACT_APP_API_URL_NOTIC;
 
   useEffect(() => {
     busquedaporcategoria();
@@ -20,7 +20,11 @@ const NoticiasporCategoria = () => {
       const respuesta = await fetch(URL);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        setNoticiascategoria(dato);
+        const noticiasPorCategoria = await dato.filter(
+          (noticia) => noticia.categoria === categoria
+        );
+        setNoticiascategoria(noticiasPorCategoria);
+
         const articuloFotograficos = await dato.filter(
           (noticia) => noticia.categoria === "fotografía"
         );
@@ -56,7 +60,7 @@ const NoticiasporCategoria = () => {
     );
 
   return (
-    <div className="mt-5 d-flex flex-column justify-content-center align-items-center bg-light">
+    <div className="mt-5 d-flex flex-column justify-content-center align-items-center bg-light mx-auto">
       <div className="bordetabla htitulocategoria d-flex flex-column justify-content-center align-items-center">
         {" "}
         <h2 className="mt-5 fs-1 text-uppercase fuenteTitulosAdmin fw-bold ">

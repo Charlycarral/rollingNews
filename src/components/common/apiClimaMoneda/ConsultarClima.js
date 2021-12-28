@@ -33,7 +33,7 @@ const ConsultarClima = () => {
     );
 
   return (
-    <section id="clima" className=" bannerClima w-25">
+    <section id="clima" className=" bannerClima w-50">
       {mostrarComp}
     </section>
   );
