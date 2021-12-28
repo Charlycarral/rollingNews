@@ -1,6 +1,6 @@
 import React from "react";
 import "./Inicio.css";
-import { Card } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const NoticiaPrincipal = (props) => {
@@ -9,18 +9,20 @@ const NoticiaPrincipal = (props) => {
       {props.categoria[0] &&
         props.categoria.map((categoria) => (
           <div className="d-flex justify-content-center w-100">
-            <Card className="bg-dark text-white w-75">
-              <Card.Img
+            <Card className="bg-dark text-white w-100">
+            <Card.Img
                 src={categoria.imagen}
                 alt="{categoria.imagen.titulo}"
               />
 
-              <Card.ImgOverlay className="d-flex flex-column justify-content-end align-items-center mb-5 pb-5">
+              <Row>
+                <Col xs={12} md={6} lg={4}>
+              <Card.ImgOverlay>
                 <Link
                   to={`/noticias/${categoria._id}`}
                   className="text-decoration-none"
                 >
-                  <Card.Title className="mb-2 pb-2 text-dark fs-1 fw-bold">
+                  <Card.Title className="mb-2 pb-2 text-red fs-1 fw-bold">
                     {categoria.titulo}
                   </Card.Title>
                 </Link>
@@ -33,6 +35,8 @@ const NoticiaPrincipal = (props) => {
                   </Card.Text>
                 </Link>
               </Card.ImgOverlay>
+              </Col>
+              </Row>
             </Card>
           </div>
         ))}

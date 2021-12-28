@@ -34,7 +34,7 @@ const ConsultarClima = () => {
     );
 
   return (
-    <section className="bannerClima me-auto w-50">{mostrarComp}
+    <section id="clima" className="bannerClima me-auto w-50">{mostrarComp}
   
     </section>
     

@@ -122,11 +122,6 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
 .wForm{
   width: 30%;
 }
-
-.fondoTextoPanel{
-  background-color: rgba(219, 217, 217, 0.856);
-
-}
 .btn-publish {
   width: 60%;
   height: 38px;
@@ -138,12 +133,30 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
   font-size: 17px;
 }
 
+.rseccionprincipal{
+  
+}
 
 @media all and (max-width: 1023px) {
 
   }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
+  #dolar{
+    margin-top: 2%;
+  }
+
+  #clima{
+    margin-top: 2%;
+  }
+
+  #cardPrin{
+    width: 100%;
+  }
+
+  #indiv{
+    margin-right: 5px;
+  }
  
 }
 @media all and (min-width: 300px) and (max-width: 767px) {
@@ -152,6 +165,20 @@ border:rgba(0, 0, 0, 0.39)  1px solid;
     text-align: center;
   }
 
+  #dolar{
+    margin-top: 15%;
+    width: 100% !important;
+
+  }
+
+  #clima{
+    margin-bottom: 3%;
+    width: 90% !important;
+  }
+
+  #cardPrin{
+    width: 25%;
+  }
 
   .rseccionprincipal{
    margin-top: 175px;

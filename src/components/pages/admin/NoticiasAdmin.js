@@ -48,7 +48,6 @@ const NoticiasAdmin = (props) => {
       >
         <thead className="bordetabla text-center bordetablacompleto">
           <tr className="text-rojo fs-5">
-            <th className="text-center">#</th>
             <th className="text-center">Imagen</th>
             <th className="text-center">Titulo</th>
             <th className="text-center">Categoría</th>

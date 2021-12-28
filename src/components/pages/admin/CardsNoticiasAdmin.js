@@ -49,7 +49,7 @@ const CardsNoticiasAdmin = (props) => {
 
   return (
     <tr className="text-center align-middle bordetablacompleto">
-      <td>{props.noticia._id}</td>
+      
       <td>
         <Link to={`/noticias/${props.noticia._id}`}>
           <Card.Img
