@@ -67,7 +67,7 @@ const EditarNoticia = (props) => {
       try {
         const respuesta = await fetch(URL, {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json"},
           body: JSON.stringify(noticiaModificada),
         });
         console.log(respuesta);

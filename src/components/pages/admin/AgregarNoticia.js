@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Form, Alert } from "react-bootstrap";
 import Swal from "sweetalert2";
-import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { campoRequerido } from "../../Helpers/helpers";
 import "./admin.css";
 
@@ -48,9 +46,7 @@ const AgregarNoticia = (props) => {
       try {
         const parametros = {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: {"Content-Type": "application/json"},
           body: JSON.stringify(nuevaNoticia),
         };
         const respuesta = await fetch(URL, parametros);

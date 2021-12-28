@@ -30,9 +30,8 @@ const FormularioSuscribe = (props) => {
       if (contrasenaUsuario === contrasenaUsuario_) {
         console.log(claveAdmin);
         if (claveAdmin.length === 0) {
-          // encriptar contrasena
           const contrasenaEncriptada = await bcrypt.hash(contrasenaUsuario, 10);
-          // crear objeto Usuario
+
           const nuevoUsuario = {
             email: emailUsuario,
             nombre: nombreUsuario,
@@ -43,7 +42,6 @@ const FormularioSuscribe = (props) => {
             return usuario.email === nuevoUsuario.email;
           });
           if (existe === undefined) {
-            // enviar objeto a la API
             try {
               const parametros = {
                 method: "POST",
@@ -59,11 +57,11 @@ const FormularioSuscribe = (props) => {
                   "Usuario agregado correctamente",
                   "success"
                 );
-                //  actualizar state de los usuarios registrados
+
                 props.consultarUser();
-                // resetear formulario
+
                 e.target.reset();
-                // redireccionar
+
                 navegacion("/login");
               } else {
                 Swal.fire({
@@ -86,12 +84,11 @@ const FormularioSuscribe = (props) => {
           }
         } else {
           if (claveAdmin === PASSW) {
-            // encriptar contrasena
             const contrasenaEncriptada = await bcrypt.hash(
               contrasenaUsuario,
               10
             );
-            // crear objeto Usuario
+
             const nuevoAdmin = {
               email: emailUsuario,
               nombre: nombreUsuario,
@@ -101,7 +98,6 @@ const FormularioSuscribe = (props) => {
               return usuario.email === nuevoAdmin.email;
             });
             if (existe === undefined) {
-              // enviar objeto a la API
               try {
                 const parametros = {
                   method: "POST",
@@ -117,11 +113,11 @@ const FormularioSuscribe = (props) => {
                     "Admin agregado correctamente",
                     "success"
                   );
-                  //  actualizar state de los usuarios registrados
+
                   props.consultarAdmin();
-                  // resetear formulario
+
                   e.target.reset();
-                  // redireccionar
+
                   navegacion("/login");
                 } else {
                   Swal.fire({

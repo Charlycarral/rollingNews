@@ -10,7 +10,7 @@ import "./admin.css";
 const NoticiasAdmin = (props) => {
   // PAGINACION
   const [paginaActual, setPaginaActual] = useState(1);
-  const [noticiasPorPagina] = useState(10);
+  const [noticiasPorPagina] = useState(20);
 
   const indexUltimaNoticia = paginaActual * noticiasPorPagina;
   const indexPrimerNoticia = indexUltimaNoticia - noticiasPorPagina;
