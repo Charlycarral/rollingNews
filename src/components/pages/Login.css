@@ -92,6 +92,15 @@
 .textcontacto {
   color: rgba(27, 27, 27, 0.822);
 }
+.wlogo{
+  width: 60%;
+  margin-top: 10px;
+}
+
+.fsuscribe{
+  font-size: 15px;
+
+}
 
 @media all and (max-width: 1023px) {
 }

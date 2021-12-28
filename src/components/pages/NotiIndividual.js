@@ -11,7 +11,7 @@ const NotiIndividual = (props) => {
         </Link>
 
         <Card.Body>
-        <Link to={`/noticias/${props.noticia._id}`} className="text-decoration-none text-black fs-4" href="categoria">
+        <Link to={`/noticias/${props.noticia._id}`} className="text-decoration-none text-black fs-4 fuenteRolling" href="categoria">
         <Card.Title>{props.noticia.titulo}</Card.Title>
         </Link>
           
@@ -19,7 +19,7 @@ const NotiIndividual = (props) => {
           <Card.Text>{props.noticia.bajadanoticia}</Card.Text>
         </Link>
           
-          <Button variant="link text-decoration-none text-secondary">
+          <Button variant="link text-decoration-none text-secondary fuenteRolling">
             {props.noticia.autor}
           </Button>
         </Card.Body>

@@ -48,7 +48,7 @@ const CardsNoticiasAdmin = (props) => {
   };
 
   return (
-    <tr className="text-center align-middle bordetablacompleto">
+    <tr className="text-center align-middle bordetablacompleto fuenteTitulosAdmin">
       
       <td>
         <Link to={`/noticias/${props.noticia._id}`}>

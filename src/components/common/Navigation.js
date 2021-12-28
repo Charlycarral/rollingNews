@@ -43,7 +43,7 @@ const Navigation = (props) => {
                           <Dropdown.Toggle
                             variant="secondary"
                             id="dropdown-basic"
-                            className="border-0"
+                            className="border-0 mt-3"
                           >
                             MAS CATEGORIAS...
                           </Dropdown.Toggle>
@@ -135,15 +135,15 @@ const Navigation = (props) => {
             to="/"
             className=" d-flex justify-content-center text-decoration-none text-white logoNav"
           >
-            <img src={logo} alt="logo rolling news" className="w-50 wlogo" />
+            <img src={logo} alt="logo rolling news" className="wlogo" />
           </Link>
 
-          <div className="d-flex justify-content-start ms-5 ps-5 mt-2">
+          <div className="d-flex justify-content-start ms-5 ps-5 mt-2 ">
             <div>
               <Link
                 to="/suscribe"
                 id="botonSub"
-                className="w-auto p-2 fuentenav"
+                className="w-auto p-2 fuentenav fsuscribe"
               >
                 Suscribite
               </Link>
@@ -154,17 +154,17 @@ const Navigation = (props) => {
                 <Link
                   to="/login"
                   id="botonIngresar"
-                  className="w-auto p-2 colorFuenteGris fuentenav"
+                  className="w-auto p-2 colorFuenteGris fuentenav fsuscribe"
                 >
                   Ingresar{" "}
                 </Link>
               </div>
             ) : (
-              <div className="colorFuenteGris">
+              <div className="colorFuenteGris fsuscribe">
                 <Link
                   to="/"
                   id="botonIngresar"
-                  className="w-auto p-2 colorFuenteGris "
+                  className="w-auto p-2 colorFuenteGris fsuscribe"
                   onClick={() => {
                     salirLogin();
                   }}

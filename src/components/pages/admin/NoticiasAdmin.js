@@ -46,7 +46,7 @@ const NoticiasAdmin = (props) => {
         responsive
         className="shadow-lg p-3 mb-5 bg-body rounded"
       >
-        <thead className="bordetabla text-center bordetablacompleto">
+        <thead className="bordetabla text-center bordetablacompleto fuenteTitulosAdmin">
           <tr className="text-rojo fs-5">
             <th className="text-center">Imagen</th>
             <th className="text-center">Titulo</th>
