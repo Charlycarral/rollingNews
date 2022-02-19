@@ -16,7 +16,7 @@ const AgregarNoticia = (props) => {
   const [destacada, setDestacada] = useState(false);
   const [principal, setPrincipal] = useState(false);
   const [error, setError] = useState(false);
-  const URL = process.env.REACT_APP_API_URL_NOTIC;
+  const URL_n = process.env.REACT_APP_API_URL_NOTIC;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,10 +46,12 @@ const AgregarNoticia = (props) => {
       try {
         const parametros = {
           method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(nuevaNoticia),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(nuevaNoticia)
         };
-        const respuesta = await fetch(URL, parametros);
+        const respuesta = await fetch(URL_n, parametros);
         console.log(respuesta);
         if (respuesta.status === 201) {
           Swal.fire(
@@ -65,11 +67,12 @@ const AgregarNoticia = (props) => {
           );
         }
         e.target.reset();
-        props.consultarServer();
+        props.consultaServer();
       } catch (error) {
         console.log(error);
       }
-    } else {
+    } 
+    else {
       setError(true);
       console.log("mensaje de error");
     }
@@ -78,15 +81,19 @@ const AgregarNoticia = (props) => {
   const handleDestacada = () => {
     if (destacada === false) {
       setDestacada(true);
+      console.log("true");
     } else {
       setDestacada(false);
+      console.log("false");
     }
   };
   const handlePrincipal = () => {
-    if (destacada === false) {
+    if (principal === false) {
       setPrincipal(true);
+      console.log("true");
     } else {
       setPrincipal(false);
+      console.log("false");
     }
   };
 
@@ -113,8 +120,8 @@ const AgregarNoticia = (props) => {
               <Form.Label>Fecha</Form.Label>
               <Form.Control
                 type="date"
-                min="1980-01-01"
-                max="2021-12-28"
+                // min="1980-01-01"
+                // max="2021-12-28"
                 placeholder=""
                 onChange={(e) => setFechaNoticia(e.target.value)}
                 className="imputFecha"
