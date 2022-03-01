@@ -107,6 +107,7 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
+                maxlength='100'
                 onChange={(e) => setAutor(e.target.value)}
                 className="imputAutor"
               />
@@ -145,6 +146,7 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
+                maxlength='200'
                 onChange={(e) => setTitulo(e.target.value)}
                 className="imputTitulo"
               />
@@ -169,6 +171,7 @@ const AgregarNoticia = (props) => {
             <Form.Control
               type="text"
               placeholder=""
+              maxlength='500'
               onChange={(e) => setImagen(e.target.value)}
             />
           </Form.Group>
@@ -176,6 +179,7 @@ const AgregarNoticia = (props) => {
             <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength='500'
               onChange={(e) => setBajadaNoticia(e.target.value)}
             />
           </Form.Group>
@@ -183,6 +187,7 @@ const AgregarNoticia = (props) => {
             <Form.Label>Lead Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength='500'
               onChange={(e) => setLeadNoticia(e.target.value)}
             />
           </Form.Group>
@@ -190,6 +195,7 @@ const AgregarNoticia = (props) => {
             <Form.Label>Cuerpo Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength='2000'
               style={{ height: "200px" }}
               onChange={(e) => setCuerpoNoticia(e.target.value)}
             />

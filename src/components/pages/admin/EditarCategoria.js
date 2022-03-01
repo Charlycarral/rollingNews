@@ -65,6 +65,7 @@ const EditarCategoria = (props) => {
             <Form.Label className="fs-4">Nombre de Categoría</Form.Label>
             <Form.Control
               type="text"
+              maxlength='40'
               placeholder="Nueva Categoría"
               defaultValue={categoria.categoria}
               ref={categoriaRef}

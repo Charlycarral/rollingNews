@@ -130,6 +130,7 @@ const EditarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
+                maxlength='100'
                 defaultValue={noticia.autor}
                 ref={autorNoticiaRef}
                 className="imputAutor"
@@ -170,6 +171,7 @@ const EditarNoticia = (props) => {
               <Form.Control
                 type="text"
                 placeholder=""
+                maxlength='200'
                 defaultValue={noticia.titulo}
                 ref={tituloNoticiaRef}
                 className="imputTitulo"
@@ -198,6 +200,7 @@ const EditarNoticia = (props) => {
             <Form.Control
               type="text"
               placeholder=""
+              maxlength='500'
               defaultValue={noticia.imagen}
               ref={imagenNoticiaRef}
             />
@@ -206,6 +209,7 @@ const EditarNoticia = (props) => {
             <Form.Label>Bajada Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength='500'
               defaultValue={noticia.bajadanoticia}
               ref={bajadanoticiaRef}
             />
@@ -214,6 +218,7 @@ const EditarNoticia = (props) => {
             <Form.Label>Lead Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength='500'
               defaultValue={noticia.leadnoticia}
               ref={leadnoticiaRef}
             />
@@ -222,6 +227,7 @@ const EditarNoticia = (props) => {
             <Form.Label>Cuerpo Noticia</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength='2000'
               style={{ height: "200px" }}
               defaultValue={noticia.cuerponoticia}
               ref={cuerponoticiaRef}
