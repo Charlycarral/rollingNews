@@ -74,7 +74,7 @@ const PaginaDetalleNoticias = (props) => {
                   <p>Autor: {noticiaid.autor}</p>
                 </div>
                 <div className="ending2 fs-5 me-5 fuenteRolling">
-                  <span>Fecha: {fecha}</span>
+                  <span>Fecha: {noticiaid.fechanoticia.slice(0, 10)}</span>
                 </div>
               </section>
             </div>
@@ -130,7 +130,7 @@ const PaginaDetalleNoticias = (props) => {
               <p>Autor: {noticiaid.autor}</p>
             </div>
             <div className="ending2 fs-5 me-5 fuenteRolling">
-              <span>Fecha: {fecha}</span>
+              <span>Fecha: {noticiaid.fechanoticia.slice(0, 10)}</span>
             </div>
           </section>
         </div>
