@@ -10,14 +10,15 @@ const PaginaDetalleNoticias = (props) => {
   const [noticiaid, setNoticiaid] = useState({});
   const [fecha, setFecha] = useState("");
   const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + id;
+
   useEffect(async () => {
     try {
       const respuesta = await fetch(URL);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        console.log(respuesta);
+        const fechaN = new Date(dato.fechanoticia);
+        const fechaSub = fechaN.toLocaleDateString();
         setNoticiaid(dato);
-        const fechaSub = noticiaid.fechanoticia.substring(0, 10);
         setFecha(fechaSub);
       }
     } catch (error) {
@@ -74,7 +75,7 @@ const PaginaDetalleNoticias = (props) => {
                   <p>Autor: {noticiaid.autor}</p>
                 </div>
                 <div className="ending2 fs-5 me-5 fuenteRolling">
-                  <span>Fecha: {noticiaid.fechanoticia.slice(0, 10)}</span>
+                  <span>Fecha: {fecha}</span>
                 </div>
               </section>
             </div>
@@ -130,7 +131,7 @@ const PaginaDetalleNoticias = (props) => {
               <p>Autor: {noticiaid.autor}</p>
             </div>
             <div className="ending2 fs-5 me-5 fuenteRolling">
-              <span>Fecha: {noticiaid.fechanoticia.slice(0, 10)}</span>
+              <span>Fecha: {fecha}</span>
             </div>
           </section>
         </div>

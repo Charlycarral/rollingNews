@@ -179,7 +179,7 @@ const FormularioSuscribe = (props) => {
   const monstrarComponenteAdmin =
     isAdmin === true ? (
       <Form.Group className="my-2 text-white">
-        <Form.Label>¿Eres Administrador? </Form.Label>
+        <Form.Label>Clave sistema </Form.Label>
         <Form.Control
           type="password"
           placeholder="Clave admin"

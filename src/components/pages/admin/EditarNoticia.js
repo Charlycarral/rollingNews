@@ -13,6 +13,7 @@ const EditarNoticia = (props) => {
   const [categoria, setCategoria] = useState("");
   const [destacada, setDestacada] = useState(false);
   const [principal, setPrincipal] = useState(false);
+  const [fecha, setFecha] = useState("");
   const autorNoticiaRef = useRef("");
   const tituloNoticiaRef = useRef("");
   const bajadanoticiaRef = useRef("");
@@ -28,7 +29,10 @@ const EditarNoticia = (props) => {
       const respuesta = await fetch(URL);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
+        const fechaN = new Date(dato.fechanoticia);
+        const fechaSub = fechaN.toLocaleDateString();
         setNoticia(dato);
+        setFecha(fechaSub);
         setCategoria(dato.categoria);
       }
     } catch (error) {
@@ -134,11 +138,11 @@ const EditarNoticia = (props) => {
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Fecha</Form.Label>
               <Form.Control
-                type="date"
+                type="text"
                 min="1980-01-01"
                 max="2021-12-28"
                 placeholder=""
-                defaultValue={noticia.fechanoticia}
+                defaultValue={fecha}
                 ref={fechanoticiaRef}
                 className="imputFecha"
               />
