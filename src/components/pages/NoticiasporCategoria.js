@@ -15,6 +15,7 @@ const NoticiasporCategoria = () => {
     busquedaporcategoria();
   }, [categoria]);
 
+  console.log()
   const busquedaporcategoria = async () => {
     try {
       const respuesta = await fetch(URL);

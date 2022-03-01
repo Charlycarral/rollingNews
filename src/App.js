@@ -107,7 +107,6 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      console.log("desde consultasServer");
     }
   };
 
@@ -147,7 +146,6 @@ function App() {
       }
     } catch (error) {
       console.log(error);
-      console.log("desde consultasServer");
     }
   };
 

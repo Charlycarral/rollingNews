@@ -36,7 +36,6 @@ const EditarCategoria = (props) => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(categoriaModificada),
         });
-        console.log(respuesta);
         if ((await respuesta.status) === 200) {
           Swal.fire(
             "Categoría Modificada",

@@ -9,7 +9,6 @@ import "./admin.css";
 
 const CardsNoticiasAdmin = (props) => {
   const eliminarNoticia = () => {
-   
     Swal.fire({
       title: "¿Esta seguro de eliminar este artículo?",
       text: "¡Una vez eliminado no se puede recuperar!",
@@ -31,7 +30,6 @@ const CardsNoticiasAdmin = (props) => {
               "Content-Type": "application/json",
             },
           });
-          console.log(respuesta);
           if (respuesta.status === 200) {
             Swal.fire(
               "¡Eliminado!",

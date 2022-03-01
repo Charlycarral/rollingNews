@@ -54,7 +54,6 @@ const AgregarNoticia = (props) => {
           body: JSON.stringify(nuevaNoticia),
         };
         const respuesta = await fetch(URL, parametros);
-        console.log(respuesta);
         if (respuesta.status === 201) {
           Swal.fire(
             "Noticia Publicada",

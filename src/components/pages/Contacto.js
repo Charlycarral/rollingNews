@@ -21,16 +21,12 @@ const Contacto = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("nombre", nombre);
-    console.log("email", email);
-    console.log("mensaje", mensaje);
     if (
       validarNombre(nombre) &&
       validarCorreo(email) &&
       campoRequerido(mensaje)
     ) {
       const datos = { nombre: nombre, email: email, mensaje: mensaje };
-      console.log(datos);
       setErrorContact(false);
       emailjs
         .send(
@@ -41,10 +37,10 @@ const Contacto = () => {
         )
         .then(
           function (response) {
-            console.log("SUCCESS!", response.status, response.text);
+            console.log("");
           },
           function (error) {
-            console.log("FAILED...", error);
+            console.log("");
           }
         );
       e.target.reset();

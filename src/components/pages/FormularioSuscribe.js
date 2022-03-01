@@ -28,7 +28,6 @@ const FormularioSuscribe = (props) => {
       campoRequerido(contrasenaUsuario_)
     ) {
       if (contrasenaUsuario === contrasenaUsuario_) {
-        console.log(claveAdmin);
         if (claveAdmin.length === 0) {
           // encriptar contrasena
           const contrasenaEncriptada = await bcrypt.hash(contrasenaUsuario, 10);

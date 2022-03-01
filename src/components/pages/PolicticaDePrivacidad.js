@@ -4,8 +4,6 @@ import './Login.css';
 const PolicticaDePrivacidad = () => {
   return (
       <div className="bgPoliticas text-black py-5">
-
-     
     <div className="container  pt-5 d-flex  flex-column jutify-content-center align-items-center ">
       <h1 className="fuentenav ms-3 mt-1 mb-5 pt-5 fw-bold titulopolitica">POLITICAS DE PRIVACIDAD</h1>  
       <p className="w-75 fuentenav fs-6 pb-5">

@@ -28,7 +28,6 @@ const EditarNoticia = (props) => {
       const respuesta = await fetch(URL);
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
-        console.log(respuesta);
         setNoticia(dato);
         setCategoria(dato.categoria);
       }
@@ -39,9 +38,6 @@ const EditarNoticia = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //console.log(autorNoticiaRef);
-    //console.log(autorNoticiaRef.current);
-    //console.log(autorNoticiaRef.current.value);
     if (
       campoRequerido(autorNoticiaRef.current.value) &&
       campoRequerido(tituloNoticiaRef.current.value) &&
@@ -70,7 +66,6 @@ const EditarNoticia = (props) => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(noticiaModificada),
         });
-        console.log(respuesta);
         if ((await respuesta.status) === 200) {
           Swal.fire(
             "Articulo Modificado",

@@ -4,10 +4,7 @@ import { Card } from "react-bootstrap";
 
 const AboutUs = () => {
   return (
-    <div className="bg-light">
-
-
-   
+    <div className="bg-light">  
     <div className="mt-5 pt-3 container fuenteTitulosAdmin ">
       <div className="main">
         <div clasName="texto mt-5">
