@@ -141,7 +141,7 @@ const EditarNoticia = (props) => {
               <Form.Control
                 type="text"
                 min="1980-01-01"
-                max="2021-12-28"
+                max="{{date | date:'yyyy-MM-dd'}}"
                 placeholder=""
                 defaultValue={fecha}
                 ref={fechanoticiaRef}

@@ -118,7 +118,7 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="date"
                 min="1980-01-01"
-                max="2021-12-28"
+                max="{{date | date:'yyyy-MM-dd'}}"
                 placeholder=""
                 onChange={(e) => setFechaNoticia(e.target.value)}
                 className="imputFecha"
