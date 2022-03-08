@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { campoRequerido } from "../../Helpers/helpers";
 import "./admin.css";
 
+
 const AgregarNoticia = (props) => {
+  const current = (new Date()).toISOString().split('T')[0];
   const [autor, setAutor] = useState("");
   const [titulo, setTitulo] = useState("");
   const [bajadanoticia, setBajadaNoticia] = useState("");
@@ -118,7 +120,7 @@ const AgregarNoticia = (props) => {
               <Form.Control
                 type="date"
                 min="1980-01-01"
-                max="{{date | date:'yyyy-MM-dd'}}"
+                max={current}
                 placeholder=""
                 onChange={(e) => setFechaNoticia(e.target.value)}
                 className="imputFecha"

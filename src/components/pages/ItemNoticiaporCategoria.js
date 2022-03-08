@@ -5,7 +5,8 @@ import "../pages/admin/admin.css";
 
 const ItemNoticiaporCategoria = (props) => {
   const fechaN = new Date(props.noticia.fechanoticia);
-  const fecha = fechaN.toLocaleDateString();
+  // const fecha = fechaN.toLocaleDateString();
+  const fecha = fechaN.toISOString().split('T')[0]
 
   return (
     <div className="my-4 mx-auto ">

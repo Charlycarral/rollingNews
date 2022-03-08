@@ -17,7 +17,7 @@ const PaginaDetalleNoticias = (props) => {
       if (respuesta.status === 200) {
         const dato = await respuesta.json();
         const fechaN = new Date(dato.fechanoticia);
-        const fechaSub = fechaN.toLocaleDateString();
+        const fechaSub = fechaN.toISOString().split('T')[0]
         setNoticiaid(dato);
         setFecha(fechaSub);
       }
