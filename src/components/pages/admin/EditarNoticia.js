@@ -146,6 +146,7 @@ const EditarNoticia = (props) => {
                 defaultValue={fecha}
                 ref={fechanoticiaRef}
                 className="imputFecha"
+                disabled = {true}
               />
             </Form.Group>
             <Form.Group controlId="formBasicCheckbox">

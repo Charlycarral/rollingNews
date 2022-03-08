@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import "../pages/admin/admin.css";
 
 const ItemNoticiaporCategoria = (props) => {
-  const fecha = props.noticia.fechanoticia.substring(0, 10);
-  console.log(fecha);
+  const fechaN = new Date(props.noticia.fechanoticia);
+  const fecha = fechaN.toLocaleDateString();
 
   return (
     <div className="my-4 mx-auto ">
