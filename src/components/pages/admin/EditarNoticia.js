@@ -139,7 +139,7 @@ const EditarNoticia = (props) => {
             <Form.Group className="mb-3 inputchico">
               <Form.Label>Fecha</Form.Label>
               <Form.Control
-                type="text"
+                type="date"
                 min="1980-01-01"
                 max="{{date | date:'yyyy-MM-dd'}}"
                 placeholder=""
