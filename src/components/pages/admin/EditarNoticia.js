@@ -7,6 +7,7 @@ import { campoRequerido } from "../../Helpers/helpers";
 import Swal from "sweetalert2";
 
 const EditarNoticia = (props) => {
+  const current = (new Date()).toISOString().split('T')[0];
   const { id } = useParams();
   const [noticia, setNoticia] = useState({});
   const URL = process.env.REACT_APP_API_URL_NOTIC + "/" + id;
@@ -141,12 +142,11 @@ const EditarNoticia = (props) => {
               <Form.Control
                 type="date"
                 min="1980-01-01"
-                max="{{date | date:'yyyy-MM-dd'}}"
+                max={current}
                 placeholder=""
                 defaultValue={fecha}
                 ref={fechanoticiaRef}
                 className="imputFecha"
-                disabled = {true}
               />
             </Form.Group>
             <Form.Group controlId="formBasicCheckbox">

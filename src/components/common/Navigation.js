@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container, Offcanvas, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../img/logoRollingBlanco.svg";
@@ -21,14 +21,14 @@ const Navigation = (props) => {
           <section>
             <Navbar.Toggle />
             <Navbar.Offcanvas id="navNewsCanvas" placement="start">
-              <Offcanvas.Header
+            <Offcanvas.Header 
                 closeButton
                 className="btn-close-dark centrado"
               ></Offcanvas.Header>
 
               <section className="fuentenav">
                 <div className="container my-5 text-center ">
-                  <Nav className="flex-row pe-3 row mt-5  justify-content-center">
+                  <Nav  className="flex-row pe-3 row mt-5  justify-content-center">
                     <div className="col-sm-12 col-md-6 col-lg-4 text-white mb-5">
                       <h3 className="text-white text-uppercase ">Secciones</h3>
                       <hr className="colorRojo"/>
